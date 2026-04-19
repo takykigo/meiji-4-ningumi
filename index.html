@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>明治4神組：黄金の1泊2日プラン</title>
+    <style>
+        :root {
+            --primary-color: #d4af37;
+            --bg-color: #fdfaf1;
+            --text-color: #333;
+            --accent-border: #bc9b2c;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0; padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        /* タブメニューのデザイン */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .tab-button {
+            padding: 15px 25px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: bold;
+            color: #888;
+            transition: 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-button.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        section {
+            background: var(--white);
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        h2 { color: var(--accent-border); border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; margin-top: 0; display: flex; align-items: center; }
+        h2::before { content: '⛩️'; margin-right: 12px; }
+
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.9rem; }
+        th, td { text-align: left; padding: 12px; border-bottom: 1px solid #eee; }
+        th { background-color: #fcfcfc; color: #666; }
+
+        .timeline { position: relative; padding-left: 30px; border-left: 2px solid var(--primary-color); margin: 20px 0; }
+        .timeline-item { position: relative; margin-bottom: 25px; }
+        .timeline-item::after { content: ''; position: absolute; left: -36px; top: 5px; width: 10px; height: 10px; background: var(--primary-color); border: 3px solid #fff; border-radius: 50%; }
+        .time { font-weight: bold; color: var(--accent-border); }
+
+        .choice-box { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
+        .choice { border: 2px solid #f0f0f0; padding: 15px; border-radius: 10px; background: #fafafa; }
+        .choice strong { display: block; color: var(--primary-color); }
+
+        footer { text-align: center; padding: 40px; color: #999; }
+        
+        @media (max-width: 600px) { .choice-box { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>明治4神組</h1>
+    <p>伊勢・松阪・大阪 黄金の1泊2日プラン</p>
+</header>
+
+<div class="tabs">
+    <button class="tab-button active" onclick="openTab(event, 'plan1')">本案（確定版）</button>
+    <button class="tab-button" onclick="openTab(event, 'plan2')">案2（準備中）</button>
+    <button class="tab-button" onclick="openTab(event, 'plan3')">案3（準備中）</button>
+</div>
+
+<div class="container">
+    <div id="plan1" class="tab-content active">
+        <section>
+            <h2>Day 1: 神聖なる参拝と至高の肉</h2>
+            <div class="timeline">
+                <div class="timeline-item"><span class="time">11:30 名古屋発</span><br>観光特急「しまかぜ」で伊勢へ。</div>
+                <div class="timeline-item"><span class="time">13:30 伊勢神宮</span><br>外宮➡内宮参拝。おかげ横丁。</div>
+                <div class="timeline-item"><span class="time">18:00 松阪牛</span><br>本場の味を堪能。</div>
+                <div class="timeline-item"><span class="time">21:00 大阪へ</span><br>難波へ先行移動。</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Day 2: 笑いの聖地と大阪グルメ</h2>
+            <div class="timeline">
+                <div class="timeline-item"><span class="time">10:00 なんば花月</span><br>吉本新喜劇と漫才。</div>
+                <div class="timeline-item"><span class="time">12:30 道頓堀</span><br>大阪グルメのハシゴ。</div>
+                <div class="timeline-item"><span class="time">15:00 解散</span><br>新大阪駅から各自帰路へ。</div>
+            </div>
+        </section>
+
+        <section style="border-top-color: #e74c3c;">
+            <h2 style="color: #e74c3c;">検討中の選択肢</h2>
+            <p><strong>Q1. 松阪牛のスタイルは？</strong></p>
+            <div class="choice-box">
+                <div class="choice"><strong>A：究極のすき焼き</strong> 老舗の個室スタイル。</div>
+                <div class="choice"><strong>B：カジュアル焼肉</strong> 地元で人気の回転焼肉。</div>
+            </div>
+        </section>
+    </div>
+
+    <div id="plan2" class="tab-content">
+        <section>
+            <h2>案2：Coming Soon...</h2>
+            <p>現在プランを作成中です。もう少々お待ちください。</p>
+        </section>
+    </div>
+
+    <div id="plan3" class="tab-content">
+        <section>
+            <h2>案3：Coming Soon...</h2>
+            <p>現在プランを作成中です。もう少々お待ちください。</p>
+        </section>
+    </div>
+</div>
+
+<footer>
+    明治4神組 &copy; 2026<br>
+    GitHub: takykigo/meiji-4-ningumi
+</footer>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+        tablinks = document.getElementsByClassName("tab-button");
+        for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+</body>
+</html>
