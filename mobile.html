@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>明治4人組：スマホ版しおり</title>
+    <title>明治4人組：スマホ完全版しおり</title>
     <style>
         :root {
             --gold: #d4af37;
             --bg: #fdfaf1;
             --text: #333;
             --white: #ffffff;
+            --accent: #bc9b2c;
         }
 
         body {
@@ -17,156 +18,218 @@
             background-color: var(--bg);
             color: var(--text);
             margin: 0; padding: 0;
-            line-height: 1.5;
+            line-height: 1.7;
+            -webkit-text-size-adjust: 100%;
         }
 
         header {
-            background: #d4af37;
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
             color: white;
-            padding: 20px 15px;
+            padding: 25px 15px;
             text-align: center;
-            position: relative;
         }
 
-        header h1 { margin: 0; font-size: 1.2rem; letter-spacing: 1px; }
+        header h1 { margin: 0; font-size: 1.3rem; letter-spacing: 2px; }
+        header p { margin: 5px 0 0; font-size: 0.8rem; opacity: 0.9; }
 
-        /* 固定タブメニュー */
         .nav-tabs {
             display: flex;
             position: sticky;
             top: 0;
             z-index: 1000;
             background: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .nav-btn {
             flex: 1;
-            padding: 15px 5px;
+            min-width: 120px;
+            padding: 15px 10px;
             border: none;
             background: none;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: bold;
-            color: #999;
+            color: #888;
             border-bottom: 3px solid transparent;
+            white-space: nowrap;
         }
 
         .nav-btn.active {
             color: var(--gold);
             border-bottom-color: var(--gold);
-            background: #fffdf0;
+            background: #fffcf0;
         }
 
-        .content { padding: 15px; }
-        .pane { display: none; }
-        .pane.active { display: block; animation: fade 0.3s; }
+        .container { padding: 15px; }
+        .pane { display: none; animation: fadeIn 0.3s ease; }
+        .pane.active { display: block; }
 
-        @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        .card {
-            background: #fff;
+        section {
+            background: var(--white);
             border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             border-left: 5px solid var(--gold);
         }
 
-        h2 { font-size: 1.1rem; margin: 0 0 10px 0; color: #bc9b2c; border-bottom: 1px solid #f0f0f0; padding-bottom: 5px; }
-        
-        /* タイムライン */
-        .tm { border-left: 2px solid #eee; margin-left: 10px; padding-left: 15px; }
-        .tm-item { position: relative; margin-bottom: 15px; font-size: 0.85rem; }
-        .tm-item::before { content: ''; position: absolute; left: -20px; top: 5px; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; }
-        .tm-item b { display: block; color: var(--gold); font-size: 0.9rem; }
+        h2 { font-size: 1.2rem; color: var(--accent); margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px; line-height: 1.4; }
+        h3 { font-size: 1rem; color: #444; background: #f9f9f9; padding: 8px 12px; border-left: 4px solid var(--gold); margin: 25px 0 10px; }
+        h4 { font-size: 0.95rem; color: var(--accent); margin: 15px 0 5px; }
 
-        /* アクセスカード */
-        .access-row { display: flex; justify-content: space-between; font-size: 0.8rem; padding: 8px 0; border-bottom: 1px solid #f9f9f9; }
-        .access-row span:first-child { font-weight: bold; color: #666; }
+        p, li { font-size: 0.9rem; margin-bottom: 10px; }
+        ul, ol { padding-left: 20px; }
 
-        .point { background: #fff9e6; padding: 12px; border-radius: 8px; font-size: 0.85rem; border: 1px solid #ffeeba; }
+        /* スマホ用テーブル */
+        .mobile-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.85rem; }
+        .mobile-table th, .mobile-table td { border: 1px solid #eee; padding: 10px; text-align: left; }
+        .mobile-table th { background: #f5f5f5; width: 30%; }
 
-        footer { text-align: center; padding: 20px; font-size: 0.7rem; color: #ccc; }
+        .tm-box { border-left: 2px dashed var(--gold); margin: 15px 0 15px 10px; padding-left: 15px; }
+        .tm-item { margin-bottom: 25px; font-size: 0.9rem; }
+        .tm-label { display: block; font-weight: bold; color: var(--gold); margin-bottom: 5px; }
+
+        .point-box { background: #fff9e6; border: 1px solid #ffeeba; padding: 15px; border-radius: 8px; font-size: 0.85rem; margin: 15px 0; }
+        .choice-card { border: 1px solid #eee; padding: 15px; border-radius: 8px; background: #fafafa; margin-top: 10px; font-size: 0.85rem; }
+        .choice-card b { color: var(--gold); }
+
+        footer { text-align: center; padding: 40px 15px; background: #f4f4f4; color: #999; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>明治4人組 黄金の1泊2日</h1>
+    <h1>明治4人組</h1>
+    <p>黄金の1泊2日プラン（スマホ完全版）</p>
 </header>
 
-<div class="nav-tabs">
+<nav class="nav-tabs">
     <button class="nav-btn active" onclick="tab(event, 'p1')">案1:名古屋集</button>
     <button class="nav-btn" onclick="tab(event, 'p2')">案2:大阪集</button>
     <button class="nav-btn" onclick="tab(event, 'p3')">案3:一本化</button>
-</div>
+</nav>
 
-<div class="content">
+<div class="container">
+
     <!-- PLAN 1 -->
     <div id="p1" class="pane active">
-        <div class="card">
-            <h2>⛩️ 案1：伊勢➡大阪（名古屋集）</h2>
-            <div class="tm">
-                <div class="tm-item"><b>1日目</b>11:30 名古屋集合 ➡ しまかぜ ➡ 伊勢神宮 ➡ 松阪牛 ➡ 大阪へ</div>
-                <div class="tm-item"><b>2日目</b>10:00 吉本新喜劇 ➡ 道頓堀 ➡ 15:00 解散</div>
+        <section>
+            <h2>⛩️ 案1：「混雑を避けて、最高の体験を」</h2>
+            <p>このプランは、大人の修学旅行ガイドとして作成されました。</p>
+
+            <h3>🗓️ 旅のベストタイミング</h3>
+            <ul>
+                <li><strong>おすすめ月：</strong> 6月 または 12月上旬（参拝客が落ち着く穴場）</li>
+                <li><strong>おすすめ曜日：</strong> 火・水 または 水・木</li>
+                <li><strong>メリット：</strong> 特急・劇場・名店の予約がスムーズ。静かな神域を堪能できます。</li>
+            </ul>
+
+            <h3>🚉 各地からのアクセス</h3>
+            <div style="overflow-x:auto;">
+                <table class="mobile-table">
+                    <tr><th>金沢</th><td>北陸新幹線(敦賀乗換) ➡ 特急しらさぎ (約2.5h)</td></tr>
+                    <tr><th>鹿沼</th><td>日光線(宇都宮乗換) ➡ 東北・東海道新幹線 (約3.25h)</td></tr>
+                    <tr><th>川越</th><td>JR/東武 ➡ 東京 ➡ 東海道新幹線 (約2.5h)</td></tr>
+                    <tr><th>立川</th><td>横浜線(新横浜乗換) ➡ 東海道新幹線 (約2.5h)</td></tr>
+                </table>
             </div>
-        </div>
-        <div class="card">
-            <h2>🚉 名古屋へのアクセス</h2>
-            <div class="access-row"><span>金沢</span><span>新幹線➡しらさぎ (2.5h)</span></div>
-            <div class="access-row"><span>鹿沼</span><span>日光線➡新幹線 (3.25h)</span></div>
-            <div class="access-row"><span>川越</span><span>JR/東武➡新幹線 (2.5h)</span></div>
-            <div class="access-row"><span>立川</span><span>横浜線➡新幹線 (2.5h)</span></div>
-        </div>
+
+            <h3>🗺️ 黄金ルート</h3>
+            <div class="tm-box">
+                <div class="tm-item"><span class="tm-label">【Day 1】神聖なる参拝と至高の肉</span>11:30 名古屋発：特急「しまかぜ」➡ 13:30 伊勢神宮 ➡ 18:00 松阪牛 ➡ 大阪へ</div>
+                <div class="tm-item"><span class="tm-label">【Day 2】笑いの聖地と大阪グルメ</span>10:00 なんば花月 ➡ 12:30 道頓堀ランチ ➡ 15:00 新大阪解散</div>
+            </div>
+
+            <h3>🎫 必須チケット</h3>
+            <ul style="padding-left:15px; font-size:0.85rem;">
+                <li><strong>吉本新喜劇</strong>：1ヶ月前から予約開始。前方席推奨。</li>
+                <li><strong>松阪牛予約</strong>：「和田金」「牛銀」などは必須。</li>
+                <li><strong>特急「しまかぜ」</strong>：乗車1ヶ月前の10:30発売。</li>
+            </ul>
+        </section>
     </div>
 
     <!-- PLAN 2 -->
     <div id="p2" class="pane">
-        <div class="card">
-            <h2>🚄 案2：大阪集合➡伊勢泊</h2>
-            <p style="font-size:0.8rem; margin:0 0 10px;">「伊勢は朝イチ」が最大の攻略法。</p>
-            <div class="tm">
-                <div class="tm-item"><b>1日目：大阪集合</b>吉本新喜劇 ➡ 夜：伊勢へ移動 ➡ 伊勢泊</div>
-                <div class="tm-item"><b>2日目：伊勢参拝</b>07:00 伊勢神宮 ➡ 昼：松阪牛 ➡ 解散</div>
-            </div>
-        </div>
-        <div class="card">
-            <h2>🍖 松阪牛候補</h2>
-            <div style="font-size:0.85rem;">
-                ・<b>和田金:</b> すき焼き最強(要予約)<br>
-                ・<b>牛銀本店:</b> 安定の品質<br>
-                ・<b>一升びん:</b> 賑やかな焼肉
-            </div>
-        </div>
+        <section>
+            <h2>🚄 案2：大阪集合 ➡ 伊勢1泊（精密設計プラン）</h2>
+            <p>「無駄なく・混雑回避・満足度最大化」の最適解。結論から言うと、“大阪集合 → 伊勢1泊”が最適解です。</p>
+
+            <h3>■ 全体戦略（最重要）</h3>
+            <ul>
+                <li>バラバラ出発 → 大阪で合流</li>
+                <li>吉本 → 初日に消化</li>
+                <li>伊勢 → 平日朝イチ参拝</li>
+                <li>松阪牛 → 伊勢or松阪で予約</li>
+            </ul>
+            <p><strong>理由：</strong> 大阪は交通の要。伊勢は「朝が命」。松阪牛は夜にゆっくり。</p>
+
+            <h3>① 合流方法</h3>
+            <p><strong>合流地点：</strong> 新大阪 or なんば (12:00〜13:00合流)<br>
+            <strong>ルート：</strong> 金沢➡サンダーバード / 関東➡新幹線</p>
+
+            <h3>②〜④ 行程ポイント</h3>
+            <ul>
+                <li><strong>吉本：</strong> なんばグランド花月。13:00回 or 16:00回。</li>
+                <li><strong>宿泊：伊勢泊がベスト。</strong> 翌朝の参拝が楽になり、混雑を回避できる最大ポイント。</li>
+            </ul>
+
+            <h3>⑤ 伊勢攻略 ＆ ⑥ 松阪牛</h3>
+            <div class="point-box"><strong>伊勢神宮：</strong> 7:00到着（外宮➡内宮）。これで混雑ほぼ回避。</div>
+            <div class="choice-card"><b>和田金:</b> 超老舗・格式高い。すき焼き最強格。</div>
+            <div class="choice-card"><b>牛銀本店:</b> コスパ＋品質バランス良。</div>
+            <div class="choice-card"><b>一升びん:</b> 焼肉系。比較的入りやすい。</div>
+        </section>
     </div>
 
     <!-- PLAN 3 -->
     <div id="p3" class="pane">
-        <div class="card">
-            <h2>🌿 案3：名古屋集・一本化</h2>
-            <div class="point">
-                名古屋(10:00) ➡ 伊勢参拝 ➡ 松阪牛 ➡ 大阪(泊) ➡ 吉本
+        <section>
+            <h2>🌿 案3：名古屋集・一本化（完成版）</h2>
+            <p>「誰が読んでも一発で全体像がわかる」形に完全一本化しました。</p>
+
+            <div class="point-box">
+                <strong>◆ 最適な理由</strong><br>
+                伊勢は平日午前が空いている。松阪牛は夕食が予約しやすい。吉本を翌日にして疲れを軽減。集合は名古屋が最も調整しやすい。
             </div>
-        </div>
-        <div class="card">
-            <h2>🗺️ 詳細スケジュール</h2>
-            <div class="tm">
-                <div class="tm-item"><b>1日目</b>11:30 伊勢着 ➡ 外宮・内宮 ➡ 17:30 松阪牛 ➡ 20:00 難波へ</div>
-                <div class="tm-item"><b>2日目</b>朝食 ➡ 吉本新喜劇 ➡ 解散</div>
+
+            <h3>🚆 各地 ➡ 名古屋ルート</h3>
+            <div style="overflow-x:auto;">
+                <table class="mobile-table">
+                    <tr><th>金沢</th><td>新幹線➡敦賀➡しらさぎ (約2h50m)</td></tr>
+                    <tr><th>鹿沼</th><td>東武/JR➡東京➡新幹線 (約3.5~4h)</td></tr>
+                    <tr><th>川越</th><td>JR➡大宮➡新幹線 (約3h)</td></tr>
+                    <tr><th>立川</th><td>中央線➡東京➡新幹線 (約2.5h)</td></tr>
+                </table>
             </div>
-        </div>
-        <div class="card" style="border-left-color:#e74c3c;">
-            <h2 style="color:#e74c3c;">🔍 次に決めること</h2>
-            <ul style="font-size:0.85rem; padding-left:15px; margin:0;">
-                <li>旅行日の決定</li>
-                <li>松阪牛の店選び</li>
-                <li>新喜劇の予約</li>
+
+            <h3>🗺️ 旅程詳細</h3>
+            <div class="tm-box">
+                <div class="tm-item"><span class="tm-label">【1日目（平日）】</span>10:00 名古屋集合 ➡ 11:30 伊勢着 ➡ 外宮参拝(11:30~) ➡ 内宮参拝(13:00~) ➡ 松阪牛ディナー(17:30~) ➡ 20:00 難波へ移動・泊</div>
+                <div class="tm-item"><span class="tm-label">【2日目（平日）】</span>朝食・散策 ➡ 吉本新喜劇（昼公演）➡ 終演後、各自帰路へ</div>
+            </div>
+
+            <h3 style="border-left-color: #e74c3c; color: #e74c3c;">🔍 次に決めるべきこと</h3>
+            <ul>
+                <li>旅行日（何月・何曜日）の決定</li>
+                <li>名古屋集合時間の確定</li>
+                <li>松阪牛の店を候補から選ぶ</li>
+                <li>吉本新喜劇の時間を決める</li>
+                <li>個別の時刻表作成</li>
             </ul>
-        </div>
+        </section>
     </div>
+
 </div>
 
-<footer>明治4人組 &copy; 2026</footer>
+<footer>
+    明治4人組 &copy; 2026<br>
+    takykigo.github.io/meiji-4-ningumi/mobile.html
+</footer>
 
 <script>
     function tab(e, id) {
