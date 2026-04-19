@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>明治4人組：スマホ版しおり</title>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --bg: #fdfaf1;
+            --text: #333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, "Helvetica Neue", "Hiragino Sans", sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0; padding: 0;
+            line-height: 1.5;
+        }
+
+        header {
+            background: #d4af37;
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 { margin: 0; font-size: 1.2rem; letter-spacing: 1px; }
+
+        /* 固定タブメニュー */
+        .nav-tabs {
+            display: flex;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn {
+            flex: 1;
+            padding: 15px 5px;
+            border: none;
+            background: none;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #999;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-btn.active {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+            background: #fffdf0;
+        }
+
+        .content { padding: 15px; }
+        .pane { display: none; }
+        .pane.active { display: block; animation: fade 0.3s; }
+
+        @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--gold);
+        }
+
+        h2 { font-size: 1.1rem; margin: 0 0 10px 0; color: #bc9b2c; border-bottom: 1px solid #f0f0f0; padding-bottom: 5px; }
+        
+        /* タイムライン */
+        .tm { border-left: 2px solid #eee; margin-left: 10px; padding-left: 15px; }
+        .tm-item { position: relative; margin-bottom: 15px; font-size: 0.85rem; }
+        .tm-item::before { content: ''; position: absolute; left: -20px; top: 5px; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; }
+        .tm-item b { display: block; color: var(--gold); font-size: 0.9rem; }
+
+        /* アクセスカード */
+        .access-row { display: flex; justify-content: space-between; font-size: 0.8rem; padding: 8px 0; border-bottom: 1px solid #f9f9f9; }
+        .access-row span:first-child { font-weight: bold; color: #666; }
+
+        .point { background: #fff9e6; padding: 12px; border-radius: 8px; font-size: 0.85rem; border: 1px solid #ffeeba; }
+
+        footer { text-align: center; padding: 20px; font-size: 0.7rem; color: #ccc; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>明治4人組 黄金の1泊2日</h1>
+</header>
+
+<div class="nav-tabs">
+    <button class="nav-btn active" onclick="tab(event, 'p1')">案1:名古屋集</button>
+    <button class="nav-btn" onclick="tab(event, 'p2')">案2:大阪集</button>
+    <button class="nav-btn" onclick="tab(event, 'p3')">案3:一本化</button>
+</div>
+
+<div class="content">
+    <!-- PLAN 1 -->
+    <div id="p1" class="pane active">
+        <div class="card">
+            <h2>⛩️ 案1：伊勢➡大阪（名古屋集）</h2>
+            <div class="tm">
+                <div class="tm-item"><b>1日目</b>11:30 名古屋集合 ➡ しまかぜ ➡ 伊勢神宮 ➡ 松阪牛 ➡ 大阪へ</div>
+                <div class="tm-item"><b>2日目</b>10:00 吉本新喜劇 ➡ 道頓堀 ➡ 15:00 解散</div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>🚉 名古屋へのアクセス</h2>
+            <div class="access-row"><span>金沢</span><span>新幹線➡しらさぎ (2.5h)</span></div>
+            <div class="access-row"><span>鹿沼</span><span>日光線➡新幹線 (3.25h)</span></div>
+            <div class="access-row"><span>川越</span><span>JR/東武➡新幹線 (2.5h)</span></div>
+            <div class="access-row"><span>立川</span><span>横浜線➡新幹線 (2.5h)</span></div>
+        </div>
+    </div>
+
+    <!-- PLAN 2 -->
+    <div id="p2" class="pane">
+        <div class="card">
+            <h2>🚄 案2：大阪集合➡伊勢泊</h2>
+            <p style="font-size:0.8rem; margin:0 0 10px;">「伊勢は朝イチ」が最大の攻略法。</p>
+            <div class="tm">
+                <div class="tm-item"><b>1日目：大阪集合</b>吉本新喜劇 ➡ 夜：伊勢へ移動 ➡ 伊勢泊</div>
+                <div class="tm-item"><b>2日目：伊勢参拝</b>07:00 伊勢神宮 ➡ 昼：松阪牛 ➡ 解散</div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>🍖 松阪牛候補</h2>
+            <div style="font-size:0.85rem;">
+                ・<b>和田金:</b> すき焼き最強(要予約)<br>
+                ・<b>牛銀本店:</b> 安定の品質<br>
+                ・<b>一升びん:</b> 賑やかな焼肉
+            </div>
+        </div>
+    </div>
+
+    <!-- PLAN 3 -->
+    <div id="p3" class="pane">
+        <div class="card">
+            <h2>🌿 案3：名古屋集・一本化</h2>
+            <div class="point">
+                名古屋(10:00) ➡ 伊勢参拝 ➡ 松阪牛 ➡ 大阪(泊) ➡ 吉本
+            </div>
+        </div>
+        <div class="card">
+            <h2>🗺️ 詳細スケジュール</h2>
+            <div class="tm">
+                <div class="tm-item"><b>1日目</b>11:30 伊勢着 ➡ 外宮・内宮 ➡ 17:30 松阪牛 ➡ 20:00 難波へ</div>
+                <div class="tm-item"><b>2日目</b>朝食 ➡ 吉本新喜劇 ➡ 解散</div>
+            </div>
+        </div>
+        <div class="card" style="border-left-color:#e74c3c;">
+            <h2 style="color:#e74c3c;">🔍 次に決めること</h2>
+            <ul style="font-size:0.85rem; padding-left:15px; margin:0;">
+                <li>旅行日の決定</li>
+                <li>松阪牛の店選び</li>
+                <li>新喜劇の予約</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<footer>明治4人組 &copy; 2026</footer>
+
+<script>
+    function tab(e, id) {
+        document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        e.currentTarget.classList.add('active');
+        window.scrollTo(0,0);
+    }
+</script>
+</body>
+</html>
