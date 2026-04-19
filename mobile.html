@@ -18,7 +18,7 @@
             background-color: var(--bg);
             color: var(--text);
             margin: 0; padding: 0;
-            line-height: 1.7;
+            line-height: 1.8;
             -webkit-text-size-adjust: 100%;
         }
 
@@ -79,23 +79,25 @@
 
         h2 { font-size: 1.2rem; color: var(--accent); margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px; line-height: 1.4; }
         h3 { font-size: 1rem; color: #444; background: #f9f9f9; padding: 8px 12px; border-left: 4px solid var(--gold); margin: 25px 0 10px; }
-        h4 { font-size: 0.95rem; color: var(--accent); margin: 15px 0 5px; }
-
-        p, li { font-size: 0.9rem; margin-bottom: 10px; }
+        
+        p, li { font-size: 0.9rem; margin-bottom: 12px; }
         ul, ol { padding-left: 20px; }
 
         /* スマホ用テーブル */
         .mobile-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.85rem; }
-        .mobile-table th, .mobile-table td { border: 1px solid #eee; padding: 10px; text-align: left; }
-        .mobile-table th { background: #f5f5f5; width: 30%; }
+        .mobile-table th, .mobile-table td { border: 1px solid #eee; padding: 12px; text-align: left; }
+        .mobile-table th { background: #f5f5f5; width: 35%; font-weight: bold; }
 
-        .tm-box { border-left: 2px dashed var(--gold); margin: 15px 0 15px 10px; padding-left: 15px; }
-        .tm-item { margin-bottom: 25px; font-size: 0.9rem; }
-        .tm-label { display: block; font-weight: bold; color: var(--gold); margin-bottom: 5px; }
+        .tm-box { border-left: 2px dashed var(--gold); margin: 20px 0 20px 10px; padding-left: 15px; }
+        .tm-item { margin-bottom: 30px; font-size: 0.9rem; position: relative; }
+        .tm-label { display: block; font-weight: bold; color: var(--gold); margin-bottom: 8px; font-size: 1rem; }
 
         .point-box { background: #fff9e6; border: 1px solid #ffeeba; padding: 15px; border-radius: 8px; font-size: 0.85rem; margin: 15px 0; }
-        .choice-card { border: 1px solid #eee; padding: 15px; border-radius: 8px; background: #fafafa; margin-top: 10px; font-size: 0.85rem; }
-        .choice-card b { color: var(--gold); }
+        
+        .choice-card { border: 1px solid #eee; padding: 15px; border-radius: 8px; background: #fafafa; margin-bottom: 15px; font-size: 0.85rem; }
+        .choice-card b { color: var(--gold); display: block; margin-bottom: 5px; font-size: 0.95rem; }
+
+        .important { color: #e74c3c; font-weight: bold; }
 
         footer { text-align: center; padding: 40px 15px; background: #f4f4f4; color: #999; font-size: 0.8rem; }
     </style>
@@ -118,37 +120,49 @@
     <!-- PLAN 1 -->
     <div id="p1" class="pane active">
         <section>
-            <h2>⛩️ 案1：「混雑を避けて、最高の体験を」</h2>
-            <p>このプランは、大人の修学旅行ガイドとして作成されました。</p>
+            <h2>⛩️ 案1：伊勢・松阪・大阪を巡る「黄金の1泊2日」確定版プラン</h2>
+            <p>「混雑を避けて、最高の体験を」をテーマにした、大人の修学旅行ガイドです。</p>
 
             <h3>🗓️ 旅のベストタイミング</h3>
+            <p>「人混みを避け、ゆとりを楽しむ」ならこの時期！</p>
             <ul>
                 <li><strong>おすすめ月：</strong> 6月 または 12月上旬（参拝客が落ち着く穴場）</li>
                 <li><strong>おすすめ曜日：</strong> 火・水 または 水・木</li>
                 <li><strong>メリット：</strong> 特急・劇場・名店の予約がスムーズ。静かな神域を堪能できます。</li>
             </ul>
 
-            <h3>🚉 各地からのアクセス</h3>
+            <h3>🚉 各地からのアクセス（11:00 名古屋集合）</h3>
             <div style="overflow-x:auto;">
                 <table class="mobile-table">
-                    <tr><th>金沢</th><td>北陸新幹線(敦賀乗換) ➡ 特急しらさぎ (約2.5h)</td></tr>
-                    <tr><th>鹿沼</th><td>日光線(宇都宮乗換) ➡ 東北・東海道新幹線 (約3.25h)</td></tr>
-                    <tr><th>川越</th><td>JR/東武 ➡ 東京 ➡ 東海道新幹線 (約2.5h)</td></tr>
-                    <tr><th>立川</th><td>横浜線(新横浜乗換) ➡ 東海道新幹線 (約2.5h)</td></tr>
+                    <tr><th>金沢</th><td>北陸新幹線(敦賀乗換) ➡ 特急しらさぎ (約2時間30分)</td></tr>
+                    <tr><th>鹿沼</th><td>日光線(宇都宮乗換) ➡ 東北・東海道新幹線 (約3時間15分)</td></tr>
+                    <tr><th>川越</th><td>JR/東武 ➡ 東京 ➡ 東海道新幹線 (約2時間30分)</td></tr>
+                    <tr><th>立川</th><td>横浜線(新横浜乗換) ➡ 東海道新幹線 (約2時間30分)</td></tr>
                 </table>
             </div>
 
-            <h3>🗺️ 黄金ルート</h3>
+            <h3>🗺️ タイムライン：1泊2日の黄金ルート</h3>
             <div class="tm-box">
-                <div class="tm-item"><span class="tm-label">【Day 1】神聖なる参拝と至高の肉</span>11:30 名古屋発：特急「しまかぜ」➡ 13:30 伊勢神宮 ➡ 18:00 松阪牛 ➡ 大阪へ</div>
-                <div class="tm-item"><span class="tm-label">【Day 2】笑いの聖地と大阪グルメ</span>10:00 なんば花月 ➡ 12:30 道頓堀ランチ ➡ 15:00 新大阪解散</div>
+                <div class="tm-item">
+                    <span class="tm-label">【Day 1】神聖なる参拝と至高の肉</span>
+                    <p><strong>11:30 | 名古屋出発</strong><br>観光特急<strong>「しまかぜ」</strong>で伊勢へ。豪華な座席で移動そのものがイベントに。</p>
+                    <p><strong>13:30 | 伊勢神宮 参拝</strong><br>外宮 ➡ 内宮の順で参拝。午後の内宮は団体客が減り始め、ゆったりとした時間が流れます。参拝後はおかげ横丁で食べ歩き。</p>
+                    <p><strong>18:00 | 松阪牛ディナー</strong><br>松阪へ移動し、本場の松阪牛を堪能。夜のうちに大阪（難波）へ移動しておくと、翌朝が非常に楽になります。</p>
+                </div>
+                <div class="tm-item">
+                    <span class="tm-label">【Day 2】笑いの聖地と大阪グルメ</span>
+                    <p><strong>10:00 | なんばグランド花月(NGK)</strong><br>平日の1回目公演。本場の吉本新喜劇と漫才で思い切り笑う。</p>
+                    <p><strong>12:30 | 道頓堀ランチ</strong><br>お好み焼き、たこ焼き、串カツ。これぞ大阪という味をハシゴ。</p>
+                    <p><strong>15:00 | 新大阪駅にて解散</strong><br>各自、北陸・関東への帰路へ。</p>
+                </div>
             </div>
 
-            <h3>🎫 必須チケット</h3>
-            <ul style="padding-left:15px; font-size:0.85rem;">
-                <li><strong>吉本新喜劇</strong>：1ヶ月前から予約開始。前方席推奨。</li>
-                <li><strong>松阪牛予約</strong>：「和田金」「牛銀」などは必須。</li>
-                <li><strong>特急「しまかぜ」</strong>：乗車1ヶ月前の10:30発売。</li>
+            <h3>🎫 事前準備：3つの必須チケット</h3>
+            <p>最高の旅は、完璧な「下準備」から。</p>
+            <ul>
+                <li><strong>吉本新喜劇（FANYチケット）</strong>：1ヶ月前から予約開始。前方席で芸人さんの息遣いを感じましょう。</li>
+                <li><strong>松阪牛の名店予約</strong>：「和田金」「牛銀」などは必須。早めの確保が安心です。</li>
+                <li><strong>近鉄特急「しまかぜ」</strong>：乗車1ヶ月前の10:30発売。プラチナチケットですが、平日ならチャンス大！</li>
             </ul>
         </section>
     </div>
@@ -157,7 +171,7 @@
     <div id="p2" class="pane">
         <section>
             <h2>🚄 案2：大阪集合 ➡ 伊勢1泊（精密設計プラン）</h2>
-            <p>「無駄なく・混雑回避・満足度最大化」の最適解。結論から言うと、“大阪集合 → 伊勢1泊”が最適解です。</p>
+            <p>いいですね、この条件なら「無駄なく・混雑回避・満足度最大化」までかなり精密に組めます。結論から言うと、“大阪集合 → 伊勢1泊”が最適解です。</p>
 
             <h3>■ 全体戦略（最重要）</h3>
             <ul>
@@ -166,61 +180,114 @@
                 <li>伊勢 → 平日朝イチ参拝</li>
                 <li>松阪牛 → 伊勢or松阪で予約</li>
             </ul>
-            <p><strong>理由：</strong> 大阪は交通の要。伊勢は「朝が命」。松阪牛は夜にゆっくり。</p>
+            <p><strong>👉理由：</strong> 交通結節点は圧倒的に 大阪。伊勢神宮 は「朝が命」。松阪牛 は夜にゆっくり。</p>
 
-            <h3>① 合流方法</h3>
-            <p><strong>合流地点：</strong> 新大阪 or なんば (12:00〜13:00合流)<br>
-            <strong>ルート：</strong> 金沢➡サンダーバード / 関東➡新幹線</p>
+            <h3>■ ① 合流方法（4拠点→大阪）</h3>
+            <p><strong>✔ 最適合流地点：</strong> 新大阪 or なんば</p>
+            <p><strong>✔ 各ルート（現実的最短）：</strong><br>
+            ● 金沢 → 大阪：特急サンダーバード（約2時間40分・乗換なし）<br>
+            ● 鹿沼・川越・立川 → 大阪：東海道新幹線（東京 or 品川発・約2時間30分）</p>
+            <p><strong>✔ 合流おすすめ時間：</strong> 12:00〜13:00（無理がなく、そのまま観光に入れるため）</p>
 
-            <h3>②〜④ 行程ポイント</h3>
-            <ul>
-                <li><strong>吉本：</strong> なんばグランド花月。13:00回 or 16:00回。</li>
-                <li><strong>宿泊：伊勢泊がベスト。</strong> 翌朝の参拝が楽になり、混雑を回避できる最大ポイント。</li>
-            </ul>
+            <h3>■ ② 吉本新喜劇（初日）</h3>
+            <p>行くべきはここ👉 <strong>なんばグランド花月</strong><br>
+            ✔ 公演時間（目安）：13:00回 or 16:00回（13時回の方が時間に余裕あり）</p>
 
-            <h3>⑤ 伊勢攻略 ＆ ⑥ 松阪牛</h3>
-            <div class="point-box"><strong>伊勢神宮：</strong> 7:00到着（外宮➡内宮）。これで混雑ほぼ回避。</div>
-            <div class="choice-card"><b>和田金:</b> 超老舗・格式高い。すき焼き最強格。</div>
-            <div class="choice-card"><b>牛銀本店:</b> コスパ＋品質バランス良。</div>
-            <div class="choice-card"><b>一升びん:</b> 焼肉系。比較的入りやすい。</div>
+            <h3>■ ③ 宿泊（重要な分岐）</h3>
+            <p>✔ <strong>伊勢宿泊がベスト</strong><br>
+            👉 理由：翌朝の参拝が圧倒的に楽。混雑回避の最大ポイント。<br>
+            ✔ おすすめエリア：伊勢市駅周辺、宇治山田駅周辺<br>
+            （大阪泊が微妙な理由：朝移動＝負けパターン。参拝が混雑時間に直撃するため）</p>
+
+            <h3>■ ④ 大阪 → 伊勢（2日目への移動）</h3>
+            <p>✔ <strong>最適ルート：</strong> 近鉄特急（大阪難波 → 宇治山田：約2時間）<br>
+            👉 乗る列車：近鉄特急（できればアーバンライナー）</p>
+
+            <h3>■ ⑤ 伊勢神宮攻略（核心）</h3>
+            <p>✔ <strong>完璧プラン：</strong> 7:00到着（外宮➡内宮の順）。これで混雑ほぼ回避。</p>
+
+            <h3>■ ⑥ 松阪牛（予約必須ゾーン）</h3>
+            <p>✔ <strong>最強候補（ガチ）：</strong></p>
+            <div class="choice-card"><b>① 和田金</b>超老舗・格式高い。すき焼き最強格。予約必須（数日前では厳しい）。</div>
+            <div class="choice-card"><b>② 牛銀本店</b>コスパ＋品質バランス良。初心者にも◎。</div>
+            <div class="choice-card"><b>③ 一升びん</b>焼肉系。比較的入りやすい（それでも予約推奨）。</div>
+            <p>✔ <strong>場所の判断：</strong> 時間に余裕あり ➡ 松阪市まで移動（本場）。時短 ➡ 伊勢で食べる。</p>
+
+            <h3>■ ⑦ 完成プラン（理想形）</h3>
+            <div class="tm-box">
+                <div class="tm-item"><span class="tm-label">【1日目】</span>昼：大阪集合 ➡ 吉本新喜劇 ➡ 夜：近鉄で伊勢へ ➡ 伊勢泊</div>
+                <div class="tm-item"><span class="tm-label">【2日目】</span>7:00 伊勢神宮参拝 ➡ 昼：松阪牛 ➡ 解散</div>
+            </div>
         </section>
     </div>
 
     <!-- PLAN 3 -->
     <div id="p3" class="pane">
         <section>
-            <h2>🌿 案3：名古屋集・一本化（完成版）</h2>
-            <p>「誰が読んでも一発で全体像がわかる」形に完全一本化しました。</p>
+            <h2>🌿 案3：伊勢神宮 → 松阪牛 → 吉本新喜劇の最適ルート（完全版）</h2>
+            <p>ここまで一緒に組み立ててきた内容を、「誰が読んでも一発で全体像がわかる」 形で 完全に一本化 します。</p>
 
             <div class="point-box">
-                <strong>◆ 最適な理由</strong><br>
-                伊勢は平日午前が空いている。松阪牛は夕食が予約しやすい。吉本を翌日にして疲れを軽減。集合は名古屋が最も調整しやすい。
+                <strong>◆ 全体の流れ（最もスムーズな順番）</strong>
+                <ol>
+                    <li>各地 → 名古屋に集合（午前）</li>
+                    <li>名古屋 → 伊勢市（外宮→内宮を参拝）</li>
+                    <li>伊勢市 → 松阪（松阪牛ディナー）</li>
+                    <li>松阪 → 大阪難波（宿泊）</li>
+                    <li>翌日：吉本新喜劇 → 各自解散</li>
+                </ol>
+                <p><strong>👉 最適な理由：</strong> 伊勢神宮は平日午前〜昼過ぎが最も空いている。松阪牛は夕食の方が予約しやすく、混雑も少ない。吉本は翌日に回すと疲れず楽しめる。集合は名古屋が圧倒的に調整しやすいため。</p>
             </div>
 
-            <h3>🚆 各地 ➡ 名古屋ルート</h3>
+            <h3>🚆 各出発地 ➡ 名古屋の最適ルート</h3>
             <div style="overflow-x:auto;">
                 <table class="mobile-table">
-                    <tr><th>金沢</th><td>新幹線➡敦賀➡しらさぎ (約2h50m)</td></tr>
-                    <tr><th>鹿沼</th><td>東武/JR➡東京➡新幹線 (約3.5~4h)</td></tr>
-                    <tr><th>川越</th><td>JR➡大宮➡新幹線 (約3h)</td></tr>
-                    <tr><th>立川</th><td>中央線➡東京➡新幹線 (約2.5h)</td></tr>
+                    <tr><th>金沢</th><td>北陸新幹線 ➡ 敦賀 ➡ 特急しらさぎ (約2時間50分)</td></tr>
+                    <tr><th>鹿沼</th><td>東武 or JR ➡ 東京 ➡ 東海道新幹線 (約3時間30分〜4時間)</td></tr>
+                    <tr><th>川越</th><td>JR川越線 ➡ 大宮 ➡ 新幹線 (約3時間)</td></tr>
+                    <tr><th>立川</th><td>中央線 ➡ 東京 ➡ 新幹線 (約2時間30分)</td></tr>
                 </table>
             </div>
+            <p class="important">目標：名古屋駅に 10:00 前後に集合</p>
 
-            <h3>🗺️ 旅程詳細</h3>
+            <h3>🏯 名古屋 ➡ 伊勢神宮（外宮➡内宮）</h3>
+            <p><strong>◆ 名古屋 ➡ 伊勢市：</strong> 近鉄特急（快適・確実）所要：約1時間30分。または JR快速みえ。</p>
+            <p><strong>◆ 伊勢神宮の回り方：</strong> 外宮 ➡ 内宮の順番（これはほぼマナー）。<br>
+            時間配分目安：外宮 11:30〜12:30 / 内宮 13:00〜15:00。</p>
+            <p><strong>◆ 昼食：</strong> 混雑を避けるなら外宮前で軽食。または内宮後におかげ横丁で遅めランチ（14時台）。</p>
+
+            <h3>🍖 伊勢市 ➡ 松阪 ➡ 松阪牛ディナー</h3>
+            <p><strong>◆ 伊勢市 ➡ 松阪：</strong> 近鉄 or JRで 約30分</p>
+            <p><strong>◆ 松阪牛ディナー（17:30〜18:00開始が理想）：</strong><br>
+            例：和田金（高級・要予約）、松阪まるよし（駅近）、一升びん（地元人気）。</p>
+
+            <h3>🏨 松阪 ➡ 大阪難波（宿泊）</h3>
+            <p>近鉄特急で約1時間50分。松阪20:00発 ➡ 難波22:00前後に到着。難波周辺のホテルにチェックイン。</p>
+
+            <h3>🎭 翌日：吉本新喜劇（なんばグランド花月）</h3>
+            <p><strong>◆ 公演：</strong> 昼公演が最も見やすく混雑も少ない。朝はゆっくり起きて朝食 ➡ 新喜劇 ➡ 各自解散。</p>
+            <p><strong>◆ 帰路：</strong> 東京方面は新大阪から新幹線。金沢方面はサンダーバード or 北陸新幹線。</p>
+
+            <h3>🗺️ 全体の旅程まとめ（1泊2日）</h3>
             <div class="tm-box">
-                <div class="tm-item"><span class="tm-label">【1日目（平日）】</span>10:00 名古屋集合 ➡ 11:30 伊勢着 ➡ 外宮参拝(11:30~) ➡ 内宮参拝(13:00~) ➡ 松阪牛ディナー(17:30~) ➡ 20:00 難波へ移動・泊</div>
-                <div class="tm-item"><span class="tm-label">【2日目（平日）】</span>朝食・散策 ➡ 吉本新喜劇（昼公演）➡ 終演後、各自帰路へ</div>
+                <div class="tm-item">
+                    <span class="tm-label">【1日目（平日）】</span>
+                    各地 ➡ 名古屋(10:00集合) ➡ 伊勢市(11:30着) ➡ 外宮(11:30〜) ➡ 内宮(13:00〜) ➡ 松阪(16:00〜) ➡ 松阪牛ディナー(17:30〜19:00) ➡ 大阪難波(22:00着) ➡ 泊
+                </div>
+                <div class="tm-item">
+                    <span class="tm-label">【2日目（平日）】</span>
+                    朝食・散策 ➡ 吉本新喜劇（昼公演）➡ 終演後、各自帰路へ
+                </div>
             </div>
 
-            <h3 style="border-left-color: #e74c3c; color: #e74c3c;">🔍 次に決めるべきこと</h3>
-            <ul>
-                <li>旅行日（何月・何曜日）の決定</li>
-                <li>名古屋集合時間の確定</li>
+            <h3 style="color: #e74c3c;">🔍 次に決めるべきこと</h3>
+            <ol>
+                <li>旅行日（何月・何曜日）を決める</li>
+                <li>名古屋集合時間を確定する</li>
                 <li>松阪牛の店を候補から選ぶ</li>
-                <li>吉本新喜劇の時間を決める</li>
-                <li>個別の時刻表作成</li>
-            </ul>
+                <li>吉本新喜劇の公演時間を決める</li>
+                <li>4地点それぞれの具体的な時刻表を作る</li>
+            </ol>
         </section>
     </div>
 
@@ -228,7 +295,7 @@
 
 <footer>
     明治4人組 &copy; 2026<br>
-    takykigo.github.io/meiji-4-ningumi/mobile.html
+    URL: takykigo.github.io/meiji-4-ningumi/mobile.html
 </footer>
 
 <script>
