@@ -18,19 +18,18 @@
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.7;
+            line-height: 1.8;
             margin: 0; padding: 0;
         }
 
         header {
             background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
             color: white;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
             box-shadow: var(--shadow);
         }
 
-        /* タブメニューのデザイン */
         .tabs {
             display: flex;
             justify-content: center;
@@ -59,39 +58,39 @@
 
         .container {
             max-width: 850px;
-            margin: 20px auto;
+            margin: 30px auto;
             padding: 0 20px;
         }
 
-        .tab-content { display: none; }
+        .tab-content { display: none; padding-bottom: 50px; }
         .tab-content.active { display: block; }
 
         section {
             background: var(--white);
-            margin-bottom: 25px;
-            padding: 25px;
+            margin-bottom: 30px;
+            padding: 35px;
             border-radius: 12px;
             box-shadow: var(--shadow);
-            border-top: 4px solid var(--primary-color);
+            border-left: 6px solid var(--primary-color);
         }
 
-        h2 { color: var(--accent-border); border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; margin-top: 0; display: flex; align-items: center; }
-        h2::before { content: '⛩️'; margin-right: 12px; }
+        h2 { color: var(--accent-border); border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 0; font-size: 1.6rem; }
+        h3 { color: #555; border-left: 4px solid var(--primary-color); padding-left: 10px; margin-top: 30px; }
 
-        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.9rem; }
-        th, td { text-align: left; padding: 12px; border-bottom: 1px solid #eee; }
-        th { background-color: #fcfcfc; color: #666; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { text-align: left; padding: 12px; border: 1px solid #eee; }
+        th { background-color: #f9f9f9; }
 
-        .timeline { position: relative; padding-left: 30px; border-left: 2px solid var(--primary-color); margin: 20px 0; }
-        .timeline-item { position: relative; margin-bottom: 25px; }
-        .timeline-item::after { content: ''; position: absolute; left: -36px; top: 5px; width: 10px; height: 10px; background: var(--primary-color); border: 3px solid #fff; border-radius: 50%; }
-        .time { font-weight: bold; color: var(--accent-border); }
+        .timeline-box { margin-left: 10px; padding-left: 20px; border-left: 2px dashed var(--primary-color); }
+        .timeline-item { margin-bottom: 30px; }
+        .time-label { font-weight: bold; color: var(--primary-color); font-size: 1.2rem; display: block; }
 
-        .choice-box { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
-        .choice { border: 2px solid #f0f0f0; padding: 15px; border-radius: 10px; background: #fafafa; }
-        .choice strong { display: block; color: var(--primary-color); }
-
-        footer { text-align: center; padding: 40px; color: #999; }
+        .choice-box { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .choice { border: 2px solid #f0f0f0; padding: 20px; border-radius: 10px; background: #fafafa; }
+        
+        .important { color: #e74c3c; font-weight: bold; }
+        
+        footer { text-align: center; padding: 40px; background: #f4f4f4; color: #777; font-size: 0.9rem; }
         
         @media (max-width: 600px) { .choice-box { grid-template-columns: 1fr; } }
     </style>
@@ -99,8 +98,8 @@
 <body>
 
 <header>
-    <h1>明治4神組</h1>
-    <p>伊勢・松阪・大阪 黄金の1泊2日プラン</p>
+    <h1>⛩️ 明治4神組</h1>
+    <p>伊勢・松阪・大阪を巡る「黄金の1泊2日」確定版プラン</p>
 </header>
 
 <div class="tabs">
@@ -112,46 +111,98 @@
 <div class="container">
     <div id="plan1" class="tab-content active">
         <section>
-            <h2>Day 1: 神聖なる参拝と至高の肉</h2>
-            <div class="timeline">
-                <div class="timeline-item"><span class="time">11:30 名古屋発</span><br>観光特急「しまかぜ」で伊勢へ。</div>
-                <div class="timeline-item"><span class="time">13:30 伊勢神宮</span><br>外宮➡内宮参拝。おかげ横丁。</div>
-                <div class="timeline-item"><span class="time">18:00 松阪牛</span><br>本場の味を堪能。</div>
-                <div class="timeline-item"><span class="time">21:00 大阪へ</span><br>難波へ先行移動。</div>
+            <h2>⛩️ 「混雑を避けて、最高の体験を」</h2>
+            <p>このプランは、大人の修学旅行ガイドとして作成されました。</p>
+
+            <h3>🗓️ 旅のベストタイミング</h3>
+            <p>「人混みを避け、ゆとりを楽しむ」ならこの時期！</p>
+            <ul>
+                <li><strong>おすすめ月：</strong> 6月 または 12月上旬（参拝客が落ち着く穴場）</li>
+                <li><strong>おすすめ曜日：</strong> 火・水 または 水・木</li>
+                <li><strong>メリット：</strong> 特急・劇場・名店の予約がスムーズ。静かな神域を堪能できます。</li>
+            </ul>
+
+            <h3>🚉 各地からのアクセス（11:00 名古屋集合）</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>出発地</th>
+                        <th>主なルート</th>
+                        <th>所要時間</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>金沢</td><td>北陸新幹線(敦賀乗換) ➡ 特急しらさぎ</td><td>約2時間30分</td></tr>
+                    <tr><td>鹿沼</td><td>日光線(宇都宮乗換) ➡ 東北・東海道新幹線</td><td>約3時間15分</td></tr>
+                    <tr><td>川越</td><td>JR/東武 ➡ 東京 ➡ 東海道新幹線</td><td>約2時間30分</td></tr>
+                    <tr><td>立川</td><td>横浜線(新横浜乗換) ➡ 東海道新幹線</td><td>約2時間30分</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🗺️ タイムライン：1泊2日の黄金ルート</h2>
+            
+            <div class="timeline-box">
+                <div class="timeline-item">
+                    <span class="time-label">【Day 1】神聖なる参拝と至高の肉</span>
+                    <p><strong>11:30 | 名古屋出発</strong><br>
+                    観光特急<strong>「しまかぜ」</strong>で伊勢へ。豪華な座席で移動そのものがイベントに。</p>
+                    <p><strong>13:30 | 伊勢神宮 参拝</strong><br>
+                    外宮 ➡ 内宮の順で参拝。<br>
+                    午後の内宮は団体客が減り始め、ゆったりとした時間が流れます。<br>
+                    参拝後はおかげ横丁で食べ歩き。</p>
+                    <p><strong>18:00 | 松阪牛ディナー</strong><br>
+                    松阪へ移動し、本場の松阪牛を堪能。<br>
+                    夜のうちに大阪（難波）へ移動しておくと、翌朝が非常に楽になります。</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-label">【Day 2】笑いの聖地と大阪グルメ</span>
+                    <p><strong>10:00 | なんばグランド花月(NGK)</strong><br>
+                    平日の1回目公演。本場の吉本新喜劇と漫才で思い切り笑う。</p>
+                    <p><strong>12:30 | 道頓堀ランチ</strong><br>
+                    お好み焼き、たこ焼き、串カツ。これぞ大阪という味をハシゴ。</p>
+                    <p><strong>15:00 | 新大阪駅にて解散</strong><br>
+                    各自、北陸・関東への帰路へ。</p>
+                </div>
             </div>
         </section>
 
         <section>
-            <h2>Day 2: 笑いの聖地と大阪グルメ</h2>
-            <div class="timeline">
-                <div class="timeline-item"><span class="time">10:00 なんば花月</span><br>吉本新喜劇と漫才。</div>
-                <div class="timeline-item"><span class="time">12:30 道頓堀</span><br>大阪グルメのハシゴ。</div>
-                <div class="timeline-item"><span class="time">15:00 解散</span><br>新大阪駅から各自帰路へ。</div>
-            </div>
+            <h2>🎫 事前準備：3つの必須チケット</h2>
+            <p>最高の旅は、完璧な「下準備」から。</p>
+            <ul>
+                <li><strong>吉本新喜劇（FANYチケット）</strong><br>1ヶ月前から予約開始。前方席で芸人さんの息遣いを感じましょう。</li>
+                <li><strong>松阪牛の名店予約</strong><br>「和田金」「牛銀」などは必須。早めの確保が安心です。</li>
+                <li><strong>近鉄特急「しまかぜ」</strong><br>乗車1ヶ月前の10:30発売。プラチナチケットですが、平日ならチャンス大！</li>
+            </ul>
         </section>
 
-        <section style="border-top-color: #e74c3c;">
-            <h2 style="color: #e74c3c;">検討中の選択肢</h2>
-            <p><strong>Q1. 松阪牛のスタイルは？</strong></p>
+        <section style="border-left-color: #e74c3c;">
+            <h2 style="color: #e74c3c;">💡 相談ポイント：ここを決めれば完成！</h2>
+            <p>メンバーの皆さんの好みに合わせて、最後のアレンジをしましょう。</p>
+            
+            <p><strong>松阪牛のスタイルは？</strong></p>
             <div class="choice-box">
-                <div class="choice"><strong>A：究極のすき焼き</strong> 老舗の個室スタイル。</div>
-                <div class="choice"><strong>B：カジュアル焼肉</strong> 地元で人気の回転焼肉。</div>
+                <div class="choice"><strong>A：究極のすき焼き</strong><br>老舗の座敷で仲居さんに焼いてもらう「究極のすき焼き」</div>
+                <div class="choice"><strong>B：カジュアルスタイル</strong><br>回転焼肉などでワイワイ賑やかに楽しむ「カジュアルスタイル」</div>
             </div>
+
+            <p><strong>宿泊場所の好みは？</strong></p>
+            <div class="choice-box">
+                <div class="choice"><strong>A：松阪ステイ</strong><br>夜は松阪で余韻に浸り、お酒とゆっくり泊まりたい</div>
+                <div class="choice"><strong>B：大阪ステイ</strong><br>夜のうちに大阪へ移動し、翌朝はホテルでゆっくり寝ていたい</div>
+            </div>
+            <p style="margin-top:20px;">この内容でOKであれば、具体的なホテルやお店のピックアップに進みます！いかがでしょうか？</p>
         </section>
     </div>
 
     <div id="plan2" class="tab-content">
-        <section>
-            <h2>案2：Coming Soon...</h2>
-            <p>現在プランを作成中です。もう少々お待ちください。</p>
-        </section>
+        <section><h2>案2：準備中</h2><p>詳細をお待ちください。</p></section>
     </div>
-
     <div id="plan3" class="tab-content">
-        <section>
-            <h2>案3：Coming Soon...</h2>
-            <p>現在プランを作成中です。もう少々お待ちください。</p>
-        </section>
+        <section><h2>案3：準備中</h2><p>詳細をお待ちください。</p></section>
     </div>
 </div>
 
