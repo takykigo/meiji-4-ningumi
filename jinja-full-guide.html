@@ -3,214 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>神社の社号と格付け：完全解説ガイド</title>
+    <title>【完全版】神社の社号と格式ガイド</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap');
         
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            background-color: #fdfdfb;
-            color: #262626;
-            line-height: 1.8;
+            background-color: #f7f3f0;
+            color: #333;
             margin: 0;
             padding: 0;
+            -webkit-text-size-adjust: 100%;
         }
 
         h1, h2, h3, h4 {
             font-family: 'Noto Serif JP', serif;
-            color: #831010;
         }
 
-        .hero-header {
+        /* モバイル用のコンテナ */
+        .mobile-container {
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: #fdfdfb;
+        }
+
+        /* ヘッダー装飾 */
+        .main-header {
+            background: linear-gradient(135deg, #831010 0%, #a52a2a 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid #d4af37;
+        }
+
+        /* 各セクションのカード */
+        .content-section {
+            padding: 30px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .category-tag {
             background-color: #831010;
             color: white;
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .section-box {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-        }
-
-        .category-label {
             display: inline-block;
-            background: #831010;
-            color: white;
             padding: 2px 12px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: bold;
-            border-radius: 4px;
-            margin-bottom: 15px;
+            border-radius: 20px;
+            margin-bottom: 10px;
         }
 
-        .point-box {
-            background-color: #f8f1f1;
-            border-left: 4px solid #831010;
+        .section-title {
+            font-size: 1.5rem;
+            color: #831010;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #831010;
+            padding-bottom: 5px;
+        }
+
+        /* リストのスタイル */
+        .shrine-list {
+            background-color: #f9f6f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .history-box {
+            background-color: #fff;
+            border: 1px solid #d4af37;
             padding: 15px;
             margin-top: 15px;
-            font-size: 0.9rem;
-        }
-
-        .list-style {
-            list-style-type: none;
-            padding-left: 0;
-            font-size: 0.95rem;
-        }
-
-        .list-style li {
-            margin-bottom: 8px;
-            padding-left: 1.2em;
-            text-indent: -1.2em;
-        }
-
-        .list-style li::before {
-            content: "● ";
-            color: #831010;
-        }
-
-        .summary-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
             font-size: 0.85rem;
+            position: relative;
         }
 
-        .summary-table th, .summary-table td {
-            border: 1px solid #d1d5db;
-            padding: 12px;
-            text-align: left;
-        }
-
-        .summary-table th {
-            background-color: #f3f4f6;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
+        .history-box::before {
+            content: "歴史的ポイント";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: #d4af37;
+            color: white;
+            padding: 0 8px;
             font-size: 0.7rem;
-            color: #9ca3af;
-            border-top: 1px solid #eee;
+            font-weight: bold;
+        }
+
+        /* まとめ表（モバイル最適化） */
+        .summary-card {
+            background-color: #2d3748;
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px;
+        }
+
+        .summary-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #4a5568;
+            padding-bottom: 10px;
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+
+        .summary-label {
+            color: #fbd38d;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
 
-<header class="hero-header">
-    <h1 class="text-white text-2xl md:text-3xl font-black mb-2">神社の「社号」と「格式」</h1>
-    <p class="text-white/80 text-sm">神宮・大社・一宮の違いを体系的に整理</p>
-</header>
-
-<div class="container">
+<div class="mobile-container">
+    <header class="main-header">
+        <p class="text-xs tracking-widest opacity-80 mb-2">SHINTO KNOWLEDGE ARCHIVE</p>
+        <h1 class="text-2xl font-black">神社・格式・社号の<br>すべてがわかるガイド</h1>
+    </header>
 
     <!-- 1. 神宮 -->
-    <section class="section-box">
-        <span class="category-label">◆ 1. 神宮</span>
-        <h2 class="text-xl font-bold mb-4">「神宮」を名乗る神社</h2>
-        <p class="text-sm mb-4">神宮は、皇室の祖先神・天皇・皇室と深い縁を持つ神を祀る神社につく社号です。現在「神宮」を名乗る神社は <strong>約25社</strong> とされています。</p>
+    <section class="content-section">
+        <span class="category-tag">◆ 1. 神宮 (Jingu)</span>
+        <h2 class="section-title">「神宮」を名乗る社</h2>
+        <p class="text-sm mb-4">皇室の祖先神・天皇・皇族と深い縁を持つ神を祀る最高位の社号です。現在、全国に<strong>約25社</strong>存在します。</p>
         
-        <h3 class="font-bold text-sm mb-2">● 主な神宮（代表例）</h3>
-        <p class="text-sm text-gray-700 mb-4">伊勢神宮（三重）、明治神宮（東京）、熱田神宮（愛知）、鹿島神宮（茨城）、香取神宮（千葉）、北海道神宮（北海道）、橿原神宮（奈良）、平安神宮（京都）、宇佐神宮（大分）、宮崎神宮（宮崎）、霧島神宮（鹿児島）、伊弉諾神宮（兵庫） など多数。</p>
+        <div class="shrine-list">
+            <p class="font-bold mb-1">● 代表例</p>
+            伊勢神宮 / 明治神宮 / 熱田神宮 / 鹿島神宮 / 香取神宮 / 北海道神宮 / 橿原神宮 / 平安神宮 / 宇佐神宮 / 宮崎神宮 / 霧島神宮 / 伊弉諾神宮 など
+        </div>
 
-        <div class="point-box">
-            <h4 class="font-bold mb-2 text-sm">歴史的ポイント</h4>
-            <ul class="text-xs space-y-2 text-gray-700">
-                <li>・平安期の文献では「神宮」と呼ばれたのは 伊勢・香取・鹿島 の3社のみ。</li>
-                <li>・明治以降、皇室ゆかりの神を祀る神社が勅許を得て「神宮」に改称。</li>
-                <li>・戦後は国家管理が廃止され、神社本庁の承認で名乗る例もある（北海道神宮など）。</li>
+        <div class="history-box">
+            <ul class="list-disc pl-4 space-y-1">
+                <li>平安期に神宮と呼ばれたのは伊勢・香取・鹿島の3社のみ。</li>
+                <li>明治以降、勅許を得て「神宮」へ改称する社が増加。</li>
+                <li>戦後は神社本庁の承認で名乗る例（北海道神宮等）もある。</li>
             </ul>
         </div>
     </section>
 
     <!-- 2. 大社 -->
-    <section class="section-box">
-        <span class="category-label">◆ 2. 大社</span>
-        <h2 class="text-xl font-bold mb-4">「大社」を名乗る神社</h2>
-        <p class="text-sm mb-4">古代の社格で「官幣大社」「国幣大社」などの高位にあった神社につく社号。出雲大社が起源で、後に他の有力神社にも広がりました。</p>
+    <section class="content-section">
+        <span class="category-tag">◆ 2. 大社 (Taisha)</span>
+        <h2 class="section-title">「大社」を名乗る社</h2>
+        <p class="text-sm mb-4">古代の社格で高位にあった神社。出雲大社が起源となり、後に有力神社へ広がりました。全国に<strong>24社</strong>あります。</p>
         
-        <h3 class="font-bold text-sm mb-2">● 主な大社（代表例）</h3>
-        <p class="text-sm text-gray-700 mb-4">出雲大社（島根）、春日大社（奈良）、諏訪大社（長野）、熊野大社（島根）、氣比神宮（※神宮と混同注意）、住吉大社（大阪） など、全国に <strong>24社</strong> が名乗っています。</p>
+        <div class="shrine-list">
+            <p class="font-bold mb-1">● 代表例</p>
+            出雲大社 / 春日大社 / 諏訪大社 / 熊野大社 / 住吉大社<br>
+            <span class="text-xs text-red-600">※氣比神宮（神宮）との混同に注意</span>
+        </div>
 
-        <div class="point-box">
-            <h4 class="font-bold mb-2 text-sm">歴史的ポイント</h4>
-            <ul class="text-xs space-y-2 text-gray-700">
-                <li>・「大社」は 出雲大社だけを指す呼称として始まった。</li>
-                <li>・戦後、多くの神社が「大社」を名乗るようになった（出雲以外の23社は戦後改称）。</li>
+        <div class="history-box" style="border-color: #2b6cb0;">
+            <style>.history-box-blue::before { background: #2b6cb0 !important; }</style>
+            <ul class="list-disc pl-4 space-y-1">
+                <li>元来は「出雲大社」だけを指す特別な呼称。</li>
+                <li>戦後に多くの有力神社が「大社」を名乗るようになった。</li>
             </ul>
         </div>
     </section>
 
     <!-- 3 & 4. 社号の種類 -->
-    <section class="section-box">
-        <span class="category-label">◆ 3 & 4. 社号の種類と意味</span>
-        <h2 class="text-xl font-bold mb-4">主な社号（肩書き）の分類</h2>
-        <ul class="list-style text-sm">
-            <li><strong>神社：</strong> 最も一般的。特別な基準はなく、全国の大多数がこれ。</li>
-            <li><strong>宮（ぐう）：</strong> 皇子・皇孫など皇室ゆかりの人物を祀る社。例：鎌倉宮、天満宮、東照宮。</li>
-            <li><strong>大社：</strong> 古代の高位社格を持つ神社、または系列の本社。</li>
-            <li><strong>神宮：</strong> 皇室の祖先神・天皇・皇室ゆかりの神を祀る神社。</li>
-        </ul>
+    <section class="content-section">
+        <span class="category-tag">◆ 3 & 4. 社号の意味</span>
+        <h2 class="section-title">肩書きの分類</h2>
+        <div class="space-y-4">
+            <div>
+                <h4 class="font-bold text-red-800">【神社】</h4>
+                <p class="text-sm">最も一般的。特別な基準はなく、全国の大多数がこれに該当します。</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-red-800">【宮 (ぐう)】</h4>
+                <p class="text-sm">皇子・皇孫など皇族ゆかりの人物を祀る。天満宮や東照宮もこの分類です。</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-red-800">【大社・神宮】</h4>
+                <p class="text-sm">前述の通り、由緒や神格が特に高い社に許される名称です。</p>
+            </div>
+        </div>
     </section>
 
     <!-- 5. 一宮・二宮・三宮 -->
-    <section class="section-box">
-        <span class="category-label">◆ 5. 一宮・二宮・三宮</span>
-        <h2 class="text-xl font-bold mb-4">地域の“序列”を示す呼び名</h2>
-        <p class="text-sm mb-4">これは社号や社格ではなく、その国（旧国）の中での格式を示す伝統的な呼び名です。</p>
+    <section class="content-section">
+        <span class="category-tag">◆ 5. 序列の仕組み</span>
+        <h2 class="section-title">一宮・二宮・三宮</h2>
+        <p class="text-sm mb-4">これは「名前」ではなく、旧国地域における<b>「格式の順位」</b>を示す呼び名です。</p>
         
-        <div class="space-y-4 text-sm">
-            <div>
-                <span class="font-bold text-red-800">● 一宮（いちのみや）</span>
-                <p class="text-gray-700">真清田神社（尾張）、氣比神宮（越前）、田村神社（讃岐）など。</p>
-            </div>
-            <div>
-                <span class="font-bold text-red-800">● 二宮・三宮</span>
-                <p class="text-gray-700">一宮に次ぐ格式。地域ごとに異なり、全国統一基準はない。</p>
-            </div>
+        <div class="shrine-list mb-4">
+            <p><span class="font-bold text-red-800">● 一宮：</span> 真清田神社(尾張) / 氣比神宮(越前) / 田村神社(讃岐)</p>
+            <p><span class="font-bold text-gray-600">● 二宮・三宮：</span> 地域ごとに異なり、一宮に次ぐ格式。</p>
         </div>
 
-        <div class="point-box">
-            <h4 class="font-bold mb-2 text-sm">なぜ序列があるのか？</h4>
-            <p class="text-xs text-gray-700 leading-relaxed">古代、各国の「国府」に赴任した国司が最初に参拝する神社を一宮としたため。政治と祭祀の中心を示す制度でした。</p>
+        <div class="bg-yellow-50 p-4 text-xs leading-relaxed border-l-4 border-yellow-400">
+            <strong>なぜ序列があるのか？</strong><br>
+            古代、地方に赴任した政治家（国司）が最初に参拝する順序が「一宮」だったため。政治と祭祀の中心を示す制度でした。
         </div>
     </section>
 
     <!-- 6. まとめ -->
-    <section class="section-box" style="border: 2px solid #831010;">
-        <span class="category-label">◆ 6. まとめ（最重要ポイント）</span>
-        <table class="summary-table">
-            <tr>
-                <th>神宮</th>
-                <td>皇室ゆかりの神 / 約25社 / 伊勢は別格<br>例：明治・香取・鹿島</td>
-            </tr>
-            <tr>
-                <th>大社</th>
-                <td>出雲大社が起源 / 古代の高位社格 / 24社<br>例：春日・諏訪・住吉</td>
-            </tr>
-            <tr>
-                <th>一宮〜</th>
-                <td>地域の序列 / 国司が参拝する順番に由来 / 社号ではない</td>
-            </tr>
-        </table>
+    <section class="pb-10">
+        <div class="summary-card">
+            <h3 class="text-xl font-bold mb-4 text-center">💡 最重要ポイント</h3>
+            
+            <div class="summary-item">
+                <span class="summary-label">神宮</span>
+                <p class="text-sm">皇室ゆかりの神を祀る。全国約25社。伊勢は別格。</p>
+            </div>
+
+            <div class="summary-item">
+                <span class="summary-label">大社</span>
+                <p class="text-sm">出雲大社が起源。古代の高位神社。全国24社。</p>
+            </div>
+
+            <div class="summary-item">
+                <span class="summary-label">一宮〜三宮</span>
+                <p class="text-sm">地域の参拝順。社号ではなく「序列」を指す。</p>
+            </div>
+        </div>
     </section>
 
+    <footer class="py-10 text-center text-gray-400 text-xs border-t">
+        © 2026 meiji-4-ningumi リポジトリ公開資料
+    </footer>
 </div>
-
-<footer>
-    © 2026 meiji-4-ningumi PROJECT | 全文体系整理資料
-</footer>
 
 </body>
 </html>
