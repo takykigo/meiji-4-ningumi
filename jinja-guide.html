@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神社の呼び名（社号）と格付けの秘密</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&family=Noto+Sans+JP:wght@400;700;900&display=swap');
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f4f4f2;
+            color: #2d3436;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .label-jingue { background-color: #c53030; color: white; } /* 神宮：赤 */
+        .label-taisha { background-color: #2b6cb0; color: white; } /* 大社：青 */
+        .label-ichinomiya { background-color: #2d3748; color: white; } /* 一宮：黒 */
+
+        .badge {
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .shago-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .list-dot {
+            list-style: none;
+            padding-left: 0;
+        }
+        .list-dot li::before {
+            content: "・";
+            color: #a0aec0;
+            font-weight: bold;
+        }
+
+        /* 比較サマリー */
+        .summary-box {
+            background-color: #fffaf0;
+            border: 1px solid #feebc8;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* モバイル最適化 */
+        @media (max-width: 640px) {
+            .hero-banner h1 { font-size: 1.6rem; }
+            .section-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-banner">
+        <p class="text-xs tracking-[0.3em] font-bold text-gray-400 mb-2">SHINTO KNOWLEDGE</p>
+        <h1 class="text-2xl md:text-4xl font-black mb-4">神社の呼び名の秘密</h1>
+        <p class="text-gray-400 text-sm">「神宮」「大社」「一宮」…<br>名前（社号）に隠された意味を徹底解説</p>
+    </div>
+
+    <main class="max-w-xl mx-auto px-5 py-10">
+
+        <!-- 神宮 -->
+        <div class="section-card">
+            <span class="badge label-jingue">神宮 (Jingu)</span>
+            <div class="shago-title">皇室ゆかりの特別な社</div>
+            <p class="text-sm text-gray-600 mb-4">皇祖神、天皇、または皇室と深い縁を持つ神を祀る最高位の社号です。</p>
+            <div class="bg-red-50 p-4 rounded-lg text-sm">
+                <p class="font-bold text-red-800 mb-2">特徴</p>
+                <ul class="list-dot text-red-900 space-y-1">
+                    <li>全国に約25社（伊勢、明治、熱田など）</li>
+                    <li>平安時代は「伊勢・香取・鹿島」のみだった</li>
+                    <li>伊勢神宮は正式には「神宮」とのみ呼ぶ別格</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 大社 -->
+        <div class="section-card">
+            <span class="badge label-taisha">大社 (Taisha)</span>
+            <div class="shago-title">古代からの高位神社</div>
+            <p class="text-sm text-gray-600 mb-4">もともとは出雲大社のみの呼称。現在は全国に24社存在します。</p>
+            <div class="bg-blue-50 p-4 rounded-lg text-sm">
+                <p class="font-bold text-blue-800 mb-2">特徴</p>
+                <ul class="list-dot text-blue-900 space-y-1">
+                    <li>出雲、春日、諏訪、住吉など</li>
+                    <li>旧社格制度の最高位「官幣大社」などに由来</li>
+                    <li>戦後に改称して「大社」を名乗る社が増えた</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 一宮 -->
+        <div class="section-card">
+            <span class="badge label-ichinomiya">一宮・二宮 (Ichinomiya)</span>
+            <div class="shago-title">地域の序列（社格ではない）</div>
+            <p class="text-sm text-gray-600 mb-4">社号ではなく、その地域（旧国）における「参拝順位」を示す称号です。</p>
+            <div class="bg-gray-100 p-4 rounded-lg text-sm border-l-4 border-gray-500">
+                <p class="font-bold text-gray-800 mb-2">成り立ち</p>
+                <p class="text-gray-700 leading-relaxed">
+                    古代、各国の「国司」が着任した際に、<b>最初に参拝する最も格式高い神社</b>が「一宮」と定められました。
+                </p>
+            </div>
+        </div>
+
+        <!-- まとめ表 -->
+        <h3 class="text-center font-bold mb-6 italic text-gray-500">Quick Check</h3>
+        <div class="summary-box text-sm">
+            <div class="flex border-b border-orange-200 py-3">
+                <div class="w-1/4 font-bold text-red-700">神宮</div>
+                <div class="w-3/4">皇室ゆかりの神 / 約25社<br><span class="text-xs text-gray-400">例：伊勢神宮・明治神宮</span></div>
+            </div>
+            <div class="flex border-b border-orange-200 py-3">
+                <div class="w-1/4 font-bold text-blue-700">大社</div>
+                <div class="w-3/4">古代の高位社格 / 24社<br><span class="text-xs text-gray-400">例：出雲大社・春日大社</span></div>
+            </div>
+            <div class="flex py-3">
+                <div class="w-1/4 font-bold text-gray-700">宮</div>
+                <div class="w-3/4">皇子や偉人など<br><span class="text-xs text-gray-400">例：天満宮・東照宮</span></div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="py-10 border-t bg-white text-center text-gray-400 text-xs tracking-widest">
+        &copy; 2026 meiji-4-ningumi PROJECT
+    </footer>
+
+</body>
+</html>
