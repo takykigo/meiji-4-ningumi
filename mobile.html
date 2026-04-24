@@ -2,89 +2,121 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>伊勢旅行詳細計画 - meiji-4-ningumi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>明治組：伊勢巡礼しおり</title>
     <style>
-        body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; margin: 0; padding: 15px; background-color: #f8f9fa; color: #333; line-height: 1.6; }
-        h1 { font-size: 1.4rem; color: #2c3e50; border-bottom: 3px solid #e67e22; padding-bottom: 5px; margin-bottom: 20px; text-align: center; }
-        h2 { font-size: 1.1rem; background: #2c3e50; color: #fff; padding: 8px 15px; border-radius: 5px; margin-top: 30px; }
-        .schedule-card { background: #fff; border: 1px solid #dee2e6; border-radius: 8px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .plan-header { font-weight: bold; color: #e67e22; font-size: 1.1rem; border-bottom: 1px solid #eee; margin-bottom: 10px; display: block; }
-        .time-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.9rem; }
-        .time-table td { padding: 5px; border-bottom: 1px solid #f0f0f0; }
-        .time { font-weight: bold; color: #2980b9; width: 80px; }
-        .map-box { background: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 25px; }
-        img { width: 100%; height: auto; border-radius: 4px; }
-        .memo { background: #fff9db; border-left: 5px solid #fcc419; padding: 10px; font-size: 0.9rem; margin: 10px 0; }
+        :root { --gold: #d4af37; --bg: #fdfaf1; --text: #333; --white: #ffffff; }
+        body { font-family: -apple-system, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
+        header { background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); color: white; padding: 25px 15px; text-align: center; }
+        .nav-tabs { display: flex; position: sticky; top: 0; z-index: 1000; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .nav-btn { flex: 1; padding: 15px 5px; border: none; background: none; font-size: 0.85rem; font-weight: bold; color: #888; border-bottom: 3px solid transparent; }
+        .nav-btn.active { color: var(--gold); border-bottom-color: var(--gold); background: #fffcf0; }
+        .container { padding: 15px; }
+        .pane { display: none; animation: fadeIn 0.3s ease; }
+        .pane.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        section { background: var(--white); border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-left: 5px solid var(--gold); }
+        h2 { font-size: 1.1rem; color: #bc9b2c; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        h3 { font-size: 0.95rem; background: #f9f9f9; padding: 8px; border-left: 4px solid var(--gold); margin: 25px 0 10px; }
+        .map-img { width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid #ddd; }
+        .tm-box { border-left: 2px dashed var(--gold); margin: 10px 0 10px 10px; padding-left: 15px; }
+        .tm-item { margin-bottom: 20px; font-size: 0.85rem; }
+        .tm-label { display: block; font-weight: bold; color: var(--gold); }
+        .point-box { background: #fff9e6; border: 1px solid #ffeeba; padding: 10px; border-radius: 8px; font-size: 0.8rem; margin-bottom: 10px; }
+        footer { text-align: center; padding: 30px 15px; color: #999; font-size: 0.7rem; background: #f4f4f4; }
     </style>
 </head>
 <body>
 
-    <h1>伊勢旅行 実施計画書</h1>
+<header>
+    <h1>明治組 伊勢巡礼</h1>
+    <p>10/28-30 レンタカー巡礼（2-3名用）</p>
+</header>
 
-    <div class="memo">
-        <strong>共通事項:</strong> 金沢から特急・新幹線で名古屋へ。名古屋駅で集合後、近鉄特急で伊勢市駅へ移動。伊勢市駅でレンタカーを借ります。
+<nav class="nav-tabs">
+    <button class="nav-btn active" onclick="tab(event, 'p1')">案1:伊勢志摩泊</button>
+    <button class="nav-btn" onclick="tab(event, 'p2')">案2:鳥羽彩朝楽泊</button>
+</nav>
+
+<div class="container">
+
+    <!-- 共通：集合と広域マップ -->
+    <section style="border-left-color: #555;">
+        <h2>🚅 集合・広域ルート（Map①）</h2>
+        <div class="tm-box">
+            <div class="tm-item"><span class="tm-label">07:13 | 金沢駅 出発</span>新幹線➡敦賀➡しらさぎ</div>
+            <div class="tm-item"><span class="tm-label">10:04 | 名古屋駅 集合</span>合流して「しまかぜ」へ</div>
+            <div class="tm-item"><span class="tm-label">11:50 | 伊勢市駅 到着</span>レンタカー借受</div>
+        </div>
+        <img src="スライド1.JPG" alt="金沢・名古屋広域図" class="map-img">
+    </section>
+
+    <!-- 共通：中域マップ（瀧原宮・宿泊地） -->
+    <section style="border-left-color: #555;">
+        <h2>📍 瀧原宮・宿泊地の位置関係（Map②）</h2>
+        <img src="スライド2.JPG" alt="伊勢志摩広域図" class="map-img">
+    </section>
+
+    <!-- 案1：伊勢志摩泊 -->
+    <div id="p1" class="pane active">
+        <section>
+            <h2>🌊 案1：大江戸温泉物語P伊勢志摩</h2>
+            <div class="point-box">英虞湾の絶景リゾート。静かな海を堪能。</div>
+            
+            <h3>【1日目】奥伊勢 ➡ 禊 ➡ 宿泊</h3>
+            <div class="tm-box">
+                <div class="tm-item"><span class="tm-label">13:10 | ⑦ 瀧原宮（50分）</span>神宮の原風景へ。</div>
+                <div class="tm-item"><span class="tm-label">15:30 | ① 二見興玉神社（30分）</span>夫婦岩で浜参宮。</div>
+                <div class="tm-item"><span class="tm-label">18:15 | 宿（候補A）到着</span>車で約50分のドライブ。</div>
+            </div>
+
+            <h3>【2日目】市街地5宮 完遂（Map③）</h3>
+            <img src="スライド3.JPG" alt="市街地詳細図" class="map-img">
+            <div class="tm-box">
+                <div class="tm-item"><span class="tm-label">09:15 | ② 外宮 ➡ ④ 月夜見宮</span>外宮に駐車。<strong>神路通りを徒歩往復</strong></div>
+                <div class="tm-item"><span class="tm-label">10:45 | ⑥ 倭姫宮 ➡ ⑤ 月讀宮</span>車で巡礼。</div>
+                <div class="tm-item"><span class="tm-label">11:45 | ③ 内宮 ➡ おかげ横丁</span>参拝とランチ。</div>
+                <div class="tm-item"><span class="tm-label">14:00 | 伊勢市駅 返却・解散</span></div>
+            </div>
+        </section>
     </div>
 
-    <h2>【案1】大江戸温泉物語Premium 伊勢志摩 泊</h2>
-    <div class="schedule-card">
-        <span class="plan-header">1日目：伊勢神宮参拝と志摩リゾート</span>
-        <table class="time-table">
-            <tr><td class="time">09:48</td><td>金沢駅 出発（特急）</td></tr>
-            <tr><td class="time">12:48</td><td>名古屋駅 集合 ＞ 近鉄名古屋駅へ</td></tr>
-            <tr><td class="time">13:10</td><td>近鉄特急 出発</td></tr>
-            <tr><td class="time">14:31</td><td>伊勢市駅 到着 ＞ <strong>レンタカー借受</strong></td></tr>
-            <tr><td class="time">15:00</td><td>外宮（豊受大神宮）参拝</td></tr>
-            <tr><td class="time">17:30</td><td>ホテル着（伊勢志摩）</td></tr>
-        </table>
-        <span class="plan-header">2日目：別宮巡りと解散</span>
-        <table class="time-table">
-            <tr><td class="time">09:00</td><td>ホテル出発</td></tr>
-            <tr><td class="time">10:00</td><td>内宮（皇大神宮）参拝・おかげ横丁</td></tr>
-            <tr><td class="time">13:00</td><td>別宮（月読宮・倭姫宮など）巡り</td></tr>
-            <tr><td class="time">15:30</td><td>伊勢市駅 <strong>レンタカー返却</strong></td></tr>
-            <tr><td class="time">16:00</td><td>伊勢市駅にて<strong>解散</strong></td></tr>
-        </table>
+    <!-- 案2：鳥羽彩朝楽泊 -->
+    <div id="p2" class="pane">
+        <section>
+            <h2>♨️ 案2：大江戸温泉物語P鳥羽彩朝楽</h2>
+            <div class="point-box">移動が短く、宿のインフィニティ風呂を長く楽しめます。</div>
+
+            <h3>【1日目】効率ルート</h3>
+            <div class="tm-box">
+                <div class="tm-item"><span class="tm-label">13:10 | ⑦ 瀧原宮（50分）</span>初日に遠方を攻略。</div>
+                <div class="tm-item"><span class="tm-label">15:30 | ① 二見興玉神社（30分）</span>参拝後、宿へは車で10分。</div>
+                <div class="tm-item"><span class="tm-label">16:30 | 宿（候補B）到着</span>早めに温泉を満喫！</div>
+            </div>
+
+            <h3>【2日目】ゆったり参拝（Map③）</h3>
+            <img src="スライド3.JPG" alt="市街地詳細図" class="map-img">
+            <div class="tm-box">
+                <div class="tm-item"><span class="tm-label">09:15 | ② 外宮 ➡ ④ 月夜見宮</span>外宮駐車場を拠点に<strong>徒歩散策</strong>。</div>
+                <div class="tm-item"><span class="tm-label">10:45 | ⑥ 倭姫宮 ➡ ⑤ 月讀宮</span>レンタカーで移動。</div>
+                <div class="tm-item"><span class="tm-label">11:45 | ③ 内宮 ➡ おかげ横丁</span>最後は総氏神様へ。</div>
+                <div class="tm-item"><span class="tm-label">14:00 | 伊勢市駅 返却・解散</span></div>
+            </div>
+        </section>
     </div>
 
-    <h2>【案2】大江戸温泉物語Premium 鳥羽彩朝楽 泊</h2>
-    <div class="schedule-card">
-        <span class="plan-header">1日目：二見ヶ浦と鳥羽宿泊</span>
-        <table class="time-table">
-            <tr><td class="time">09:48</td><td>金沢駅 出発</td></tr>
-            <tr><td class="time">14:31</td><td>伊勢市駅 到着 ＞ <strong>レンタカー借受</strong></td></tr>
-            <tr><td class="time">15:30</td><td>二見興玉神社（夫婦岩）参拝</td></tr>
-            <tr><td class="time">17:00</td><td>ホテル着（鳥羽）</td></tr>
-        </table>
-        <span class="plan-header">2日目：伊勢神宮完全参拝ルート</span>
-        <table class="time-table">
-            <tr><td class="time">08:30</td><td>ホテル出発</td></tr>
-            <tr><td class="time">09:00</td><td>外宮 ＞ 内宮 参拝</td></tr>
-            <tr><td class="time">13:00</td><td>瀧原宮（遥宮）へ移動（Map②参照）</td></tr>
-            <tr><td class="time">16:00</td><td>伊勢市駅にて<strong>解散</strong></td></tr>
-        </table>
-    </div>
+</div>
 
-    <h2>参照マップ</h2>
+<footer>明治組 &copy; 2026</footer>
 
-    <p>Map①：全体行程（金沢〜名古屋〜伊勢）</p>
-    <div class="map-box">
-        <img src="スライド1.JPG">
-    </div>
-
-    <p>Map②：宿泊候補と広域（瀧原宮など）</p>
-    <div class="map-box">
-        <img src="スライド2.JPG">
-    </div>
-
-    <p>Map③：伊勢市街地詳細（神社位置と解散場所）</p>
-    <div class="map-box">
-        <img src="スライド3.JPG">
-    </div>
-
-    <footer style="text-align: center; margin: 30px 0; font-size: 0.8rem; color: #888;">
-        &copy; 2026 meiji-4-ningumi
-    </footer>
-
+<script>
+    function tab(e, id) {
+        document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        e.currentTarget.classList.add('active');
+        window.scrollTo(0,0);
+    }
+</script>
 </body>
 </html>
