@@ -3,57 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>伊勢旅行計画 - meiji-4-ningumi</title>
+    <title>伊勢旅行詳細計画 - meiji-4-ningumi</title>
     <style>
-        body { font-family: sans-serif; margin: 0; padding: 15px; background-color: #f4f4f4; color: #333; }
-        h1 { font-size: 1.5rem; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px; }
-        h2 { font-size: 1.2rem; margin-top: 25px; color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; }
-        .map-container { background: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        img { width: 100%; height: auto; border-radius: 4px; display: block; }
-        .plan-box { background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #ddd; }
-        .plan-title { font-weight: bold; color: #d35400; font-size: 1.1rem; margin-bottom: 10px; display: block; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
-        hr { border: 0; border-top: 1px dotted #ccc; margin: 20px 0; }
+        body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; margin: 0; padding: 15px; background-color: #f8f9fa; color: #333; line-height: 1.6; }
+        h1 { font-size: 1.4rem; color: #2c3e50; border-bottom: 3px solid #e67e22; padding-bottom: 5px; margin-bottom: 20px; text-align: center; }
+        h2 { font-size: 1.1rem; background: #2c3e50; color: #fff; padding: 8px 15px; border-radius: 5px; margin-top: 30px; }
+        .schedule-card { background: #fff; border: 1px solid #dee2e6; border-radius: 8px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .plan-header { font-weight: bold; color: #e67e22; font-size: 1.1rem; border-bottom: 1px solid #eee; margin-bottom: 10px; display: block; }
+        .time-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.9rem; }
+        .time-table td { padding: 5px; border-bottom: 1px solid #f0f0f0; }
+        .time { font-weight: bold; color: #2980b9; width: 80px; }
+        .map-box { background: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 25px; }
+        img { width: 100%; height: auto; border-radius: 4px; }
+        .memo { background: #fff9db; border-left: 5px solid #fcc419; padding: 10px; font-size: 0.9rem; margin: 10px 0; }
     </style>
 </head>
 <body>
 
-    <h1>伊勢旅行 実施計画</h1>
+    <h1>伊勢旅行 実施計画書</h1>
 
-    <div class="plan-box">
-        <span class="plan-title">【案A】大江戸温泉物語Premium 伊勢志摩 泊</span>
-        <ul>
-            <li><strong>特徴：</strong>英虞湾の絶景を楽しめるリゾート拠点。</li>
-            <li><strong>1日目：</strong>伊勢神宮（外宮・内宮）参拝後、志摩へ南下（Map②参照）。</li>
-            <li><strong>2日目：</strong>志摩周辺観光 ＞ 瀧原宮（遥宮）参拝 ＞ 伊勢市駅にて<strong>解散</strong>。</li>
-        </ul>
-        <hr>
-        <span class="plan-title">【案B】大江戸温泉物語Premium 鳥羽彩朝楽 泊</span>
-        <ul>
-            <li><strong>特徴：</strong>市街地や二見興玉神社に近く、移動がスムーズ。</li>
-            <li><strong>1日目：</strong>二見興玉神社 ＞ 伊勢神宮周辺を観光し、鳥羽へ宿泊（Map③参照）。</li>
-            <li><strong>2日目：</strong>鳥羽 ＞ 瀧原宮（遥宮）へ足を伸ばして参拝 ＞ 伊勢市駅にて<strong>解散</strong>。</li>
-        </ul>
+    <div class="memo">
+        <strong>共通事項:</strong> 金沢から特急・新幹線で名古屋へ。名古屋駅で集合後、近鉄特急で伊勢市駅へ移動。伊勢市駅でレンタカーを借ります。
     </div>
 
-    <h2>Map①：全体行程（金沢・名古屋・伊勢）</h2>
-    <div class="map-container">
-        <img src="スライド1.JPG" alt="全体マップ">
+    <h2>【案1】大江戸温泉物語Premium 伊勢志摩 泊</h2>
+    <div class="schedule-card">
+        <span class="plan-header">1日目：伊勢神宮参拝と志摩リゾート</span>
+        <table class="time-table">
+            <tr><td class="time">09:48</td><td>金沢駅 出発（特急）</td></tr>
+            <tr><td class="time">12:48</td><td>名古屋駅 集合 ＞ 近鉄名古屋駅へ</td></tr>
+            <tr><td class="time">13:10</td><td>近鉄特急 出発</td></tr>
+            <tr><td class="time">14:31</td><td>伊勢市駅 到着 ＞ <strong>レンタカー借受</strong></td></tr>
+            <tr><td class="time">15:00</td><td>外宮（豊受大神宮）参拝</td></tr>
+            <tr><td class="time">17:30</td><td>ホテル着（伊勢志摩）</td></tr>
+        </table>
+        <span class="plan-header">2日目：別宮巡りと解散</span>
+        <table class="time-table">
+            <tr><td class="time">09:00</td><td>ホテル出発</td></tr>
+            <tr><td class="time">10:00</td><td>内宮（皇大神宮）参拝・おかげ横丁</td></tr>
+            <tr><td class="time">13:00</td><td>別宮（月読宮・倭姫宮など）巡り</td></tr>
+            <tr><td class="time">15:30</td><td>伊勢市駅 <strong>レンタカー返却</strong></td></tr>
+            <tr><td class="time">16:00</td><td>伊勢市駅にて<strong>解散</strong></td></tr>
+        </table>
     </div>
 
-    <h2>Map②：宿泊候補と広域（瀧原宮など）</h2>
-    <div class="map-container">
-        <img src="スライド2.JPG" alt="広域マップ">
+    <h2>【案2】大江戸温泉物語Premium 鳥羽彩朝楽 泊</h2>
+    <div class="schedule-card">
+        <span class="plan-header">1日目：二見ヶ浦と鳥羽宿泊</span>
+        <table class="time-table">
+            <tr><td class="time">09:48</td><td>金沢駅 出発</td></tr>
+            <tr><td class="time">14:31</td><td>伊勢市駅 到着 ＞ <strong>レンタカー借受</strong></td></tr>
+            <tr><td class="time">15:30</td><td>二見興玉神社（夫婦岩）参拝</td></tr>
+            <tr><td class="time">17:00</td><td>ホテル着（鳥羽）</td></tr>
+        </table>
+        <span class="plan-header">2日目：伊勢神宮完全参拝ルート</span>
+        <table class="time-table">
+            <tr><td class="time">08:30</td><td>ホテル出発</td></tr>
+            <tr><td class="time">09:00</td><td>外宮 ＞ 内宮 参拝</td></tr>
+            <tr><td class="time">13:00</td><td>瀧原宮（遥宮）へ移動（Map②参照）</td></tr>
+            <tr><td class="time">16:00</td><td>伊勢市駅にて<strong>解散</strong></td></tr>
+        </table>
     </div>
 
-    <h2>Map③：伊勢市街地詳細（神社巡りと解散場所）</h2>
-    <div class="map-container">
-        <img src="スライド3.JPG" alt="詳細マップ">
+    <h2>参照マップ</h2>
+
+    <p>Map①：全体行程（金沢〜名古屋〜伊勢）</p>
+    <div class="map-box">
+        <img src="スライド1.JPG">
     </div>
 
-    <footer style="text-align: center; font-size: 0.8rem; color: #777; margin-top: 40px; padding-bottom: 20px;">
-        &copy; 2026 meiji-4-ningumi 伊勢旅行プロジェクト
+    <p>Map②：宿泊候補と広域（瀧原宮など）</p>
+    <div class="map-box">
+        <img src="スライド2.JPG">
+    </div>
+
+    <p>Map③：伊勢市街地詳細（神社位置と解散場所）</p>
+    <div class="map-box">
+        <img src="スライド3.JPG">
+    </div>
+
+    <footer style="text-align: center; margin: 30px 0; font-size: 0.8rem; color: #888;">
+        &copy; 2026 meiji-4-ningumi
     </footer>
 
 </body>
