@@ -2,114 +2,59 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>明治組：伊勢巡礼しおり</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伊勢旅行計画 - meiji-4-ningumi</title>
     <style>
-        :root { --gold: #d4af37; --bg: #fdfaf1; --text: #333; --white: #ffffff; }
-        body { font-family: -apple-system, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
-        header { background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); color: white; padding: 25px 15px; text-align: center; }
-        .nav-tabs { display: flex; sticky; top: 0; z-index: 1000; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .nav-btn { flex: 1; padding: 15px 5px; border: none; background: none; font-size: 0.85rem; font-weight: bold; color: #888; border-bottom: 3px solid transparent; }
-        .nav-btn.active { color: var(--gold); border-bottom-color: var(--gold); background: #fffcf0; }
-        .container { padding: 15px; }
-        .pane { display: none; }
-        .pane.active { display: block; }
-        section { background: var(--white); border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-left: 5px solid var(--gold); }
-        h2 { font-size: 1.1rem; color: #bc9b2c; margin-top: 0; }
-        h3 { font-size: 0.95rem; background: #f9f9f9; padding: 8px; border-left: 4px solid var(--gold); margin: 15px 0 10px; }
-        .tm-box { border-left: 2px dashed var(--gold); margin: 10px 0 10px 10px; padding-left: 15px; }
-        .tm-item { margin-bottom: 20px; font-size: 0.85rem; }
-        .tm-label { display: block; font-weight: bold; color: var(--gold); }
-        .point-box { background: #fff9e6; border: 1px solid #ffeeba; padding: 10px; border-radius: 8px; font-size: 0.8rem; margin-bottom: 10px; }
-        footer { text-align: center; padding: 20px; color: #999; font-size: 0.7rem; }
+        body { font-family: sans-serif; margin: 0; padding: 15px; background-color: #f4f4f4; color: #333; }
+        h1 { font-size: 1.5rem; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px; }
+        h2 { font-size: 1.2rem; margin-top: 25px; color: #e67e22; }
+        .map-container { background: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        img { width: 100%; height: auto; border-radius: 4px; display: block; }
+        .spot-list { background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .spot-list ul { padding-left: 20px; }
+        .spot-list li { margin-bottom: 8px; }
+        .highlight-station { font-weight: bold; color: #d35400; }
+        hr { border: 0; border-top: 1px solid #ddd; margin: 30px 0; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>明治組 伊勢巡礼</h1>
-    <p>10/28-30 レンタカー2泊3日（2-3名用）</p>
-</header>
+    <h1>伊勢旅行計画</h1>
 
-<nav class="nav-tabs">
-    <button class="nav-btn active" onclick="tab(event, 'p1')">案1:伊勢志摩泊</button>
-    <button class="nav-btn" onclick="tab(event, 'p2')">案2:鳥羽彩朝楽泊</button>
-</nav>
-
-<div class="container">
-
-    <!-- 共通の出発セクション -->
-    <section style="border-left: 5px solid #555;">
-        <h2>🚅 集合までの流れ（共通）</h2>
-        <p style="font-size: 0.85rem;">金沢から名古屋、そして伊勢へ。</p>
-        <div class="tm-box">
-            <div class="tm-item"><span class="tm-label">07:13 | 金沢駅 出発</span>新幹線つるぎ ➡ 敦賀（特急しらさぎ）</div>
-            <div class="tm-item"><span class="tm-label">10:04 | 名古屋駅 集合</span>新幹線改札付近で合流。</div>
-            <div class="tm-item"><span class="tm-label">10:25 | 近鉄特急しまかぜ</span>豪華特急で昼食を楽しみながら伊勢へ。</div>
-            <div class="tm-item"><span class="tm-label">11:50 | 伊勢市駅 到着</span>レンタカー借受。巡礼スタート！</div>
-        </div>
-    </section>
-
-    <!-- 案1：伊勢志摩泊 -->
-    <div id="p1" class="pane active">
-        <section>
-            <h2>🌊 案1：大江戸温泉物語P伊勢志摩</h2>
-            <div class="point-box"><strong>特徴：</strong>英虞湾の絶景リゾート。静かな海を眺めて癒やされたい人向け。</div>
-            
-            <h3>【1日目】奥伊勢と禊</h3>
-            <div class="tm-box">
-                <div class="tm-item"><span class="tm-label">13:10 | ⑦ 瀧原宮（50分）</span>奥伊勢の深い森で参拝。</div>
-                <div class="tm-item"><span class="tm-label">15:30 | ① 二見興玉神社（30分）</span>夫婦岩で浜参宮。</div>
-                <div class="tm-item"><span class="tm-label">18:15 | 宿（候補A）着</span>伊勢市街から約50分のドライブ。</div>
-            </div>
-
-            <h3>【2日目】市街地5宮 完遂</h3>
-            <div class="tm-box">
-                <div class="tm-item"><span class="tm-label">08:15 | 宿を出発</span>内宮方面へ北上。</div>
-                <div class="tm-item"><span class="tm-label">09:15 | ② 外宮 ➡ ④ 月夜見宮</span>外宮に駐車。<strong>神路通りを徒歩往復（60分）</strong></div>
-                <div class="tm-item"><span class="tm-label">10:45 | ⑥ 倭姫宮 ➡ ⑤ 月讀宮</span>車でスムーズに巡拝。</div>
-                <div class="tm-item"><span class="tm-label">11:45 | ③ 内宮 ➡ おかげ横丁</span>正宮参拝とランチ。</div>
-                <div class="tm-item"><span class="tm-label">14:00 | 伊勢市駅 返却・解散</span>近鉄特急で大阪へ。</div>
-            </div>
-        </section>
+    <div class="spot-list">
+        <h2>主要地点</h2>
+        <ul>
+            <li>出発地：金沢駅</li>
+            <li>集合場所：名古屋駅</li>
+            <li>宿泊候補A：大江戸温泉物語Premium 伊勢志摩</li>
+            <li>宿泊候補B：大江戸温泉物語Premium 鳥羽彩朝楽</li>
+            <li>観光：二見興玉神社、外宮、内宮、他別宮</li>
+            <li class="highlight-station">終了地点：伊勢市駅（解散）</li>
+        </ul>
     </div>
 
-    <!-- 案2：鳥羽彩朝楽泊 -->
-    <div id="p2" class="pane">
-        <section>
-            <h2>♨️ 案2：大江戸温泉物語P鳥羽彩朝楽</h2>
-            <div class="point-box"><strong>特徴：</strong>移動が楽。インフィニティ風呂が自慢。宿での時間を長く取りたい人向け。</div>
-
-            <h3>【1日目】効率重視ルート</h3>
-            <div class="tm-box">
-                <div class="tm-item"><span class="tm-label">13:10 | ⑦ 瀧原宮（50分）</span>案1と同じく初日に遠方を攻略。</div>
-                <div class="tm-item"><span class="tm-label">15:30 | ① 二見興玉神社（30分）</span>参拝後、宿へは車で10分。</div>
-                <div class="tm-item"><span class="tm-label">16:30 | 宿（候補B）着</span>早めに温泉とラウンジを満喫！</div>
-            </div>
-
-            <h3>【2日目】ゆったり参拝ルート</h3>
-            <div class="tm-box">
-                <div class="tm-item"><span class="tm-label">08:30 | 宿を出発</span>宿が近いので朝は少しゆっくり。</div>
-                <div class="tm-item"><span class="tm-label">09:15 | ② 外宮 ➡ ④ 月夜見宮</span>外宮駐車場を拠点に<strong>徒歩散策（60分）</strong></div>
-                <div class="tm-item"><span class="tm-label">10:45 | ⑥ 倭姫宮 ➡ ⑤ 月讀宮</span>車で移動。</div>
-                <div class="tm-item"><span class="tm-label">11:45 | ③ 内宮 ➡ おかげ横丁</span>お土産も車に積んで安心。</div>
-                <div class="tm-item"><span class="tm-label">14:00 | 伊勢市駅 返却・解散</span>大阪行きの特急へ。</div>
-            </div>
-        </section>
+    <div class="map-container">
+        <h2>Map①：全体行程（金沢・名古屋・伊勢）</h2>
+        <img src="スライド1.JPG" alt="全体マップ">
     </div>
 
-</div>
+    <hr>
 
-<footer>明治組 &copy; 2026<br>伊勢市駅返却：レンタカー活用プラン</footer>
+    <div class="map-container">
+        <h2>Map②：宿泊候補・広域観光</h2>
+        <img src="スライド2.JPG" alt="広域マップ">
+    </div>
 
-<script>
-    function tab(e, id) {
-        document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
-        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
-        e.currentTarget.classList.add('active');
-        window.scrollTo(0,0);
-    }
-</script>
+    <hr>
+
+    <div class="map-container">
+        <h2>Map③：伊勢市街地詳細（解散地点確認）</h2>
+        <img src="スライド3.JPG" alt="詳細マップ">
+    </div>
+
+    <footer style="text-align: center; font-size: 0.8rem; color: #777; margin-top: 40px;">
+        &copy; 2026 meiji-4-ningumi 伊勢旅行プロジェクト
+    </footer>
+
 </body>
 </html>
