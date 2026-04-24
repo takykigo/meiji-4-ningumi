@@ -7,52 +7,52 @@
     <style>
         body { font-family: sans-serif; margin: 0; padding: 15px; background-color: #f4f4f4; color: #333; }
         h1 { font-size: 1.5rem; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px; }
-        h2 { font-size: 1.2rem; margin-top: 25px; color: #e67e22; }
+        h2 { font-size: 1.2rem; margin-top: 25px; color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; }
         .map-container { background: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
         img { width: 100%; height: auto; border-radius: 4px; display: block; }
-        .spot-list { background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
-        .spot-list ul { padding-left: 20px; }
-        .spot-list li { margin-bottom: 8px; }
-        .highlight-station { font-weight: bold; color: #d35400; }
-        hr { border: 0; border-top: 1px solid #ddd; margin: 30px 0; }
+        .plan-box { background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #ddd; }
+        .plan-title { font-weight: bold; color: #d35400; font-size: 1.1rem; margin-bottom: 10px; display: block; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        hr { border: 0; border-top: 1px dotted #ccc; margin: 20px 0; }
     </style>
 </head>
 <body>
 
-    <h1>伊勢旅行計画</h1>
+    <h1>伊勢旅行 実施計画</h1>
 
-    <div class="spot-list">
-        <h2>主要地点</h2>
+    <div class="plan-box">
+        <span class="plan-title">【案A】大江戸温泉物語Premium 伊勢志摩 泊</span>
         <ul>
-            <li>出発地：金沢駅</li>
-            <li>集合場所：名古屋駅</li>
-            <li>宿泊候補A：大江戸温泉物語Premium 伊勢志摩</li>
-            <li>宿泊候補B：大江戸温泉物語Premium 鳥羽彩朝楽</li>
-            <li>観光：二見興玉神社、外宮、内宮、他別宮</li>
-            <li class="highlight-station">終了地点：伊勢市駅（解散）</li>
+            <li><strong>特徴：</strong>英虞湾の絶景を楽しめるリゾート拠点。</li>
+            <li><strong>1日目：</strong>伊勢神宮（外宮・内宮）参拝後、志摩へ南下（Map②参照）。</li>
+            <li><strong>2日目：</strong>志摩周辺観光 ＞ 瀧原宮（遥宮）参拝 ＞ 伊勢市駅にて<strong>解散</strong>。</li>
+        </ul>
+        <hr>
+        <span class="plan-title">【案B】大江戸温泉物語Premium 鳥羽彩朝楽 泊</span>
+        <ul>
+            <li><strong>特徴：</strong>市街地や二見興玉神社に近く、移動がスムーズ。</li>
+            <li><strong>1日目：</strong>二見興玉神社 ＞ 伊勢神宮周辺を観光し、鳥羽へ宿泊（Map③参照）。</li>
+            <li><strong>2日目：</strong>鳥羽 ＞ 瀧原宮（遥宮）へ足を伸ばして参拝 ＞ 伊勢市駅にて<strong>解散</strong>。</li>
         </ul>
     </div>
 
+    <h2>Map①：全体行程（金沢・名古屋・伊勢）</h2>
     <div class="map-container">
-        <h2>Map①：全体行程（金沢・名古屋・伊勢）</h2>
         <img src="スライド1.JPG" alt="全体マップ">
     </div>
 
-    <hr>
-
+    <h2>Map②：宿泊候補と広域（瀧原宮など）</h2>
     <div class="map-container">
-        <h2>Map②：宿泊候補・広域観光</h2>
         <img src="スライド2.JPG" alt="広域マップ">
     </div>
 
-    <hr>
-
+    <h2>Map③：伊勢市街地詳細（神社巡りと解散場所）</h2>
     <div class="map-container">
-        <h2>Map③：伊勢市街地詳細（解散地点確認）</h2>
         <img src="スライド3.JPG" alt="詳細マップ">
     </div>
 
-    <footer style="text-align: center; font-size: 0.8rem; color: #777; margin-top: 40px;">
+    <footer style="text-align: center; font-size: 0.8rem; color: #777; margin-top: 40px; padding-bottom: 20px;">
         &copy; 2026 meiji-4-ningumi 伊勢旅行プロジェクト
     </footer>
 
