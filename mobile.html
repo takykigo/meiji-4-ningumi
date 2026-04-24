@@ -3,204 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>明治4人組：スマホ完全版しおり</title>
+    <title>明治組：伊勢巡礼しおり</title>
     <style>
-        :root {
-            --gold: #d4af37;
-            --bg: #fdfaf1;
-            --text: #333;
-            --white: #ffffff;
-            --accent: #bc9b2c;
-        }
-
-        body {
-            font-family: -apple-system, "Helvetica Neue", "Hiragino Sans", sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0; padding: 0;
-            line-height: 1.8;
-            -webkit-text-size-adjust: 100%;
-        }
-
-        header {
-            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
-            color: white;
-            padding: 25px 15px;
-            text-align: center;
-        }
-
-        header h1 { margin: 0; font-size: 1.3rem; letter-spacing: 2px; }
-        header p { margin: 5px 0 0; font-size: 0.8rem; opacity: 0.9; }
-
-        .nav-tabs {
-            display: flex;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .nav-btn {
-            flex: 1;
-            min-width: 120px;
-            padding: 15px 10px;
-            border: none;
-            background: none;
-            font-size: 0.85rem;
-            font-weight: bold;
-            color: #888;
-            border-bottom: 3px solid transparent;
-            white-space: nowrap;
-        }
-
-        .nav-btn.active {
-            color: var(--gold);
-            border-bottom-color: var(--gold);
-            background: #fffcf0;
-        }
-
+        :root { --gold: #d4af37; --bg: #fdfaf1; --text: #333; --white: #ffffff; }
+        body { font-family: -apple-system, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
+        header { background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); color: white; padding: 25px 15px; text-align: center; }
+        .nav-tabs { display: flex; sticky; top: 0; z-index: 1000; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .nav-btn { flex: 1; padding: 15px 5px; border: none; background: none; font-size: 0.85rem; font-weight: bold; color: #888; border-bottom: 3px solid transparent; }
+        .nav-btn.active { color: var(--gold); border-bottom-color: var(--gold); background: #fffcf0; }
         .container { padding: 15px; }
-        .pane { display: none; animation: fadeIn 0.3s ease; }
+        .pane { display: none; }
         .pane.active { display: block; }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        section {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--gold);
-        }
-
-        h2 { font-size: 1.2rem; color: var(--accent); margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px; line-height: 1.4; }
-        h3 { font-size: 1.1rem; color: #444; background: #f9f9f9; padding: 8px 12px; border-left: 4px solid var(--gold); margin: 25px 0 10px; }
-        
-        p, li { font-size: 0.9rem; margin-bottom: 12px; }
-        ul, ol { padding-left: 20px; }
-
-        .mobile-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.85rem; }
-        .mobile-table th, .mobile-table td { border: 1px solid #eee; padding: 12px; text-align: left; }
-        .mobile-table th { background: #f5f5f5; width: 35%; font-weight: bold; }
-
-        .tm-box { border-left: 2px dashed var(--gold); margin: 20px 0 20px 10px; padding-left: 15px; }
-        .tm-item { margin-bottom: 30px; font-size: 0.9rem; position: relative; }
-        .tm-label { display: block; font-weight: bold; color: var(--gold); margin-bottom: 8px; font-size: 1rem; }
-
-        .point-box { background: #fff9e6; border: 1px solid #ffeeba; padding: 15px; border-radius: 8px; font-size: 0.85rem; margin: 15px 0; }
-        .info-box { background: #f0f7ff; border: 1px solid #bcdff1; padding: 15px; border-radius: 8px; font-size: 0.85rem; margin: 15px 0; color: #31708f; }
-
-        footer { text-align: center; padding: 40px 15px; background: #f4f4f4; color: #999; font-size: 0.8rem; }
+        section { background: var(--white); border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-left: 5px solid var(--gold); }
+        h2 { font-size: 1.1rem; color: #bc9b2c; margin-top: 0; }
+        h3 { font-size: 0.95rem; background: #f9f9f9; padding: 8px; border-left: 4px solid var(--gold); margin: 15px 0 10px; }
+        .tm-box { border-left: 2px dashed var(--gold); margin: 10px 0 10px 10px; padding-left: 15px; }
+        .tm-item { margin-bottom: 20px; font-size: 0.85rem; }
+        .tm-label { display: block; font-weight: bold; color: var(--gold); }
+        .point-box { background: #fff9e6; border: 1px solid #ffeeba; padding: 10px; border-radius: 8px; font-size: 0.8rem; margin-bottom: 10px; }
+        footer { text-align: center; padding: 20px; color: #999; font-size: 0.7rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>明治4人組</h1>
-    <p>黄金の1泊2日プラン（スマホ完全版）</p>
+    <h1>明治組 伊勢巡礼</h1>
+    <p>10/28-30 レンタカー2泊3日（2-3名用）</p>
 </header>
 
 <nav class="nav-tabs">
-    <button class="nav-btn active" onclick="tab(event, 'p1')">案1:名古屋集</button>
-    <button class="nav-btn" onclick="tab(event, 'p2')">案2:大阪集</button>
-    <button class="nav-btn" onclick="tab(event, 'p3')">案3:一本化</button>
+    <button class="nav-btn active" onclick="tab(event, 'p1')">案1:伊勢志摩泊</button>
+    <button class="nav-btn" onclick="tab(event, 'p2')">案2:鳥羽彩朝楽泊</button>
 </nav>
 
 <div class="container">
 
+    <!-- 共通の出発セクション -->
+    <section style="border-left: 5px solid #555;">
+        <h2>🚅 集合までの流れ（共通）</h2>
+        <p style="font-size: 0.85rem;">金沢から名古屋、そして伊勢へ。</p>
+        <div class="tm-box">
+            <div class="tm-item"><span class="tm-label">07:13 | 金沢駅 出発</span>新幹線つるぎ ➡ 敦賀（特急しらさぎ）</div>
+            <div class="tm-item"><span class="tm-label">10:04 | 名古屋駅 集合</span>新幹線改札付近で合流。</div>
+            <div class="tm-item"><span class="tm-label">10:25 | 近鉄特急しまかぜ</span>豪華特急で昼食を楽しみながら伊勢へ。</div>
+            <div class="tm-item"><span class="tm-label">11:50 | 伊勢市駅 到着</span>レンタカー借受。巡礼スタート！</div>
+        </div>
+    </section>
+
+    <!-- 案1：伊勢志摩泊 -->
     <div id="p1" class="pane active">
         <section>
-            <h2>⛩️ 案1：伊勢巡礼 ➡ 松阪牛 ➡ 大阪泊（名古屋集合）</h2>
-            <div class="info-box">
-                <strong>ポイント：</strong> 名古屋に集まり、初日に正式な順序で全ての宮を巡ります。移動はタクシーを駆使して効率化。
+            <h2>🌊 案1：大江戸温泉物語P伊勢志摩</h2>
+            <div class="point-box"><strong>特徴：</strong>英虞湾の絶景リゾート。静かな海を眺めて癒やされたい人向け。</div>
+            
+            <h3>【1日目】奥伊勢と禊</h3>
+            <div class="tm-box">
+                <div class="tm-item"><span class="tm-label">13:10 | ⑦ 瀧原宮（50分）</span>奥伊勢の深い森で参拝。</div>
+                <div class="tm-item"><span class="tm-label">15:30 | ① 二見興玉神社（30分）</span>夫婦岩で浜参宮。</div>
+                <div class="tm-item"><span class="tm-label">18:15 | 宿（候補A）着</span>伊勢市街から約50分のドライブ。</div>
             </div>
 
-            <h3>🗺️ 1日目：巡礼タイムスケジュール</h3>
+            <h3>【2日目】市街地5宮 完遂</h3>
             <div class="tm-box">
-                <div class="tm-item"><span class="tm-label">10:00 | 名古屋駅 集合</span>10:25発 特急「しまかぜ」で出発</div>
-                <div class="tm-item"><span class="tm-label">12:10 | 二見興玉神社</span>【タクシー】夫婦岩で禊（みそぎ）の参拝</div>
-                <div class="tm-item"><span class="tm-label">13:30 | 外宮 ➡ 月夜見宮</span>【タクシー/徒歩】食の神様と夜の神様へ</div>
-                <div class="tm-item"><span class="tm-label">15:15 | 倭姫宮 ➡ 月讀宮</span>【タクシー】歴史を刻む重要なお宮を巡る</div>
-                <div class="tm-item"><span class="tm-label">16:15 | 内宮（皇大神宮）</span>【タクシー】最後に天照大御神へ</div>
-                <div class="tm-item"><span class="tm-label">18:00 | 松阪牛ディナー</span>松阪または伊勢にて至高の肉</div>
-                <div class="tm-item"><span class="tm-label">20:00 | 大阪へ移動</span>近鉄特急で難波へ移動・宿泊</div>
-            </div>
-
-            <h3>🗺️ 2日目：大阪満喫</h3>
-            <div class="tm-box">
-                <div class="tm-item"><span class="tm-label">10:00 | 吉本新喜劇</span>NGK（なんばグランド花月）で観劇</div>
-                <div class="tm-item"><span class="tm-label">12:30 | 大阪グルメ</span>道頓堀周辺でランチ後、各自帰路へ</div>
+                <div class="tm-item"><span class="tm-label">08:15 | 宿を出発</span>内宮方面へ北上。</div>
+                <div class="tm-item"><span class="tm-label">09:15 | ② 外宮 ➡ ④ 月夜見宮</span>外宮に駐車。<strong>神路通りを徒歩往復（60分）</strong></div>
+                <div class="tm-item"><span class="tm-label">10:45 | ⑥ 倭姫宮 ➡ ⑤ 月讀宮</span>車でスムーズに巡拝。</div>
+                <div class="tm-item"><span class="tm-label">11:45 | ③ 内宮 ➡ おかげ横丁</span>正宮参拝とランチ。</div>
+                <div class="tm-item"><span class="tm-label">14:00 | 伊勢市駅 返却・解散</span>近鉄特急で大阪へ。</div>
             </div>
         </section>
     </div>
 
+    <!-- 案2：鳥羽彩朝楽泊 -->
     <div id="p2" class="pane">
         <section>
-            <h2>🚄 案2：大阪合流 ➡ 吉本 ➡ 伊勢泊（2日目巡礼）</h2>
-            <div class="info-box">
-                <strong>ポイント：</strong> 初日は大阪で笑い、伊勢に宿泊。2日目の朝イチから正式な順序で巡る「混雑回避」特化プラン。
-            </div>
+            <h2>♨️ 案2：大江戸温泉物語P鳥羽彩朝楽</h2>
+            <div class="point-box"><strong>特徴：</strong>移動が楽。インフィニティ風呂が自慢。宿での時間を長く取りたい人向け。</div>
 
-            <h3>🗺️ 1日目：大阪集合と移動</h3>
+            <h3>【1日目】効率重視ルート</h3>
             <div class="tm-box">
-                <div class="tm-item"><span class="tm-label">12:00 | 大阪・難波集合</span>各自のルートで大阪へ</div>
-                <div class="tm-item"><span class="tm-label">13:00 | 吉本新喜劇</span>昼公演を鑑賞</div>
-                <div class="tm-item"><span class="tm-label">16:00 | 大阪 ➡ 伊勢</span>近鉄特急で伊勢へ移動、夜は伊勢で宿泊</div>
+                <div class="tm-item"><span class="tm-label">13:10 | ⑦ 瀧原宮（50分）</span>案1と同じく初日に遠方を攻略。</div>
+                <div class="tm-item"><span class="tm-label">15:30 | ① 二見興玉神社（30分）</span>参拝後、宿へは車で10分。</div>
+                <div class="tm-item"><span class="tm-label">16:30 | 宿（候補B）着</span>早めに温泉とラウンジを満喫！</div>
             </div>
 
-            <h3>🗺️ 2日目：朝イチからの究極巡礼</h3>
+            <h3>【2日目】ゆったり参拝ルート</h3>
             <div class="tm-box">
-                <div class="tm-item"><span class="tm-label">07:30 | 二見興玉神社</span>【タクシー】朝の空気の中で浜参宮</div>
-                <div class="tm-item"><span class="tm-label">08:45 | 外宮 ➡ 月夜見宮</span>【タクシー】混雑前の清々しい参拝</div>
-                <div class="tm-item"><span class="tm-label">10:30 | 倭姫宮 ➡ 月讀宮</span>【タクシー】静寂に包まれたお宮を巡る</div>
-                <div class="tm-item"><span class="tm-label">11:30 | 内宮（皇大神宮）</span>総氏神様へ参拝後、おかげ横丁へ</div>
-                <div class="tm-item"><span class="tm-label">14:00 | 松阪牛ランチ</span>旅の締めくくりに本場の松阪牛</div>
-                <div class="tm-item"><span class="tm-label">16:00 | 伊勢市駅 解散</span>各自帰路へ</div>
+                <div class="tm-item"><span class="tm-label">08:30 | 宿を出発</span>宿が近いので朝は少しゆっくり。</div>
+                <div class="tm-item"><span class="tm-label">09:15 | ② 外宮 ➡ ④ 月夜見宮</span>外宮駐車場を拠点に<strong>徒歩散策（60分）</strong></div>
+                <div class="tm-item"><span class="tm-label">10:45 | ⑥ 倭姫宮 ➡ ⑤ 月讀宮</span>車で移動。</div>
+                <div class="tm-item"><span class="tm-label">11:45 | ③ 内宮 ➡ おかげ横丁</span>お土産も車に積んで安心。</div>
+                <div class="tm-item"><span class="tm-label">14:00 | 伊勢市駅 返却・解散</span>大阪行きの特急へ。</div>
             </div>
-        </section>
-    </div>
-
-    <div id="p3" class="pane">
-        <section>
-            <h2>🌿 案3：伊勢神宮 ➡ 松阪牛 ➡ 吉本新喜劇（一本化版）</h2>
-            <div class="info-box">
-                <strong>ポイント：</strong> 1泊2日の流れを最もスムーズに整理した決定版。移動の負担を最小限に抑えています。
-            </div>
-
-            <h3>🗺️ 1日目：タイムスケジュール</h3>
-            <div class="tm-box">
-                <div class="tm-item"><span class="tm-label">10:00 | 名古屋駅 集合</span>「しまかぜ」10:25発</div>
-                <div class="tm-item"><span class="tm-label">12:10 | 二見興玉神社</span>【タクシー】浜参宮で禊</div>
-                <div class="tm-item"><span class="tm-label">13:30 | 外宮 ➡ 月夜見宮</span>【タクシー/徒歩】</div>
-                <div class="tm-item"><span class="tm-label">15:15 | 倭姫宮 ➡ 月讀宮</span>【タクシー】歴史と神秘を巡る</div>
-                <div class="tm-item"><span class="tm-label">16:15 | 内宮（皇大神宮）</span>参拝後、夕方のおかげ横丁へ</div>
-                <div class="tm-item"><span class="tm-label">18:00 | 松阪牛ディナー</span>予約の名店で夕食</div>
-                <div class="tm-item"><span class="tm-label">20:00 | 難波へ移動・泊</span>翌日に備えて大阪へ</div>
-            </div>
-
-            <h3>🎭 2日目：吉本と大阪</h3>
-            <div class="tm-box">
-                <div class="tm-item"><span class="tm-label">午前 | 大阪散策</span>難波周辺を観光</div>
-                <div class="tm-item"><span class="tm-label">昼公演 | 吉本新喜劇</span>笑いの殿堂を満喫</div>
-                <div class="tm-item"><span class="tm-label">16:00 | 解散</span>新大阪または難波にて</div>
-            </div>
-
-            <h3 style="color: #e74c3c;">🔍 次に決めるべきこと</h3>
-            <ol>
-                <li>旅行日（月・曜日）の決定</li>
-                <li>松阪牛の店を候補（和田金、牛銀など）から選ぶ</li>
-                <li>吉本新喜劇の予約タイミング確認</li>
-            </ol>
         </section>
     </div>
 
 </div>
 
-<footer>明治4人組 &copy; 2026</footer>
+<footer>明治組 &copy; 2026<br>伊勢市駅返却：レンタカー活用プラン</footer>
 
 <script>
     function tab(e, id) {
