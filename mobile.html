@@ -17,12 +17,11 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         section { background: var(--white); border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-left: 5px solid var(--gold); }
         h2 { font-size: 1.1rem; color: #bc9b2c; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        h3 { font-size: 0.95rem; background: #f9f9f9; padding: 8px; border-left: 4px solid var(--gold); margin: 25px 0 10px; }
+        h3 { font-size: 0.95rem; background: #f9f9f9; padding: 8px; border-left: 4px solid var(--gold); margin: 15px 0 10px; }
         .map-img { width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid #ddd; }
-        .tm-box { border-left: 2px dashed var(--gold); margin: 10px 0 10px 10px; padding-left: 15px; }
-        .tm-item { margin-bottom: 20px; font-size: 0.85rem; }
-        .tm-label { display: block; font-weight: bold; color: var(--gold); }
-        .point-box { background: #fff9e6; border: 1px solid #ffeeba; padding: 10px; border-radius: 8px; font-size: 0.8rem; margin-bottom: 10px; }
+        .mobile-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.8rem; }
+        .mobile-table th, .mobile-table td { border: 1px solid #eee; padding: 8px; text-align: left; }
+        .mobile-table th { background: #f5f5f5; width: 25%; }
         footer { text-align: center; padding: 30px 15px; color: #999; font-size: 0.7rem; background: #f4f4f4; }
     </style>
 </head>
@@ -30,7 +29,7 @@
 
 <header>
     <h1>明治組 伊勢巡礼</h1>
-    <p>10/28-30 レンタカー巡礼（2-3名用）</p>
+    <p>10/28-30 レンタカープラン</p>
 </header>
 
 <nav class="nav-tabs">
@@ -40,44 +39,40 @@
 
 <div class="container">
 
-    <!-- 共通：集合と広域マップ -->
+    <!-- 共通：出発と広域図 -->
     <section style="border-left-color: #555;">
-        <h2>🚅 集合・広域ルート（Map①）</h2>
-        <div class="tm-box">
-            <div class="tm-item"><span class="tm-label">07:13 | 金沢駅 出発</span>新幹線➡敦賀➡しらさぎ</div>
-            <div class="tm-item"><span class="tm-label">10:04 | 名古屋駅 集合</span>合流して「しまかぜ」へ</div>
-            <div class="tm-item"><span class="tm-label">11:50 | 伊勢市駅 到着</span>レンタカー借受</div>
-        </div>
-        <img src="スライド1.JPG" alt="金沢・名古屋広域図" class="map-img">
-    </section>
-
-    <!-- 共通：中域マップ（瀧原宮・宿泊地） -->
-    <section style="border-left-color: #555;">
-        <h2>📍 瀧原宮・宿泊地の位置関係（Map②）</h2>
-        <img src="スライド2.JPG" alt="伊勢志摩広域図" class="map-img">
+        <h2>🚅 集合・広域ルート</h2>
+        <table class="mobile-table">
+            <tr><th>金沢発</th><td>07:13 (新幹線➡敦賀➡しらさぎ)</td></tr>
+            <tr><th>名古屋集</th><td>10:04 集合 ➡ 10:25 しまかぜ発</td></tr>
+            <tr><th>伊勢市着</th><td>11:50 到着 ➡ レンタカー借受</td></tr>
+        </table>
+        <img src="スライド1.JPG" alt="広域図" class="map-img">
+        <img src="スライド2.JPG" alt="宿泊・瀧原宮関係図" class="map-img">
     </section>
 
     <!-- 案1：伊勢志摩泊 -->
     <div id="p1" class="pane active">
         <section>
             <h2>🌊 案1：大江戸温泉物語P伊勢志摩</h2>
-            <div class="point-box">英虞湾の絶景リゾート。静かな海を堪能。</div>
+            <p style="font-size: 0.8rem;">英虞湾を望む絶景リゾート。移動時間を楽しみ、静かに過ごすプラン。</p>
             
-            <h3>【1日目】奥伊勢 ➡ 禊 ➡ 宿泊</h3>
-            <div class="tm-box">
-                <div class="tm-item"><span class="tm-label">13:10 | ⑦ 瀧原宮（50分）</span>神宮の原風景へ。</div>
-                <div class="tm-item"><span class="tm-label">15:30 | ① 二見興玉神社（30分）</span>夫婦岩で浜参宮。</div>
-                <div class="tm-item"><span class="tm-label">18:15 | 宿（候補A）到着</span>車で約50分のドライブ。</div>
-            </div>
+            <h3>1日目 行程</h3>
+            <table class="mobile-table">
+                <tr><th>13:10</th><td><b>⑦ 瀧原宮</b><br>高速利用。奥伊勢の神域を参拝。</td></tr>
+                <tr><th>15:30</th><td><b>① 二見興玉神社</b><br>浜参宮で禊を済ませます。</td></tr>
+                <tr><th>17:15</th><td><b>宿へ移動（候補A）</b><br>約50分のドライブ。18:15頃着。</td></tr>
+            </table>
 
-            <h3>【2日目】市街地5宮 完遂（Map③）</h3>
-            <img src="スライド3.JPG" alt="市街地詳細図" class="map-img">
-            <div class="tm-box">
-                <div class="tm-item"><span class="tm-label">09:15 | ② 外宮 ➡ ④ 月夜見宮</span>外宮に駐車。<strong>神路通りを徒歩往復</strong></div>
-                <div class="tm-item"><span class="tm-label">10:45 | ⑥ 倭姫宮 ➡ ⑤ 月讀宮</span>車で巡礼。</div>
-                <div class="tm-item"><span class="tm-label">11:45 | ③ 内宮 ➡ おかげ横丁</span>参拝とランチ。</div>
-                <div class="tm-item"><span class="tm-label">14:00 | 伊勢市駅 返却・解散</span></div>
-            </div>
+            <h3>2日目 行程 (Map③参照)</h3>
+            <img src="スライド3.JPG" alt="市街地図" class="map-img">
+            <table class="mobile-table">
+                <tr><th>08:15</th><td><b>宿を出発</b><br>朝の英虞湾を眺めながら北上。</td></tr>
+                <tr><th>09:15</th><td><b>② 外宮 ➡ ④ 月夜見宮</b><br>外宮に駐車。神路通りを徒歩往復。</td></tr>
+                <tr><th>10:45</th><td><b>⑥ 倭姫宮 ➡ ⑤ 月讀宮</b><br>車でスムーズに移動。</td></tr>
+                <tr><th>11:45</th><td><b>③ 内宮 ➡ おかげ横丁</b><br>参拝とランチ。土産も車へ。</td></tr>
+                <tr><th>14:00</th><td><b>伊勢市駅にて返却・解散</b></td></tr>
+            </table>
         </section>
     </div>
 
@@ -85,23 +80,24 @@
     <div id="p2" class="pane">
         <section>
             <h2>♨️ 案2：大江戸温泉物語P鳥羽彩朝楽</h2>
-            <div class="point-box">移動が短く、宿のインフィニティ風呂を長く楽しめます。</div>
+            <p style="font-size: 0.8rem;">伊勢市街から近く、移動を短縮して宿の滞在を長くするプラン。</p>
 
-            <h3>【1日目】効率ルート</h3>
-            <div class="tm-box">
-                <div class="tm-item"><span class="tm-label">13:10 | ⑦ 瀧原宮（50分）</span>初日に遠方を攻略。</div>
-                <div class="tm-item"><span class="tm-label">15:30 | ① 二見興玉神社（30分）</span>参拝後、宿へは車で10分。</div>
-                <div class="tm-item"><span class="tm-label">16:30 | 宿（候補B）到着</span>早めに温泉を満喫！</div>
-            </div>
+            <h3>1日目 行程</h3>
+            <table class="mobile-table">
+                <tr><th>13:10</th><td><b>⑦ 瀧原宮</b><br>案1と同じく、初日に遠方を攻略。</td></tr>
+                <tr><th>15:30</th><td><b>① 二見興玉神社</b><br>二見から鳥羽へはすぐ（約10分）。</td></tr>
+                <tr><th>16:30</th><td><b>宿へ移動（候補B）</b><br>移動が短いため、早めに温泉へ。</td></tr>
+            </table>
 
-            <h3>【2日目】ゆったり参拝（Map③）</h3>
-            <img src="スライド3.JPG" alt="市街地詳細図" class="map-img">
-            <div class="tm-box">
-                <div class="tm-item"><span class="tm-label">09:15 | ② 外宮 ➡ ④ 月夜見宮</span>外宮駐車場を拠点に<strong>徒歩散策</strong>。</div>
-                <div class="tm-item"><span class="tm-label">10:45 | ⑥ 倭姫宮 ➡ ⑤ 月讀宮</span>レンタカーで移動。</div>
-                <div class="tm-item"><span class="tm-label">11:45 | ③ 内宮 ➡ おかげ横丁</span>最後は総氏神様へ。</div>
-                <div class="tm-item"><span class="tm-label">14:00 | 伊勢市駅 返却・解散</span></div>
-            </div>
+            <h3>2日目 行程 (Map③参照)</h3>
+            <img src="スライド3.JPG" alt="市街地図" class="map-img">
+            <table class="mobile-table">
+                <tr><th>08:30</th><td><b>宿を出発</b><br>案1よりゆっくり出発。</td></tr>
+                <tr><th>09:15</th><td><b>② 外宮 ➡ ④ 月夜見宮</b><br>外宮に駐車。神路通りを徒歩往復。</td></tr>
+                <tr><th>10:45</th><td><b>⑥ 倭姫宮 ➡ ⑤ 月讀宮</b><br>各宮を順番に巡礼。</td></tr>
+                <tr><th>11:45</th><td><b>③ 内宮 ➡ おかげ横丁</b><br>参拝後の賑わいを楽しみます。</td></tr>
+                <tr><th>14:00</th><td><b>伊勢市駅にて返却・解散</b></td></tr>
+            </table>
         </section>
     </div>
 
