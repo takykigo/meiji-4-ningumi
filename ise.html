@@ -59,7 +59,7 @@
   }
   .content { padding: 28px; }
 
-  /* 地図コンテナ */
+  /* 地図セクション */
   .map-section {
     background: var(--bg-light);
     border: 1px solid var(--border-color);
@@ -178,6 +178,48 @@
     border-left: 4px solid var(--secondary);
   }
 
+  /* スポット紹介グリッド */
+  .spot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 16px;
+    padding: 20px;
+  }
+  .spot-card {
+    border: 1px solid #e5dfd5;
+    border-radius: 8px;
+    padding: 16px;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  }
+  .spot-number {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+  }
+  .spot-name {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--primary-dark);
+  }
+  .spot-deity {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 6px 0 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed #e0d8cc;
+  }
+  .spot-text {
+    font-size: 0.92rem;
+    color: #444;
+    line-height: 1.6;
+  }
+
   table {
     width: 100%;
     border-collapse: collapse;
@@ -209,7 +251,10 @@
     body { background: #fff; padding: 0; }
     .container { box-shadow: none; max-width: 100%; }
     .print-btn { display: none; }
-    .day-card, .map-card { page-break-inside: avoid; }
+    .day-card, .map-card, .spot-card { page-break-inside: avoid; }
+  }
+  @media (max-width: 600px) {
+    .spot-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -236,13 +281,9 @@
             <rect x="5" y="5" width="890" height="370" rx="8" fill="#fcfbf9" stroke="#dcd6cb" stroke-width="1.5"/>
 
             <!-- 鉄道ルート線 -->
-            <!-- 往路（青実線）：金沢➔敦賀➔大阪 -->
             <path d="M 180,95 L 340,150 L 340,250" fill="none" stroke="#2563eb" stroke-width="5"/>
-            <!-- 2日目（赤実線）：大阪鶴橋➔伊勢市 -->
             <path d="M 340,250 L 530,250" fill="none" stroke="#dc2626" stroke-width="5"/>
-            <!-- 3日目復路（緑実線）：伊勢市➔名古屋 -->
             <path d="M 530,250 L 710,140" fill="none" stroke="#059669" stroke-width="5"/>
-            <!-- 3日目復路（緑破線）：名古屋➔敦賀➔金沢 -->
             <path d="M 710,140 L 340,150 L 180,95" fill="none" stroke="#059669" stroke-width="4" stroke-dasharray="8,6"/>
 
             <!-- 矢印マーカー -->
@@ -251,37 +292,37 @@
             <polygon points="615,200 632,187 622,180" fill="#059669"/>
             <polygon points="505,152 488,146 502,139" fill="#059669"/>
 
-            <!-- 【金沢駅】 -->
+            <!-- 金沢駅 -->
             <circle cx="180" cy="95" r="10" fill="#2563eb" stroke="#fff" stroke-width="2.5"/>
             <rect x="65" y="30" width="230" height="48" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
             <text x="180" y="52" font-size="15" font-weight="bold" text-anchor="middle" fill="#1e3a8a">金沢駅（出発・帰着）</text>
             <text x="180" y="70" font-size="12" text-anchor="middle" fill="#444">10/29 08:57発 ➔ 10/31 20:50着</text>
 
-            <!-- 【敦賀駅】 -->
+            <!-- 敦賀駅 -->
             <circle cx="340" cy="150" r="8" fill="#2563eb" stroke="#fff" stroke-width="2"/>
             <rect x="360" y="115" width="185" height="42" rx="6" fill="#fff" stroke="#666" stroke-width="1.5"/>
             <text x="452" y="133" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">敦賀駅（乗換拠点）</text>
             <text x="452" y="149" font-size="11" text-anchor="middle" fill="#555">北陸新幹線 ⇄ サンダーバード/しらさぎ</text>
 
-            <!-- 【大阪・鶴橋】 -->
+            <!-- 大阪・鶴橋 -->
             <circle cx="340" cy="250" r="9" fill="#dc2626" stroke="#fff" stroke-width="2.5"/>
             <rect x="225" y="275" width="230" height="52" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
             <text x="340" y="297" font-size="14" font-weight="bold" text-anchor="middle" fill="#991b1b">大阪（なんば・鶴橋泊）</text>
             <text x="340" y="316" font-size="12" text-anchor="middle" fill="#444">1日目：花月＆鶴橋焼肉 ➔ 2日目朝近鉄特急</text>
 
-            <!-- 【伊勢市駅】 -->
+            <!-- 伊勢市駅 -->
             <circle cx="530" cy="250" r="9" fill="#dc2626" stroke="#fff" stroke-width="2.5"/>
             <rect x="475" y="275" width="220" height="52" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
             <text x="585" y="297" font-size="14" font-weight="bold" text-anchor="middle" fill="#991b1b">伊勢市駅（現地拠点）</text>
             <text x="585" y="316" font-size="12" text-anchor="middle" fill="#444">10/30 10:55着・レンタカー発着</text>
 
-            <!-- 【名古屋駅】 -->
+            <!-- 名古屋駅 -->
             <circle cx="710" cy="140" r="9" fill="#059669" stroke="#fff" stroke-width="2.5"/>
             <rect x="725" y="115" width="160" height="46" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
             <text x="805" y="135" font-size="14" font-weight="bold" text-anchor="middle" fill="#065f46">名古屋駅（乗換）</text>
             <text x="805" y="152" font-size="11" text-anchor="middle" fill="#555">近鉄特急 ➔ JR特急・新幹線</text>
 
-            <!-- 凡例ブロック -->
+            <!-- 凡例 -->
             <rect x="25" y="315" width="180" height="48" rx="6" fill="#fff" stroke="#bbb"/>
             <line x1="35" y1="328" x2="60" y2="328" stroke="#2563eb" stroke-width="3.5"/>
             <text x="68" y="332" font-size="11" fill="#333">1日目：金沢➔敦賀➔大阪</text>
@@ -300,12 +341,12 @@
           <svg viewBox="0 0 900 230" width="100%" height="auto">
             <rect x="5" y="5" width="890" height="220" rx="8" fill="#fffdfa" stroke="#dcd6cb" stroke-width="1.5"/>
 
-            <!-- 地下鉄（大阪駅➔なんば） -->
+            <!-- 地下鉄 -->
             <path d="M 120,80 L 250,80 L 250,140" fill="none" stroke="#64748b" stroke-width="3.5" stroke-dasharray="6,4"/>
             <rect x="145" y="55" width="160" height="24" rx="4" fill="#f1f5f9" stroke="#cbd5e1"/>
             <text x="225" y="71" font-size="12" font-weight="bold" text-anchor="middle" fill="#334155">地下鉄御堂筋線（約8分）</text>
 
-            <!-- JR大阪駅 -->
+            <!-- 大阪駅 -->
             <rect x="30" y="50" width="100" height="52" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
             <text x="80" y="72" font-size="13" font-weight="bold" text-anchor="middle" fill="#0f172a">JR大阪駅</text>
             <text x="80" y="91" font-size="11" text-anchor="middle" fill="#64748b">11:34着</text>
@@ -336,79 +377,63 @@
             <text x="740" y="134" font-size="13" font-weight="bold" text-anchor="middle" fill="#b45309">🥩 鶴橋焼肉街（空・白雲台 等）</text>
 
             <rect x="615" y="154" width="250" height="36" rx="5" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
-            <text x="740" y="176" font-size="12" font-weight="bold" text-anchor="middle" fill="#991b1b">★ 翌朝 09:14発 近鉄特急で伊勢市へ直行</text>
+            <text x="740" y="176" font-size="12" font-weight="bold" text-anchor="middle" fill="#991b1b">★ 翌朝 09:14発 近鉄特急で伊勢市へ直通</text>
           </svg>
         </div>
       </div>
 
-      <!-- ③ 伊勢・鳥羽地区図（完全修正版：2日目・3日目上下分離） -->
+      <!-- ③ 伊勢・鳥羽地区図（2日目・3日目上下分割） -->
       <div class="map-card">
         <div class="map-card-title">③ 伊勢神宮関連・鳥羽 巡礼ドライブルート（全8スポット＋宿泊地）</div>
         <div class="svg-box">
           <svg viewBox="0 0 900 480" width="100%" height="auto">
             <rect x="5" y="5" width="890" height="470" rx="8" fill="#fafcfa" stroke="#dcd6cb" stroke-width="1.5"/>
 
-            <!-- ================= 上段：2日目（金）ルート ================= -->
+            <!-- 2日目ルート -->
             <rect x="15" y="20" width="870" height="205" rx="8" fill="#fff9f5" stroke="#f97316" stroke-width="2"/>
             <rect x="25" y="12" width="260" height="28" rx="5" fill="#ea580c"/>
             <text x="155" y="31" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">▼ 2日目ルート（外宮・瀧原宮・鳥羽宿）</text>
 
-            <!-- 2日目矢印ライン -->
-            <!-- 拠点➔①月夜見宮 -->
             <path d="M 170,95 L 210,95" fill="none" stroke="#ea580c" stroke-width="4"/>
             <polygon points="195,90 207,95 195,100" fill="#ea580c"/>
-            <!-- ①月夜見宮➔②外宮 -->
             <path d="M 330,95 L 370,95" fill="none" stroke="#ea580c" stroke-width="4"/>
             <polygon points="355,90 367,95 355,100" fill="#ea580c"/>
-            <!-- ②外宮➔③瀧原宮（高速） -->
             <path d="M 440,125 L 440,150 L 175,150 L 175,160" fill="none" stroke="#ea580c" stroke-width="4" stroke-dasharray="6,4"/>
             <polygon points="280,145 265,150 280,155" fill="#ea580c"/>
             <text x="310" y="142" font-size="11" font-weight="bold" fill="#ea580c">紀勢自動車道（約40分）</text>
-            <!-- ③瀧原宮➔宿泊地（鳥羽） -->
             <path d="M 270,180 L 630,180" fill="none" stroke="#ea580c" stroke-width="4"/>
             <polygon points="450,175 465,180 450,185" fill="#ea580c"/>
             <text x="450" y="172" font-size="11" font-weight="bold" text-anchor="middle" fill="#ea580c">大台➔伊勢二見鳥羽ライン（約55分）</text>
 
-            <!-- 2日目各スポット -->
-            <!-- スタート：伊勢市駅 -->
             <rect x="35" y="70" width="135" height="50" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
             <text x="102" y="91" font-size="13" font-weight="bold" text-anchor="middle" fill="#dc2626">伊勢市駅 10:55着</text>
             <text x="102" y="108" font-size="11" text-anchor="middle" fill="#666">レンタカー出発</text>
 
-            <!-- ① 月夜見宮 -->
             <rect x="210" y="70" width="120" height="50" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="1.5"/>
             <text x="270" y="91" font-size="13" font-weight="bold" text-anchor="middle" fill="#15803d">① 月夜見宮</text>
             <text x="270" y="108" font-size="11" text-anchor="middle" fill="#444">外宮北の別宮</text>
 
-            <!-- ② 外宮 -->
             <rect x="370" y="70" width="170" height="50" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
             <text x="455" y="91" font-size="13" font-weight="bold" text-anchor="middle" fill="#991b1b">② 豊受大神宮（外宮）</text>
             <text x="455" y="108" font-size="11" text-anchor="middle" fill="#444">正宮参拝 ＆ 伊勢うどん昼食</text>
 
-            <!-- ③ 瀧原宮 -->
             <rect x="80" y="155" width="190" height="50" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
             <text x="175" y="176" font-size="13" font-weight="bold" text-anchor="middle" fill="#065f46">③ 皇大神宮別宮 瀧原宮</text>
             <text x="175" y="193" font-size="11" text-anchor="middle" fill="#047857">奥伊勢・清流頓登川の御手洗場</text>
 
-            <!-- ゴール：鳥羽彩朝楽 -->
             <rect x="630" y="150" width="235" height="60" rx="6" fill="#fff1f2" stroke="#be123c" stroke-width="2.5"/>
             <text x="747" y="174" font-size="14" font-weight="bold" text-anchor="middle" fill="#9f1239">★ 大江戸温泉物語Premium 鳥羽彩朝楽</text>
             <text x="747" y="195" font-size="12" font-weight="bold" text-anchor="middle" fill="#444">【2日目宿泊】海景露天風呂＆バイキング</text>
 
-
-            <!-- ================= 下段：3日目（土）ルート ================= -->
+            <!-- 3日目ルート -->
             <rect x="15" y="245" width="870" height="215" rx="8" fill="#f8f7ff" stroke="#7c3aed" stroke-width="2"/>
             <rect x="25" y="237" width="270" height="28" rx="5" fill="#7c3aed"/>
             <text x="160" y="256" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">▼ 3日目ルート（二見・内宮・別宮・帰路）</text>
 
-            <!-- 3日目矢印ライン -->
-            <!-- 宿➔④二見興玉神社 -->
             <path d="M 740,300 L 640,300" fill="none" stroke="#7c3aed" stroke-width="4"/>
             <polygon points="655,295 640,300 655,305" fill="#7c3aed"/>
-            <!-- ④二見興玉神社➔⑤内宮/⑥おかげ横丁 -->
             <path d="M 480,300 L 370,300" fill="none" stroke="#7c3aed" stroke-width="4"/>
             <polygon points="385,295 370,300 385,305" fill="#7c3aed"/>
-            <!-- 内宮➔⑦月讀宮➔⑧倭姫宮➔伊勢市駅 -->
             <path d="M 270,335 L 270,390 L 350,390" fill="none" stroke="#7c3aed" stroke-width="4"/>
             <polygon points="335,385 348,390 335,395" fill="#7c3aed"/>
             <path d="M 470,390 L 520,390" fill="none" stroke="#7c3aed" stroke-width="4"/>
@@ -416,33 +441,26 @@
             <path d="M 640,390 L 710,390" fill="none" stroke="#7c3aed" stroke-width="4"/>
             <polygon points="695,385 708,390 695,395" fill="#7c3aed"/>
 
-            <!-- 3日目各スポット -->
-            <!-- スタート：鳥羽彩朝楽 -->
             <rect x="730" y="275" width="135" height="50" rx="6" fill="#fff" stroke="#be123c" stroke-width="1.5"/>
             <text x="797" y="296" font-size="12" font-weight="bold" text-anchor="middle" fill="#9f1239">鳥羽彩朝楽 出発</text>
             <text x="797" y="313" font-size="11" text-anchor="middle" fill="#666">09:30発（朝風呂後）</text>
 
-            <!-- ④ 二見興玉神社 -->
             <rect x="480" y="275" width="160" height="50" rx="6" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
             <text x="560" y="296" font-size="13" font-weight="bold" text-anchor="middle" fill="#6d28d9">④ 二見興玉神社</text>
             <text x="560" y="313" font-size="11" text-anchor="middle" fill="#444">夫婦岩・禊の浜参宮</text>
 
-            <!-- ⑤ 内宮 ＆ ⑥ おかげ横丁 -->
             <rect x="170" y="275" width="200" height="60" rx="6" fill="#fff1f2" stroke="#e11d48" stroke-width="2"/>
             <text x="270" y="298" font-size="14" font-weight="bold" text-anchor="middle" fill="#be123c">⑤ 皇大神宮（内宮）</text>
             <text x="270" y="320" font-size="13" font-weight="bold" text-anchor="middle" fill="#b45309">⑥ おかげ横丁（昼食・散策）</text>
 
-            <!-- ⑦ 月讀宮 -->
             <rect x="350" y="365" width="120" height="50" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="1.5"/>
             <text x="410" y="386" font-size="13" font-weight="bold" text-anchor="middle" fill="#15803d">⑦ 月讀宮</text>
             <text x="410" y="403" font-size="11" text-anchor="middle" fill="#444">4社並びの別宮</text>
 
-            <!-- ⑧ 倭姫宮 -->
             <rect x="520" y="365" width="120" height="50" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="1.5"/>
             <text x="580" y="386" font-size="13" font-weight="bold" text-anchor="middle" fill="#15803d">⑧ 倭姫宮</text>
             <text x="580" y="403" font-size="11" text-anchor="middle" fill="#444">倉田山の杜</text>
 
-            <!-- ゴール：伊勢市駅 -->
             <rect x="710" y="365" width="155" height="52" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
             <text x="787" y="386" font-size="13" font-weight="bold" text-anchor="middle" fill="#b91c1c">伊勢市駅 15:45返却</text>
             <text x="787" y="404" font-size="11" font-weight="bold" text-anchor="middle" fill="#059669">➔ 16:15発 特急で名古屋へ</text>
@@ -450,6 +468,72 @@
         </div>
       </div>
 
+    </div>
+
+    <!-- ⛩️ 伊勢神宮関連スポット紹介セクション -->
+    <div class="day-card">
+      <div class="day-header">
+        <span class="day-title">⛩️ 伊勢神宮関連 巡礼地のご紹介（全8スポット）</span>
+      </div>
+      <div class="spot-grid">
+        
+        <!-- ① 月夜見宮 -->
+        <div class="spot-card">
+          <div><span class="spot-number">①</span><span class="spot-name">豊受大神宮別宮 月夜見宮（つきよみのみや）</span></div>
+          <div class="spot-deity">【ご祭神】月夜見尊（ツクヨミノミコト）・月夜見尊荒御魂</div>
+          <div class="spot-text">外宮の北に位置する外宮の別宮。天照大御神の弟神である夜の神をお祀りしています。外宮から続く「神路通」の起点であり、市街地の中にありながら樹齢数百年の大楠に包まれた静寂な社です。</div>
+        </div>
+
+        <!-- ② 外宮 -->
+        <div class="spot-card">
+          <div><span class="spot-number">②</span><span class="spot-name">豊受大神宮（伊勢神宮 外宮）</span></div>
+          <div class="spot-deity">【ご祭神】豊受大御神（トヨウケノオオミカミ）</div>
+          <div class="spot-text">衣食住をはじめとする産業全般の守護神をお祀りする正宮。「外宮先訪」の古例に従い、内宮より先にお参りするのが伝統です。御正宮のほか、境内にある多賀宮・土宮・風宮の3別宮を順拝します。</div>
+        </div>
+
+        <!-- ③ 瀧原宮 -->
+        <div class="spot-card">
+          <div><span class="spot-number">③</span><span class="spot-name">皇大神宮別宮 瀧原宮（たきはらのみや）</span></div>
+          <div class="spot-deity">【ご祭神】天照大御神御魂（アマテラスオオミカミノミタマ）</div>
+          <div class="spot-text">奥伊勢・大紀町の深山に佇む内宮の別宮。「元伊勢」の筆頭とされ、清流・頓登川（とんどがわ）が自然の御手洗場となっています。杉や楠の巨木が立ち並ぶ参道は圧倒的な清浄さを誇ります。</div>
+        </div>
+
+        <!-- ④ 二見興玉神社 -->
+        <div class="spot-card">
+          <div><span class="spot-number">④</span><span class="spot-name">二見興玉神社（ふたみおきたまじんじゃ）</span></div>
+          <div class="spot-deity">【ご祭神】猿田彦大神・宇迦御魂大神</div>
+          <div class="spot-text">海沿いに位置し、沖合の霊石「興玉神石」を拝する神社。古くから伊勢参宮の前に海水で身を清める「浜参宮（禊）」の地として知られます。注連縄で結ばれた有名な「夫婦岩」が象徴です。</div>
+        </div>
+
+        <!-- ⑤ 内宮 -->
+        <div class="spot-card">
+          <div><span class="spot-number">⑤</span><span class="spot-name">皇大神宮（伊勢神宮 内宮）</span></div>
+          <div class="spot-deity">【ご祭神】天照大御神（アマテラスオオミカミ）</div>
+          <div class="spot-text">日本人の総氏神である天照大御神をお祀りする国内最高峰の聖地。五十鈴川にかかる宇治橋を渡り、御手洗場で手を清めて玉砂利の参道を進みます。御正宮、荒祭宮、神楽殿をお参りします。</div>
+        </div>
+
+        <!-- ⑥ おかげ横丁 -->
+        <div class="spot-card">
+          <div><span class="spot-number">⑥</span><span class="spot-name">おかげ横丁・おはらい町</span></div>
+          <div class="spot-deity">【エリア】内宮鳥居前町</div>
+          <div class="spot-text">内宮の門前町として栄えた通りで、江戸から明治期の町並みを再現した一大観光スポット。赤福本店をはじめ、名物伊勢うどん、手こね寿司、松阪牛などの食べ歩きや名産品のお土産選びを満喫できます。</div>
+        </div>
+
+        <!-- ⑦ 月讀宮 -->
+        <div class="spot-card">
+          <div><span class="spot-number">⑦</span><span class="spot-name">皇大神宮別宮 月讀宮（つきよみのひりのみや）</span></div>
+          <div class="spot-deity">【ご祭神】月讀尊・伊佐奈岐尊・伊佐奈弥尊</div>
+          <div class="spot-text">内宮の別宮で、月夜見宮と同じく月の神をお祀りしています。同一境内に4つの社殿が横一列に整然と並び建つ独特の配置が特徴で、決められた順序に従って四社を順拝します。</div>
+        </div>
+
+        <!-- ⑧ 倭姫宮 -->
+        <div class="spot-card">
+          <div><span class="spot-number">⑧</span><span class="spot-name">皇大神宮別宮 倭姫宮（やまとひめのみや）</span></div>
+          <div class="spot-deity">【ご祭神】倭姫命（ヤマトヒメノミコト）</div>
+          <div class="spot-text">各地を巡り、天照大御神の鎮座地として現在の伊勢の地を定めた皇女・倭姫命をお祀りする別宮。大正年間に創建された最も新しい別宮で、倉田山の静かな森の中に鎮座しています。</div>
+        </div>
+
+      </div>
     </div>
 
     <!-- 1日目詳細行程 -->
