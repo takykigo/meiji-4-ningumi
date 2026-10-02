@@ -178,7 +178,31 @@
     border-left: 4px solid var(--secondary);
   }
 
-  /* チケット受け取り・案内ボックス */
+  /* 参加形態バッジ */
+  .mode-badge-solo {
+    display: inline-block;
+    background: #3b82f6;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .mode-badge-group {
+    display: inline-block;
+    background: #dc2626;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* 案内・警告ボックス */
   .ticket-alert-box {
     background: #fffbeb;
     border: 2px solid #d97706;
@@ -311,7 +335,7 @@
 
       <!-- ① 全体広域図 -->
       <div class="map-card">
-        <div class="map-card-title">① 全体広域周遊ルート（金沢 ➔ 大阪 ➔ 伊勢 ➔ 名古屋 ➔ 金沢）</div>
+        <div class="map-card-title">① 全体広域周遊ルート（金沢 ➔ 大阪 ➔ 伊勢市駅集合・解散 ➔ 名古屋 ➔ 金沢）</div>
         <div class="svg-box">
           <svg viewBox="0 0 900 380" width="100%" height="auto">
             <rect x="5" y="5" width="890" height="370" rx="8" fill="#fcfbf9" stroke="#dcd6cb" stroke-width="1.5"/>
@@ -331,7 +355,7 @@
             <!-- 金沢駅 -->
             <circle cx="180" cy="95" r="10" fill="#2563eb" stroke="#fff" stroke-width="2.5"/>
             <rect x="65" y="30" width="230" height="48" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
-            <text x="180" y="52" font-size="15" font-weight="bold" text-anchor="middle" fill="#1e3a8a">金沢駅（出発・帰着）</text>
+            <text x="180" y="52" font-size="15" font-weight="bold" text-anchor="middle" fill="#1e3a8a">金沢駅（単独発着）</text>
             <text x="180" y="70" font-size="12" text-anchor="middle" fill="#444">10/29 08:40発 ➔ 10/31 22:39着</text>
 
             <!-- 敦賀駅 -->
@@ -342,37 +366,38 @@
 
             <!-- 大阪・鶴橋 -->
             <circle cx="340" cy="250" r="9" fill="#dc2626" stroke="#fff" stroke-width="2.5"/>
-            <rect x="225" y="275" width="230" height="52" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
-            <text x="340" y="297" font-size="14" font-weight="bold" text-anchor="middle" fill="#991b1b">大阪（なんば・鶴橋泊）</text>
+            <rect x="220" y="275" width="240" height="52" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+            <text x="340" y="297" font-size="14" font-weight="bold" text-anchor="middle" fill="#991b1b">大阪（一人旅・鶴橋泊）</text>
             <text x="340" y="316" font-size="12" text-anchor="middle" fill="#444">1日目：花月＆空 鶴橋総本店 ➔ 2日目特急</text>
 
-            <!-- 伊勢市駅 -->
-            <circle cx="530" cy="250" r="9" fill="#dc2626" stroke="#fff" stroke-width="2.5"/>
-            <rect x="475" y="275" width="220" height="52" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
-            <text x="585" y="297" font-size="14" font-weight="bold" text-anchor="middle" fill="#991b1b">伊勢市駅（現地拠点）</text>
-            <text x="585" y="316" font-size="12" font-weight="bold" text-anchor="middle" fill="#d97706">★JR復路きっぷ事前受取推奨駅</text>
+            <!-- 伊勢市駅（集合・解散地点） -->
+            <circle cx="530" cy="250" r="10" fill="#ea580c" stroke="#fff" stroke-width="2.5"/>
+            <rect x="475" y="270" width="230" height="58" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+            <text x="590" y="291" font-size="14" font-weight="bold" text-anchor="middle" fill="#c2410c">伊勢市駅【四人組 集合・解散】</text>
+            <text x="590" y="308" font-size="11" font-weight="bold" text-anchor="middle" fill="#dc2626">10/30 11:00合流 ➔ 10/31 夕刻解散</text>
+            <text x="590" y="322" font-size="10" text-anchor="middle" fill="#7c2d12">★JR復路きっぷ事前受取推奨駅</text>
 
             <!-- 名古屋駅 -->
             <circle cx="710" cy="140" r="9" fill="#059669" stroke="#fff" stroke-width="2.5"/>
             <rect x="725" y="115" width="165" height="46" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
-            <text x="807" y="135" font-size="14" font-weight="bold" text-anchor="middle" fill="#065f46">名古屋駅（乗換）</text>
+            <text x="807" y="135" font-size="14" font-weight="bold" text-anchor="middle" fill="#065f46">名古屋駅（一人乗換）</text>
             <text x="807" y="152" font-size="11" text-anchor="middle" fill="#555">近鉄 ➔ JR乗換（31分）➔ しらさぎ</text>
 
             <!-- 凡例 -->
             <rect x="25" y="315" width="180" height="48" rx="6" fill="#fff" stroke="#bbb"/>
             <line x1="35" y1="328" x2="60" y2="328" stroke="#2563eb" stroke-width="3.5"/>
-            <text x="68" y="332" font-size="11" fill="#333">1日目：金沢➔敦賀➔大阪</text>
+            <text x="68" y="332" font-size="11" fill="#333">1日目：金沢➔大阪（一人）</text>
             <line x1="35" y1="345" x2="60" y2="345" stroke="#dc2626" stroke-width="3.5"/>
-            <text x="68" y="349" font-size="11" fill="#333">2日目：鶴橋➔伊勢市</text>
+            <text x="68" y="349" font-size="11" fill="#333">2日目：鶴橋➔伊勢（合流）</text>
             <line x1="35" y1="358" x2="60" y2="358" stroke="#059669" stroke-width="3" stroke-dasharray="4,3"/>
-            <text x="68" y="362" font-size="11" fill="#333">3日目：伊勢➔名古屋➔金沢</text>
+            <text x="68" y="362" font-size="11" fill="#333">3日目：伊勢➔金沢（一人）</text>
           </svg>
         </div>
       </div>
 
       <!-- ② 大阪地区図 -->
       <div class="map-card">
-        <div class="map-card-title">② 大阪地区詳細（なんば・千日前・鶴橋）</div>
+        <div class="map-card-title">② 大阪地区詳細（なんば・千日前・鶴橋）［一人旅区間］</div>
         <div class="svg-box">
           <svg viewBox="0 0 900 230" width="100%" height="auto">
             <rect x="5" y="5" width="890" height="220" rx="8" fill="#fffdfa" stroke="#dcd6cb" stroke-width="1.5"/>
@@ -410,7 +435,7 @@
             <text x="740" y="92" font-size="13" font-weight="bold" text-anchor="middle" fill="#1e40af">🏨 FIVE HOTEL OSAKA（予約済）</text>
 
             <rect x="615" y="112" width="250" height="34" rx="5" fill="#fff" stroke="#f59e0b" stroke-width="1.5"/>
-            <text x="740" y="134" font-size="12" font-weight="bold" text-anchor="middle" fill="#b45309">🥩 空 鶴橋総本店（18:30予約済・遅刻厳禁）</text>
+            <text x="740" y="134" font-size="13" font-weight="bold" text-anchor="middle" fill="#b45309">🥩 空 鶴橋総本店（18:30予約済・遅刻厳禁）</text>
 
             <rect x="615" y="154" width="250" height="36" rx="5" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
             <text x="740" y="176" font-size="12" font-weight="bold" text-anchor="middle" fill="#991b1b">★ 翌朝 09:14発 近鉄特急で伊勢市へ直通</text>
@@ -418,17 +443,17 @@
         </div>
       </div>
 
-      <!-- ③ 伊勢・鳥羽地区図（2日目・3日目上下分割） -->
+      <!-- ③ 伊勢・鳥羽地区図（四人組 本隊行動） -->
       <div class="map-card">
-        <div class="map-card-title">③ 伊勢神宮関連・鳥羽 巡礼ドライブルート（タイムズカー利用）</div>
+        <div class="map-card-title">③ 伊勢神宮関連・鳥羽 巡礼ドライブルート［明治四人組 合同巡礼］</div>
         <div class="svg-box">
           <svg viewBox="0 0 900 480" width="100%" height="auto">
             <rect x="5" y="5" width="890" height="470" rx="8" fill="#fafcfa" stroke="#dcd6cb" stroke-width="1.5"/>
 
             <!-- 2日目ルート -->
             <rect x="15" y="20" width="870" height="205" rx="8" fill="#fff9f5" stroke="#f97316" stroke-width="2"/>
-            <rect x="25" y="12" width="280" height="28" rx="5" fill="#ea580c"/>
-            <text x="165" y="31" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">▼ 2日目ルート（外宮・瀧原宮・鳥羽宿）</text>
+            <rect x="25" y="12" width="320" height="28" rx="5" fill="#ea580c"/>
+            <text x="185" y="31" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">▼ 2日目：四人合流・外宮・瀧原宮・鳥羽宿</text>
 
             <path d="M 170,95 L 210,95" fill="none" stroke="#ea580c" stroke-width="4"/>
             <polygon points="195,90 207,95 195,100" fill="#ea580c"/>
@@ -441,9 +466,10 @@
             <polygon points="450,175 465,180 450,185" fill="#ea580c"/>
             <text x="450" y="172" font-size="11" font-weight="bold" text-anchor="middle" fill="#ea580c">大台➔伊勢二見鳥羽ライン（約55分）</text>
 
-            <rect x="35" y="70" width="145" height="50" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
-            <text x="107" y="91" font-size="13" font-weight="bold" text-anchor="middle" fill="#dc2626">タイムズカー伊勢店</text>
-            <text x="107" y="108" font-size="11" text-anchor="middle" fill="#666">11:00 貸出手続き</text>
+            <rect x="35" y="65" width="145" height="58" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+            <text x="107" y="86" font-size="13" font-weight="bold" text-anchor="middle" fill="#c2410c">タイムズカー伊勢店</text>
+            <text x="107" y="102" font-size="11" font-weight="bold" text-anchor="middle" fill="#dc2626">★ 11:00 四人集合・貸出</text>
+            <text x="107" y="117" font-size="10" text-anchor="middle" fill="#666">C-1クラスコンパクト</text>
 
             <rect x="210" y="70" width="120" height="50" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="1.5"/>
             <text x="270" y="91" font-size="13" font-weight="bold" text-anchor="middle" fill="#15803d">① 月夜見宮</text>
@@ -459,12 +485,12 @@
 
             <rect x="630" y="150" width="235" height="60" rx="6" fill="#fff1f2" stroke="#be123c" stroke-width="2.5"/>
             <text x="747" y="174" font-size="14" font-weight="bold" text-anchor="middle" fill="#9f1239">★ 大江戸温泉物語Premium 鳥羽彩朝楽</text>
-            <text x="747" y="195" font-size="12" font-weight="bold" text-anchor="middle" fill="#444">【2日目宿泊】海景露天風呂＆バイキング</text>
+            <text x="747" y="195" font-size="12" font-weight="bold" text-anchor="middle" fill="#444">【四人組 宿泊】海景露天風呂＆バイキング</text>
 
             <!-- 3日目ルート -->
             <rect x="15" y="245" width="870" height="215" rx="8" fill="#f8f7ff" stroke="#7c3aed" stroke-width="2"/>
-            <rect x="25" y="237" width="280" height="28" rx="5" fill="#7c3aed"/>
-            <text x="165" y="256" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">▼ 3日目ルート（二見・内宮・別宮・返却）</text>
+            <rect x="25" y="237" width="310" height="28" rx="5" fill="#7c3aed"/>
+            <text x="180" y="256" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">▼ 3日目：二見・内宮・別宮・返却解散</text>
 
             <path d="M 740,300 L 640,300" fill="none" stroke="#7c3aed" stroke-width="4"/>
             <polygon points="655,295 640,300 655,305" fill="#7c3aed"/>
@@ -497,9 +523,10 @@
             <text x="580" y="386" font-size="13" font-weight="bold" text-anchor="middle" fill="#15803d">⑧ 倭姫宮</text>
             <text x="580" y="403" font-size="11" text-anchor="middle" fill="#444">倉田山の杜</text>
 
-            <rect x="710" y="365" width="160" height="52" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
-            <text x="790" y="386" font-size="13" font-weight="bold" text-anchor="middle" fill="#b91c1c">タイムズカー返却</text>
-            <text x="790" y="404" font-size="11" font-weight="bold" text-anchor="middle" fill="#059669">➔ 伊勢市駅できっぷ受取推奨</text>
+            <rect x="705" y="360" width="175" height="60" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+            <text x="792" y="380" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">タイムズカー返却（17:00迄）</text>
+            <text x="792" y="396" font-size="13" font-weight="bold" text-anchor="middle" fill="#dc2626">★ 四人組 解散！</text>
+            <text x="792" y="411" font-size="10" text-anchor="middle" fill="#666">伊勢市駅で各方面へ</text>
           </svg>
         </div>
       </div>
@@ -509,7 +536,7 @@
     <!-- ⛩️ 伊勢神宮関連スポット紹介セクション -->
     <div class="day-card">
       <div class="day-header">
-        <span class="day-title">⛩️ 伊勢神宮関連 巡礼地のご紹介（全8スポット）</span>
+        <span class="day-title">⛩️️ 伊勢神宮関連 巡礼地のご紹介（全8スポット）</span>
       </div>
       <div class="spot-grid">
         
@@ -575,7 +602,7 @@
     <!-- 1日目詳細行程 -->
     <div class="day-card">
       <div class="day-header">
-        <span class="day-title">第一日：金沢発・笑いの殿堂なんば花月と鶴橋焼肉の宵</span>
+        <span class="day-title">第一日：金沢発・笑いの殿堂なんば花月と鶴橋焼肉の宵 <span class="mode-badge-solo">一人旅区間</span></span>
         <span class="day-date">10月29日(木)</span>
       </div>
       <ul class="timeline">
@@ -611,7 +638,7 @@
           <div class="desc-box" style="border-left:4px solid #b91c1c; background:#fff7f7;">
             <strong>【予約時間】：18:30（空 鶴橋総本店）</strong><br>
             <span style="color:#b91c1c; font-weight:bold;">⚠️ 厳守事項：予約時間から10分遅れた場合は自動的にキャンセルとなります！</span><br>
-            ホテルからお店へは余裕を持って移動し、<strong>18:25には店頭に集合・到着</strong>するようにしてください。煙立ち込める本場の聖地で絶品ホルモン＆極上和牛で乾杯！
+            ホテルからお店へは余裕を持って移動し、<strong>18:25には店頭に集合・到着</strong>するようにしてください。煙立ち込める本場の聖地で絶品ホルモン＆極上和牛に舌鼓！
           </div>
         </li>
       </ul>
@@ -620,12 +647,12 @@
     <!-- 2日目詳細行程 -->
     <div class="day-card">
       <div class="day-header">
-        <span class="day-title">第二日：鶴橋発近鉄特急・月夜見宮・外宮・奥伊勢「瀧原宮」と鳥羽温泉</span>
+        <span class="day-title">第二日：鶴橋発近鉄特急・伊勢合流・外宮・奥伊勢「瀧原宮」と鳥羽温泉 <span class="mode-badge-group">伊勢より四人合流</span></span>
         <span class="day-date">10月30日(金)</span>
       </div>
       <ul class="timeline">
         <li>
-          <span class="time-badge">09:14</span> <span class="place-title">近鉄鶴橋駅 出発【特急券チケットレス / 乗車券別途】</span>
+          <span class="time-badge">09:14</span> <span class="place-title">近鉄鶴橋駅 出発【特急券チケットレス / 乗車券別途】<span class="mode-badge-solo">一人移動</span></span>
           <div class="desc-box">
             <strong>特急 伊勢志摩ライナー 賢島行（6903列車 / 3号車 1A番）</strong><br>
             ・予約番号：<code>A64339</code>（認証コード: 07014）<br>
@@ -635,10 +662,14 @@
         </li>
         <li>
           <span class="time-badge">10:55</span> <span class="place-title">伊勢市駅 到着 ➔ タイムズカー伊勢店へ</span>
-          <div class="desc-box">
-            駅から徒歩約4分で店舗へ（TEL: 0596-25-5668）。<br>
-            <strong>11:00 貸出手続き（C-1クラス・コンパクト / 免許証必携）</strong>。荷物はトランクに積んだまま身軽に出発！<br>
-            <span style="color:#d97706; font-size:0.9rem;">※ 時間に余裕があれば、駅到着時に改札口付近で翌日のJR復路きっぷを事前発券しておくことも可能です。</span>
+          <div class="desc-box">駅から徒歩約4分で店舗へ（TEL: 0596-25-5668）。</div>
+        </li>
+        <li>
+          <span class="time-badge" style="background:#dc2626;">11:00</span> <span class="place-title" style="color:#dc2626;">★【明治四人組 合流！】レンタカー出発手続き</span>
+          <div class="desc-box" style="border-left:4px solid #dc2626; background:#fff7ed;">
+            <strong>タイムズカー伊勢店にて四人合流！</strong><br>
+            <strong>C-1クラス（コンパクト / 運転免許証必携）</strong>の手続きを行い、荷物をトランクに積んでいざ四人揃ってお伊勢参りへ出発！<br>
+            <span style="color:#d97706; font-size:0.9rem;">※ 時間に余裕があれば、駅到着時に改札口付近で翌日の復路JRきっぷを事前発券しておくことも可能です。</span>
           </div>
         </li>
         <li>
@@ -661,8 +692,8 @@
           <span class="time-badge">15:25</span> <span class="place-title">鳥羽へ移動（大台➔伊勢二見鳥羽ライン・約55分）</span>
         </li>
         <li>
-          <span class="time-badge">16:30</span> <span class="place-title">大江戸温泉物語Premium 鳥羽彩朝楽 到着</span>
-          <div class="desc-box">鳥羽湾を一望する海景露天風呂でドライブの疲れを癒やし、夜は海の幸バイキングを堪能。</div>
+          <span class="time-badge">16:30</span> <span class="place-title">大江戸温泉物語Premium 鳥羽彩朝楽 到着・チェックイン</span>
+          <div class="desc-box">鳥羽湾を一望する海景露天風呂でドライブの疲れを癒やし、夜は海の幸バイキング＆地酒で四人揃って乾杯！</div>
         </li>
       </ul>
     </div>
@@ -670,7 +701,7 @@
     <!-- 3日目詳細行程 -->
     <div class="day-card">
       <div class="day-header">
-        <span class="day-title">第三日：朝風呂満喫・禊の二見・皇祖神「内宮」とおかげ横丁〜金沢へ</span>
+        <span class="day-title">第三日：朝風呂満喫・禊の二見・皇祖神「内宮」とおかげ横丁〜解散・帰路 <span class="mode-badge-group">夕刻まで四人行動</span></span>
         <span class="day-date">10月31日(土)</span>
       </div>
       <ul class="timeline">
@@ -699,18 +730,21 @@
           <div class="desc-box">車で約5分。倉田山の美しい森に囲まれた静謐な別宮を参拝。</div>
         </li>
         <li>
-          <span class="time-badge">16:45〜17:00</span> <span class="place-title">タイムズカー伊勢店 車両返却</span>
-          <div class="desc-box">ガソリン満タンで返却。徒歩約4分で伊勢市駅へ移動。</div>
+          <span class="time-badge">16:45〜17:00</span> <span class="place-title">タイムズカー伊勢店 車両返却 ➔ ★【四人組 解散】</span>
+          <div class="desc-box">
+            ガソリン満タンで返却。徒歩約4分で伊勢市駅へ移動。<br>
+            <strong style="color:#c2410c;">伊勢市駅にて明治四人組の巡礼旅は無事完了・ここで解散となります！お疲れ様でした！</strong>
+          </div>
         </li>
         <li>
-          <span class="time-badge" style="background:#b45309;">17:10〜17:45</span> <span class="place-title" style="color:#b45309;">★【超推奨】JR伊勢市駅にて復路JRきっぷを発券・受取！</span>
+          <span class="time-badge" style="background:#b45309;">17:10〜17:45</span> <span class="place-title" style="color:#b45309;">★【超推奨】JR伊勢市駅にて復路JRきっぷを発券・受取！ <span class="mode-badge-solo">一人行動</span></span>
           <div class="desc-box" style="border-left:4px solid #b45309; background:#fffdf5;">
             <strong>※名古屋駅での乗換時間は31分しかなく、混雑や列車の遅延リスクが高いため、必ずここ「JR伊勢市駅」で事前に発券してください！</strong><br>
             JR伊勢市駅の指定席券売機にて、<strong>決済VISAカード</strong>、<strong>予約番号</strong>、<strong>電話番号下4桁</strong>を用いて発券します。（※詳細は下記の切符ガイド参照）
           </div>
         </li>
         <li>
-          <span class="time-badge">17:54</span> <span class="place-title">伊勢市駅 出発【特急券チケットレス / 乗車券別途】➔ 近鉄名古屋 19:17着</span>
+          <span class="time-badge">17:54</span> <span class="place-title">伊勢市駅 出発【特急券チケットレス / 乗車券別途】➔ 近鉄名古屋 19:17着 <span class="mode-badge-solo">一人移動</span></span>
           <div class="desc-box">
             <strong>近鉄特急 近鉄名古屋行（1712列車 / 7号車 1A番）</strong><br>
             ・予約番号：<code>A45866</code>（認証コード: 51265）<br>
@@ -725,7 +759,7 @@
           </div>
         </li>
         <li>
-          <span class="time-badge">19:48</span> <span class="place-title">名古屋駅 出発【紙のきっぷで改札入場】➔ 金沢へ</span>
+          <span class="time-badge">19:48</span> <span class="place-title">名古屋駅 出発【紙のきっぷで改札入場】➔ 金沢へ <span class="mode-badge-solo">一人移動</span></span>
           <div class="desc-box">
             ① <strong>名古屋 19:48発 ➔ 敦賀 21:26着</strong>：特急しらさぎ15号（3号車 1番D席）<br>
             ② <strong>敦賀 21:42発 ➔ 金沢 22:39着</strong>：北陸新幹線つるぎ48号（6号車 18番E席）<br>
@@ -733,8 +767,8 @@
           </div>
         </li>
         <li>
-          <span class="time-badge">22:39</span> <span class="place-title">金沢駅 到着・解散</span>
-          <div class="desc-box">お疲れ様でした！すべての巡礼を無事達成です！</div>
+          <span class="time-badge">22:39</span> <span class="place-title">金沢駅 到着・全日程終了</span>
+          <div class="desc-box">お疲れ様でした！最高の巡礼旅でした！</div>
         </li>
       </ul>
     </div>
@@ -748,7 +782,7 @@
         
         <!-- 10/29 JR -->
         <div style="margin-bottom: 16px;">
-          <h3 style="font-size: 1.05rem; color: #1e3a8a; margin-bottom: 6px;">■ 10/29(木) 往路 JR新幹線・特急（金沢 ➔ 敦賀 ➔ 大阪）</h3>
+          <h3 style="font-size: 1.05rem; color: #1e3a8a; margin-bottom: 6px;">■ 10/29(木) 往路 JR新幹線・特急（金沢 ➔ 敦賀 ➔ 大阪）［1名］</h3>
           <p style="font-size: 0.93rem; color: #333;">
             <strong>【チケットレス乗車：紙のきっぷ発券不要】</strong><br>
             e5489「北陸・関西チケットレス」利用。紐付け済みの<strong>「Suica」</strong>を自動改札機にタッチするだけで通過できます。
@@ -757,7 +791,7 @@
 
         <!-- 近鉄特急 -->
         <div style="margin-bottom: 16px; border-top: 1px dashed #dcd4c7; padding-top: 14px;">
-          <h3 style="font-size: 1.05rem; color: #b91c1c; margin-bottom: 6px;">■ 10/30(金)・10/31(土) 近鉄特急（鶴橋 ➔ 伊勢市 / 伊勢市 ➔ 名古屋）</h3>
+          <h3 style="font-size: 1.05rem; color: #b91c1c; margin-bottom: 6px;">■ 10/30(金)・10/31(土) 近鉄特急（鶴橋 ➔ 伊勢市 / 伊勢市 ➔ 名古屋）［1名］</h3>
           <p style="font-size: 0.93rem; color: #333; line-height: 1.6;">
             <strong>【特急券のみチケットレス購入済み / 乗車券は別途必要】</strong><br>
             ・<strong>乗車券：</strong>別途購入が必要です。駅の改札機に<strong>交通系ICカード（Suica）をタッチ</strong>して入場してください。<br>
@@ -769,7 +803,7 @@
 
         <!-- 10/31 復路JR -->
         <div class="ticket-alert-box">
-          <div class="ticket-alert-title">⚠️ 【最重要】10/31(土) 復路 JR特急しらさぎ・新幹線つるぎの受取について</div>
+          <div class="ticket-alert-title">⚠️ 【最重要】10/31(土) 復路 JR特急しらさぎ・新幹線つるぎの受取について［1名］</div>
           <p style="color: #451a03; line-height: 1.6; margin-bottom: 8px;">
             この区間（JR東海区間を含む予約）はチケットレス非対応のため、<strong>必ず乗車前に紙のきっぷを発券・受取</strong>する必要があります。<br>
             <strong style="color:#b91c1c; font-size:1rem; text-decoration:underline;">名古屋駅での乗換時間（31分）は遅延や券売機の長蛇の列のリスクが極めて高いため、JR伊勢市駅での受取を強く推奨します！</strong>
@@ -814,7 +848,7 @@
             <td>
               <strong>【10/29(木) なんばグランド花月 本公演2回目 予約済み】</strong><br>
               ・開場 14:00 ／ 開演 14:30<br>
-              ・座席：1階指定席 P列 9番（前売・未発券）
+              ・座席：1階指定席 P列 9番（前売・未発券・1名）
             </td>
           </tr>
           <tr>
@@ -824,13 +858,13 @@
               <span style="color:#b91c1c; font-weight:bold;">※ 10分遅れで自動キャンセルのため、18:25には店頭集合</span>
             </td>
           </tr>
-          <tr><th>宿泊（1泊目）</th><td>10/29(木) FIVE HOTEL OSAKA（予約済み）</td></tr>
-          <tr><th>宿泊（2泊目）</th><td>10/30(金) 大江戸温泉物語Premium 鳥羽彩朝楽（予約済み）</td></tr>
+          <tr><th>宿泊（1泊目）</th><td>10/29(木) FIVE HOTEL OSAKA（予約済み・1名）</td></tr>
+          <tr><th>宿泊（2泊目）</th><td>10/30(金) 大江戸温泉物語Premium 鳥羽彩朝楽（予約済み・四人組）</td></tr>
           <tr>
             <th>レンタカー</th>
             <td>
               <strong>【タイムズカー伊勢店 予約済み】</strong><br>
-              ・貸出：10/30(金) 11:00 ➔ 契約返却：10/31(土) 17:00<br>
+              ・貸出：10/30(金) 11:00 ➔ 契約返却：10/31(土) 17:00（※四人利用）<br>
               ・車種：C-1クラス（コンパクト）／ 店舗TEL: 0596-25-5668<br>
               <span style="color:#d97706; font-size:0.88rem;">※ 運転免許証を必ずご持参ください</span>
             </td>
@@ -838,19 +872,19 @@
           <tr>
             <th>鉄道指定席<br>（全予約完了）</th>
             <td>
-              <strong>①【10/29(木) 往路 JR】Suicaチケットレス</strong><br>
+              <strong>①【10/29(木) 往路 JR】Suicaチケットレス（1名）</strong><br>
               ・金沢 08:40発 ➔ 敦賀 09:25着：つるぎ11号（10号車 2番E席）<br>
               ・敦賀 09:39発 ➔ 大阪 11:02着：サンダーバード12号（8号車 2番D席）<br><br>
 
-              <strong>②【10/30(金) 近鉄特急】特急券チケットレス（乗車券はSuica別途）</strong><br>
+              <strong>②【10/30(金) 近鉄特急】特急券チケットレス（乗車券はSuica別途・1名）</strong><br>
               ・鶴橋 09:14発 ➔ 伊勢市 10:55着：伊勢志摩ライナー（3号車 1A番）<br>
               ・予約番号：<code>A64339</code>（認証コード: 07014）<br><br>
 
-              <strong>③【10/31(土) 近鉄特急】特急券チケットレス（乗車券はSuica別途）</strong><br>
+              <strong>③【10/31(土) 近鉄特急】特急券チケットレス（乗車券はSuica別途・1名）</strong><br>
               ・伊勢市 17:54発 ➔ 近鉄名古屋 19:17着：特急（7号車 1A番）<br>
               ・予約番号：<code>A45866</code>（認証コード: 51265）<br><br>
 
-              <strong>④【10/31(土) 復路 JR】★JR伊勢市駅での事前受取を強く推奨（VISAカード要）</strong><br>
+              <strong>④【10/31(土) 復路 JR】★JR伊勢市駅での事前受取を強く推奨（VISAカード要・1名）</strong><br>
               ・名古屋 19:48発 ➔ 敦賀 21:26着：特急しらさぎ15号（3号車 1番D席）<br>
               ・敦賀 21:42発 ➔ 金沢 22:39着：北陸新幹線つるぎ48号（6号車 18番E席）
             </td>
