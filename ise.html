@@ -178,6 +178,25 @@
     border-left: 4px solid var(--secondary);
   }
 
+  /* チケット受け取り案内ボックス */
+  .ticket-alert-box {
+    background: #fffbeb;
+    border: 2px solid #f59e0b;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 14px;
+    font-size: 0.93rem;
+  }
+  .ticket-alert-title {
+    font-weight: bold;
+    color: #b45309;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
   /* スポット紹介グリッド */
   .spot-grid {
     display: grid;
@@ -271,7 +290,7 @@
 
     <!-- 🗺️ 改良版 地図セクション -->
     <div class="map-section">
-      <h2>🗺️ 巡礼ルート図（全体・大阪・伊勢）</h2>
+      <h2>🗺️️ 巡礼ルート図（全体・大阪・伊勢）</h2>
 
       <!-- ① 全体広域図 -->
       <div class="map-card">
@@ -296,7 +315,7 @@
             <circle cx="180" cy="95" r="10" fill="#2563eb" stroke="#fff" stroke-width="2.5"/>
             <rect x="65" y="30" width="230" height="48" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
             <text x="180" y="52" font-size="15" font-weight="bold" text-anchor="middle" fill="#1e3a8a">金沢駅（出発・帰着）</text>
-            <text x="180" y="70" font-size="12" text-anchor="middle" fill="#444">10/29 08:40発 ➔ 10/31 20:50着</text>
+            <text x="180" y="70" font-size="12" text-anchor="middle" fill="#444">10/29 08:40発 ➔ 10/31 22:39着</text>
 
             <!-- 敦賀駅 -->
             <circle cx="340" cy="150" r="8" fill="#2563eb" stroke="#fff" stroke-width="2"/>
@@ -314,13 +333,13 @@
             <circle cx="530" cy="250" r="9" fill="#dc2626" stroke="#fff" stroke-width="2.5"/>
             <rect x="475" y="275" width="220" height="52" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
             <text x="585" y="297" font-size="14" font-weight="bold" text-anchor="middle" fill="#991b1b">伊勢市駅（現地拠点）</text>
-            <text x="585" y="316" font-size="12" text-anchor="middle" fill="#444">10/30 10:55着・タイムズカー発着</text>
+            <text x="585" y="316" font-size="12" text-anchor="middle" fill="#444">10/30 10:55着 ➔ 10/31 17:54発</text>
 
             <!-- 名古屋駅 -->
             <circle cx="710" cy="140" r="9" fill="#059669" stroke="#fff" stroke-width="2.5"/>
-            <rect x="725" y="115" width="160" height="46" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
-            <text x="805" y="135" font-size="14" font-weight="bold" text-anchor="middle" fill="#065f46">名古屋駅（乗換）</text>
-            <text x="805" y="152" font-size="11" text-anchor="middle" fill="#555">近鉄特急 ➔ JR特急・新幹線</text>
+            <rect x="725" y="115" width="165" height="46" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+            <text x="807" y="135" font-size="14" font-weight="bold" text-anchor="middle" fill="#065f46">名古屋駅（乗換・受取）</text>
+            <text x="807" y="152" font-size="11" text-anchor="middle" fill="#555">近鉄 ➔ JRきっぷ受取 ➔ しらさぎ</text>
 
             <!-- 凡例 -->
             <rect x="25" y="315" width="180" height="48" rx="6" fill="#fff" stroke="#bbb"/>
@@ -462,8 +481,8 @@
             <text x="580" y="403" font-size="11" text-anchor="middle" fill="#444">倉田山の杜</text>
 
             <rect x="710" y="365" width="160" height="52" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
-            <text x="790" y="386" font-size="13" font-weight="bold" text-anchor="middle" fill="#b91c1c">タイムズカー 15:45返却</text>
-            <text x="790" y="404" font-size="11" font-weight="bold" text-anchor="middle" fill="#059669">➔ 16:15発 特急で名古屋へ</text>
+            <text x="790" y="386" font-size="13" font-weight="bold" text-anchor="middle" fill="#b91c1c">タイムズカー返却</text>
+            <text x="790" y="404" font-size="11" font-weight="bold" text-anchor="middle" fill="#059669">➔ 17:54発 近鉄特急へ</text>
           </svg>
         </div>
       </div>
@@ -544,10 +563,11 @@
       </div>
       <ul class="timeline">
         <li>
-          <span class="time-badge">08:40</span> <span class="place-title">金沢駅 出発</span>
+          <span class="time-badge">08:40</span> <span class="place-title">金沢駅 出発【JRチケットレス・Suica等】</span>
           <div class="desc-box">
             北陸新幹線「つるぎ11号」（金沢 08:40発 ➔ 敦賀 09:25着 / 10号車2番E席）。<br>
-            敦賀駅で特急サンダーバード12号に乗換（09:39発 ➔ 大阪 11:02着 / 8号車2番D席）。
+            敦賀駅で特急サンダーバード12号に乗換（09:39発 ➔ 大阪 11:02着 / 8号車2番D席）。<br>
+            <span style="color:#059669; font-weight:bold;">★ 北陸・関西チケットレス：登録済みSuica等の交通系ICカードでそのまま改札タッチ通過！</span>
           </div>
         </li>
         <li>
@@ -584,8 +604,12 @@
       </div>
       <ul class="timeline">
         <li>
-          <span class="time-badge">09:14</span> <span class="place-title">近鉄鶴橋駅 出発（特急 伊勢志摩ライナー 賢島行）</span>
-          <div class="desc-box">宿から駅へ徒歩で移動。乗り換えなしで快適に伊勢へ。</div>
+          <span class="time-badge">09:14</span> <span class="place-title">近鉄鶴橋駅 出発【近鉄チケットレス】</span>
+          <div class="desc-box">
+            <strong>特急 伊勢志摩ライナー 賢島行（6903列車 / 3号車 1A番）</strong><br>
+            ・予約番号：<code>A64339</code>（認証コード: 07014）<br>
+            <span style="color:#059669; font-weight:bold;">★ 近鉄チケットレス特急券：紙の切符受取は不要！乗車券は交通系ICカード（Suica等）で改札通過。</span>
+          </div>
         </li>
         <li>
           <span class="time-badge">10:55</span> <span class="place-title">伊勢市駅 到着 ➔ タイムズカー伊勢店へ</span>
@@ -644,35 +668,93 @@
           <div class="desc-box">赤福本店の一服、てこね寿司・松阪牛串などの食べ歩きとお土産選び。</div>
         </li>
         <li>
-          <span class="time-badge">14:25</span> <span class="place-title">⑦ 皇大神宮別宮 月讀宮 参拝</span>
+          <span class="time-badge">14:40</span> <span class="place-title">⑦ 皇大神宮別宮 月讀宮 参拝</span>
           <div class="desc-box">おかげ横丁から車で約5分。社殿が4つ並ぶ独特の別宮を決められた順路でお参り。</div>
         </li>
         <li>
-          <span class="time-badge">15:00</span> <span class="place-title">⑧ 倭姫宮 参拝</span>
+          <span class="time-badge">15:30</span> <span class="place-title">⑧ 倭姫宮 参拝</span>
           <div class="desc-box">車で約5分。倉田山の美しい森に囲まれた静謐な別宮を参拝。</div>
         </li>
         <li>
-          <span class="time-badge">15:45</span> <span class="place-title">タイムズカー伊勢店 車両返却</span>
-          <div class="desc-box">ガソリン満タンで返却（※契約上は17:00まで利用可能なので万が一の渋滞時も安心）。徒歩で伊勢市駅へ。</div>
+          <span class="time-badge">16:45〜17:00</span> <span class="place-title">タイムズカー伊勢店 車両返却</span>
+          <div class="desc-box">ガソリン満タンで返却。徒歩で伊勢市駅へ移動（お土産購入・JR伊勢市駅でのきっぷ受取も可能）。</div>
         </li>
         <li>
-          <span class="time-badge">16:15</span> <span class="place-title">伊勢市駅 出発（近鉄特急 近鉄名古屋行）</span>
-          <div class="desc-box">近鉄特急で名古屋駅へ（17:37着）。名駅で名物弁当を調達。</div>
+          <span class="time-badge">17:54</span> <span class="place-title">伊勢市駅 出発【近鉄チケットレス】➔ 近鉄名古屋 19:17着</span>
+          <div class="desc-box">
+            <strong>近鉄特急 近鉄名古屋行（1712列車 / 7号車 1A番）</strong><br>
+            ・予約番号：<code>A45866</code>（認証コード: 51265）<br>
+            <span style="color:#059669; font-weight:bold;">★ 近鉄チケットレス特急券：紙の切符受取は不要！乗車券は交通系ICカード（Suica等）で改札通過。</span>
+          </div>
         </li>
         <li>
-          <span class="time-badge">18:00頃</span> <span class="place-title">名古屋駅 出発（敦賀乗換・北陸新幹線）</span>
-          <div class="desc-box">特急しらさぎ（または東海道新幹線米原経由）＋北陸新幹線つるぎ。</div>
+          <span class="time-badge">19:17〜19:48</span> <span class="place-title">JR名古屋駅 乗換 ＆ きっぷ受取（乗換時間31分）</span>
+          <div class="desc-box">
+            近鉄からJR乗換口へ移動。駅弁調達と、<strong>JR東海の「指定席券売機」でJR復路の紙のきっぷを発券・受取</strong>を行います。
+          </div>
         </li>
         <li>
-          <span class="time-badge">20:50頃</span> <span class="place-title">金沢駅 到着・解散</span>
-          <div class="desc-box">お疲れ様でした！最高の巡礼旅でした！</div>
+          <span class="time-badge">19:48</span> <span class="place-title">名古屋駅 出発【要・紙のきっぷ】➔ 金沢へ</span>
+          <div class="desc-box">
+            ① <strong>名古屋 19:48発 ➔ 敦賀 21:26着</strong>：特急しらさぎ15号（3号車 1番D席）<br>
+            ② <strong>敦賀 21:42発 ➔ 金沢 22:39着</strong>：北陸新幹線つるぎ48号（6号車 18番E席）<br>
+            <span style="color:#b91c1c; font-weight:bold;">※ 名古屋駅（またはJR伊勢市駅）で発券した紙のきっぷを通勤改札機に投入してご乗車ください。</span>
+          </div>
+        </li>
+        <li>
+          <span class="time-badge">22:39</span> <span class="place-title">金沢駅 到着・解散</span>
+          <div class="desc-box">お疲れ様でした！すべての巡礼を無事達成です！</div>
         </li>
       </ul>
     </div>
 
+    <!-- 🎫 切符受取・乗車方式案内カード -->
+    <div class="day-card" style="border: 2px solid var(--secondary);">
+      <div class="day-header" style="background: #fdf6e7;">
+        <span class="day-title" style="color: #92400e;">🎫 切符の乗車方式・発券ガイド（必ずご確認ください）</span>
+      </div>
+      <div style="padding: 18px 20px;">
+        
+        <div style="margin-bottom: 16px;">
+          <h3 style="font-size: 1.05rem; color: #1e3a8a; margin-bottom: 6px;">■ 10/29(木) 往路 JR新幹線・特急</h3>
+          <p style="font-size: 0.93rem; color: #333;">
+            <strong>【チケットレス乗車（紙のきっぷ発券不要）】</strong><br>
+            e5489の「北陸・関西チケットレス」です。事前に紐付けた<strong>交通系ICカード（Suica等）</strong>を自動改札機にタッチするだけで、金沢駅・敦賀駅・大阪駅をスムーズに通過できます。
+          </p>
+        </div>
+
+        <div style="margin-bottom: 16px; border-top: 1px dashed #dcd4c7; padding-top: 14px;">
+          <h3 style="font-size: 1.05rem; color: #b91c1c; margin-bottom: 6px;">■ 10/30(金)・10/31(土) 近鉄特急（鶴橋↔伊勢市・伊勢市➔名古屋）</h3>
+          <p style="font-size: 0.93rem; color: #333;">
+            <strong>【チケットレス特急券（紙の特急券発券不要）】</strong><br>
+            特急券はチケットレス購入済みです。乗車券は<strong>交通系ICカード（Suica等）</strong>でそのまま自動改札をタッチ通過できます。車内で車掌に提示を求められた場合のみ、スマホの予約画面をご提示ください。
+          </p>
+        </div>
+
+        <div class="ticket-alert-box">
+          <div class="ticket-alert-title">⚠️ 【重要】10/31(土) 復路 JR特急しらさぎ・新幹線つるぎの受取方法</div>
+          <p style="color: #451a03; line-height: 1.6; margin-bottom: 8px;">
+            この区間（JR東海区間を含む予約）はチケットレス非対応のため、<strong>必ず乗車前に紙のきっぷを発券・受取</strong>する必要があります。
+          </p>
+          <div style="background: #fff; padding: 12px; border-radius: 6px; border: 1px solid #fcd34d; font-size: 0.9rem; color: #222;">
+            <strong>【受取場所】：</strong><br>
+            ・<strong>JR名古屋駅</strong>：JR東海の「指定席券売機」または「きっぷうりば」（乗換口付近に多数あり）<br>
+            ・または <strong>JR伊勢市駅</strong>：JR東海の指定席券売機（外宮側・JR改札口付近）でも受取可能<br><br>
+            <strong>【受取に必要なもの】：</strong><br>
+            ① 決済時に使用した<strong>クレジットカード</strong><br>
+            ② <strong>予約番号</strong>（e5489の予約詳細画面に記載の数字）<br>
+            ③ 登録した<strong>電話番号（下4桁）</strong><br><br>
+            <strong>【受取手順（券売機）】：</strong><br>
+            画面の「予約したきっぷのお受取り」➔「JR西日本 e5489の受取り」を選択 ➔ クレジットカードを挿入 ➔ 画面の案内に沿って発券。
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <!-- 予約リスト -->
     <div class="day-card">
-      <div class="day-header"><span class="day-title">📋 旅の事前準備・手配リスト</span></div>
+      <div class="day-header"><span class="day-title">📋 旅の事前準備・手配リスト（全手配完了）</span></div>
       <div style="padding: 16px 20px;">
         <table>
           <tr>
@@ -689,18 +771,29 @@
             <th>レンタカー</th>
             <td>
               <strong>【タイムズカー伊勢店 予約済み】</strong><br>
-              ・貸出：10/30(金) 11:00 ➔ 契約返却：10/31(土) 17:00（※予定は15:45返却）<br>
+              ・貸出：10/30(金) 11:00 ➔ 契約返却：10/31(土) 17:00<br>
               ・車種：C-1クラス（コンパクト）／ 店舗TEL: 0596-25-5668<br>
               <span style="color:#d97706; font-size:0.88rem;">※ 運転免許証・ETCカードを必ずご持参ください</span>
             </td>
           </tr>
           <tr>
-            <th>鉄道指定席</th>
+            <th>鉄道指定席<br>（全予約完了）</th>
             <td>
-              <strong>【往路 10/29(木) 予約済み】</strong><br>
-              ・金沢 08:40発 ➔ 敦賀 09:25着：つるぎ11号（10号車2番E席）<br>
-              ・敦賀 09:39発 ➔ 大阪 11:02着：サンダーバード12号（8号車2番D席）<br>
-              <span style="color:#666; font-size:0.9rem;">※ 10/30朝 近鉄特急、10/31夕 近鉄特急・帰路JRは順次手配</span>
+              <strong>①【10/29(木) 往路 JR】チケットレス・Suica等</strong><br>
+              ・金沢 08:40発 ➔ 敦賀 09:25着：つるぎ11号（10号車 2番E席）<br>
+              ・敦賀 09:39発 ➔ 大阪 11:02着：サンダーバード12号（8号車 2番D席）<br><br>
+
+              <strong>②【10/30(金) 近鉄特急】チケットレス</strong><br>
+              ・鶴橋 09:14発 ➔ 伊勢市 10:55着：伊勢志摩ライナー（3号車 1A番）<br>
+              ・予約番号：<code>A64339</code>（認証コード: 07014）<br><br>
+
+              <strong>③【10/31(土) 近鉄特急】チケットレス</strong><br>
+              ・伊勢市 17:54発 ➔ 近鉄名古屋 19:17着：特急（7号車 1A番）<br>
+              ・予約番号：<code>A45866</code>（認証コード: 51265）<br><br>
+
+              <strong>④【10/31(土) 復路 JR】★名古屋駅または伊勢市駅で紙のきっぷ受取必須</strong><br>
+              ・名古屋 19:48発 ➔ 敦賀 21:26着：特急しらさぎ15号（3号車 1番D席）<br>
+              ・敦賀 21:42発 ➔ 金沢 22:39着：北陸新幹線つるぎ48号（6号車 18番E席）
             </td>
           </tr>
         </table>
