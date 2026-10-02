@@ -178,23 +178,40 @@
     border-left: 4px solid var(--secondary);
   }
 
-  /* チケット受け取り案内ボックス */
+  /* チケット受け取り・案内ボックス */
   .ticket-alert-box {
     background: #fffbeb;
-    border: 2px solid #f59e0b;
+    border: 2px solid #d97706;
     border-radius: 8px;
-    padding: 16px 20px;
+    padding: 18px 20px;
     margin-top: 14px;
-    font-size: 0.93rem;
+    font-size: 0.95rem;
   }
   .ticket-alert-title {
     font-weight: bold;
     color: #b45309;
-    font-size: 1.05rem;
-    margin-bottom: 6px;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
     gap: 6px;
+  }
+  .highlight-badge {
+    display: inline-block;
+    background: #fef3c7;
+    border: 1.5px solid #d97706;
+    color: #92400e;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+  .step-box {
+    background: #fff;
+    border: 1px solid #fed7aa;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-top: 10px;
   }
 
   /* スポット紹介グリッド */
@@ -290,7 +307,7 @@
 
     <!-- 🗺️ 改良版 地図セクション -->
     <div class="map-section">
-      <h2>🗺️️ 巡礼ルート図（全体・大阪・伊勢）</h2>
+      <h2>🗺️ 巡礼ルート図（全体・大阪・伊勢）</h2>
 
       <!-- ① 全体広域図 -->
       <div class="map-card">
@@ -333,13 +350,13 @@
             <circle cx="530" cy="250" r="9" fill="#dc2626" stroke="#fff" stroke-width="2.5"/>
             <rect x="475" y="275" width="220" height="52" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
             <text x="585" y="297" font-size="14" font-weight="bold" text-anchor="middle" fill="#991b1b">伊勢市駅（現地拠点）</text>
-            <text x="585" y="316" font-size="12" text-anchor="middle" fill="#444">10/30 10:55着 ➔ 10/31 17:54発</text>
+            <text x="585" y="316" font-size="12" font-weight="bold" text-anchor="middle" fill="#d97706">★JR復路きっぷ事前受取推奨駅</text>
 
             <!-- 名古屋駅 -->
             <circle cx="710" cy="140" r="9" fill="#059669" stroke="#fff" stroke-width="2.5"/>
             <rect x="725" y="115" width="165" height="46" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
-            <text x="807" y="135" font-size="14" font-weight="bold" text-anchor="middle" fill="#065f46">名古屋駅（乗換・受取）</text>
-            <text x="807" y="152" font-size="11" text-anchor="middle" fill="#555">近鉄 ➔ JRきっぷ受取 ➔ しらさぎ</text>
+            <text x="807" y="135" font-size="14" font-weight="bold" text-anchor="middle" fill="#065f46">名古屋駅（乗換）</text>
+            <text x="807" y="152" font-size="11" text-anchor="middle" fill="#555">近鉄 ➔ JR乗換（31分）➔ しらさぎ</text>
 
             <!-- 凡例 -->
             <rect x="25" y="315" width="180" height="48" rx="6" fill="#fff" stroke="#bbb"/>
@@ -482,7 +499,7 @@
 
             <rect x="710" y="365" width="160" height="52" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
             <text x="790" y="386" font-size="13" font-weight="bold" text-anchor="middle" fill="#b91c1c">タイムズカー返却</text>
-            <text x="790" y="404" font-size="11" font-weight="bold" text-anchor="middle" fill="#059669">➔ 17:54発 近鉄特急へ</text>
+            <text x="790" y="404" font-size="11" font-weight="bold" text-anchor="middle" fill="#059669">➔ 伊勢市駅できっぷ受取推奨</text>
           </svg>
         </div>
       </div>
@@ -563,11 +580,11 @@
       </div>
       <ul class="timeline">
         <li>
-          <span class="time-badge">08:40</span> <span class="place-title">金沢駅 出発【JRチケットレス・Suica等】</span>
+          <span class="time-badge">08:40</span> <span class="place-title">金沢駅 出発【JRチケットレス：Suica利用】</span>
           <div class="desc-box">
             北陸新幹線「つるぎ11号」（金沢 08:40発 ➔ 敦賀 09:25着 / 10号車2番E席）。<br>
             敦賀駅で特急サンダーバード12号に乗換（09:39発 ➔ 大阪 11:02着 / 8号車2番D席）。<br>
-            <span style="color:#059669; font-weight:bold;">★ 北陸・関西チケットレス：登録済みSuica等の交通系ICカードでそのまま改札タッチ通過！</span>
+            <span style="color:#059669; font-weight:bold;">★ 北陸・関西チケットレス：登録済み「Suica」で自動改札機をそのままタッチ通過！紙の切符は不要です。</span>
           </div>
         </li>
         <li>
@@ -604,18 +621,20 @@
       </div>
       <ul class="timeline">
         <li>
-          <span class="time-badge">09:14</span> <span class="place-title">近鉄鶴橋駅 出発【近鉄チケットレス】</span>
+          <span class="time-badge">09:14</span> <span class="place-title">近鉄鶴橋駅 出発【特急券チケットレス / 乗車券別途】</span>
           <div class="desc-box">
             <strong>特急 伊勢志摩ライナー 賢島行（6903列車 / 3号車 1A番）</strong><br>
             ・予約番号：<code>A64339</code>（認証コード: 07014）<br>
-            <span style="color:#059669; font-weight:bold;">★ 近鉄チケットレス特急券：紙の切符受取は不要！乗車券は交通系ICカード（Suica等）で改札通過。</span>
+            <span style="color:#b91c1c; font-weight:bold;">⚠️️ 注意：特急券のみ購入済みです。乗車券（運賃）は交通系ICカード（Suica等）の自動改札タッチ、または券売機で購入が必要です。</span><br>
+            <span style="color:#059669; font-weight:bold;">★ 車内提示方法：乗務員に特急券の提示を求められた際は、スマホの予約照会画面から【乗車日・予約番号・メールアドレス】を入力して表示した画面を提示します。</span>
           </div>
         </li>
         <li>
           <span class="time-badge">10:55</span> <span class="place-title">伊勢市駅 到着 ➔ タイムズカー伊勢店へ</span>
           <div class="desc-box">
             駅から徒歩約4分で店舗へ（TEL: 0596-25-5668）。<br>
-            <strong>11:00 貸出手続き（C-1クラス・コンパクト）</strong>。荷物はトランクに積んだまま身軽に出発！
+            <strong>11:00 貸出手続き（C-1クラス・コンパクト）</strong>。荷物はトランクに積んだまま身軽に出発！<br>
+            <span style="color:#d97706; font-size:0.9rem;">※ 時間に余裕があれば、駅到着時に改札口付近で翌日のJR復路きっぷを事前発券しておくことも可能です。</span>
           </div>
         </li>
         <li>
@@ -677,28 +696,36 @@
         </li>
         <li>
           <span class="time-badge">16:45〜17:00</span> <span class="place-title">タイムズカー伊勢店 車両返却</span>
-          <div class="desc-box">ガソリン満タンで返却。徒歩で伊勢市駅へ移動（お土産購入・JR伊勢市駅でのきっぷ受取も可能）。</div>
+          <div class="desc-box">ガソリン満タンで返却。徒歩約4分で伊勢市駅へ。</div>
         </li>
         <li>
-          <span class="time-badge">17:54</span> <span class="place-title">伊勢市駅 出発【近鉄チケットレス】➔ 近鉄名古屋 19:17着</span>
+          <span class="time-badge" style="background:#b45309;">17:10〜17:45</span> <span class="place-title" style="color:#b45309;">★【超推奨】JR伊勢市駅にて復路JRきっぷを発券・受取！</span>
+          <div class="desc-box" style="border-left:4px solid #b45309; background:#fffdf5;">
+            <strong>※名古屋駅での乗換時間は31分しかなく、混雑や列車の遅延リスクが高いため、必ずここ「JR伊勢市駅」で事前に発券してください！</strong><br>
+            JR伊勢市駅の指定席券売機にて、<strong>決済VISAカード</strong>、<strong>予約番号</strong>、<strong>電話番号下4桁</strong>を用いて発券します。（※詳細は下記の切符ガイド参照）
+          </div>
+        </li>
+        <li>
+          <span class="time-badge">17:54</span> <span class="place-title">伊勢市駅 出発【特急券チケットレス / 乗車券別途】➔ 近鉄名古屋 19:17着</span>
           <div class="desc-box">
             <strong>近鉄特急 近鉄名古屋行（1712列車 / 7号車 1A番）</strong><br>
             ・予約番号：<code>A45866</code>（認証コード: 51265）<br>
-            <span style="color:#059669; font-weight:bold;">★ 近鉄チケットレス特急券：紙の切符受取は不要！乗車券は交通系ICカード（Suica等）で改札通過。</span>
+            <span style="color:#b91c1c; font-weight:bold;">⚠️ 注意：特急券のみ購入済み。乗車券は交通系ICカード（Suica等）でタッチ通過。</span><br>
+            <span style="color:#059669; font-weight:bold;">★ 車内提示方法：スマホ画面から【乗車日・予約番号・メールアドレス】を入力して表示。</span>
           </div>
         </li>
         <li>
-          <span class="time-badge">19:17〜19:48</span> <span class="place-title">JR名古屋駅 乗換 ＆ きっぷ受取（乗換時間31分）</span>
+          <span class="time-badge">19:17〜19:48</span> <span class="place-title">近鉄名古屋 ➔ JR名古屋駅 乗換（乗換時間31分）</span>
           <div class="desc-box">
-            近鉄からJR乗換口へ移動。駅弁調達と、<strong>JR東海の「指定席券売機」でJR復路の紙のきっぷを発券・受取</strong>を行います。
+            伊勢市駅できっぷを発券済みなため、慌てることなく近鉄からJR乗換口へ直行可能！駅弁や手羽先などの夕食・お酒を調達してJR在来線ホームへ。
           </div>
         </li>
         <li>
-          <span class="time-badge">19:48</span> <span class="place-title">名古屋駅 出発【要・紙のきっぷ】➔ 金沢へ</span>
+          <span class="time-badge">19:48</span> <span class="place-title">名古屋駅 出発【紙のきっぷで改札入場】➔ 金沢へ</span>
           <div class="desc-box">
             ① <strong>名古屋 19:48発 ➔ 敦賀 21:26着</strong>：特急しらさぎ15号（3号車 1番D席）<br>
             ② <strong>敦賀 21:42発 ➔ 金沢 22:39着</strong>：北陸新幹線つるぎ48号（6号車 18番E席）<br>
-            <span style="color:#b91c1c; font-weight:bold;">※ 名古屋駅（またはJR伊勢市駅）で発券した紙のきっぷを通勤改札機に投入してご乗車ください。</span>
+            <span style="color:#b91c1c; font-weight:bold;">※ 伊勢市駅で発券した紙のきっぷを改札機に通してご乗車ください。</span>
           </div>
         </li>
         <li>
@@ -711,41 +738,62 @@
     <!-- 🎫 切符受取・乗車方式案内カード -->
     <div class="day-card" style="border: 2px solid var(--secondary);">
       <div class="day-header" style="background: #fdf6e7;">
-        <span class="day-title" style="color: #92400e;">🎫 切符の乗車方式・発券ガイド（必ずご確認ください）</span>
+        <span class="day-title" style="color: #92400e;">🎫 切符の乗車方式・発券ガイド（超重要・必ず確認）</span>
       </div>
       <div style="padding: 18px 20px;">
         
+        <!-- 10/29 JR -->
         <div style="margin-bottom: 16px;">
-          <h3 style="font-size: 1.05rem; color: #1e3a8a; margin-bottom: 6px;">■ 10/29(木) 往路 JR新幹線・特急</h3>
+          <h3 style="font-size: 1.05rem; color: #1e3a8a; margin-bottom: 6px;">■ 10/29(木) 往路 JR新幹線・特急（金沢 ➔ 敦賀 ➔ 大阪）</h3>
           <p style="font-size: 0.93rem; color: #333;">
-            <strong>【チケットレス乗車（紙のきっぷ発券不要）】</strong><br>
-            e5489の「北陸・関西チケットレス」です。事前に紐付けた<strong>交通系ICカード（Suica等）</strong>を自動改札機にタッチするだけで、金沢駅・敦賀駅・大阪駅をスムーズに通過できます。
+            <strong>【チケットレス乗車：紙のきっぷ発券不要】</strong><br>
+            e5489「北陸・関西チケットレス」利用。紐付け済みの<strong>「Suica」</strong>を自動改札機にタッチするだけで通過できます。
           </p>
         </div>
 
+        <!-- 近鉄特急 -->
         <div style="margin-bottom: 16px; border-top: 1px dashed #dcd4c7; padding-top: 14px;">
-          <h3 style="font-size: 1.05rem; color: #b91c1c; margin-bottom: 6px;">■ 10/30(金)・10/31(土) 近鉄特急（鶴橋↔伊勢市・伊勢市➔名古屋）</h3>
-          <p style="font-size: 0.93rem; color: #333;">
-            <strong>【チケットレス特急券（紙の特急券発券不要）】</strong><br>
-            特急券はチケットレス購入済みです。乗車券は<strong>交通系ICカード（Suica等）</strong>でそのまま自動改札をタッチ通過できます。車内で車掌に提示を求められた場合のみ、スマホの予約画面をご提示ください。
+          <h3 style="font-size: 1.05rem; color: #b91c1c; margin-bottom: 6px;">■ 10/30(金)・10/31(土) 近鉄特急（鶴橋 ➔ 伊勢市 / 伊勢市 ➔ 名古屋）</h3>
+          <p style="font-size: 0.93rem; color: #333; line-height: 1.6;">
+            <strong>【特急券のみチケットレス購入済み / 乗車券は別途必要】</strong><br>
+            ・<strong>乗車券：</strong>別途購入が必要です。駅の改札機に<strong>交通系ICカード（Suica）をタッチ</strong>して入場してください。<br>
+            ・<strong>特急券（車内提示方法）：</strong>紙の特急券はありません。車掌に提示を求められた際は、近鉄チケットレスのスマホ照会画面にて<br>
+             <span class="highlight-badge">① 乗車日</span> ＋ <span class="highlight-badge">② 予約番号</span> ＋ <span class="highlight-badge">③ 登録メールアドレス</span><br>
+             を入力し、画面に表示された特急券面を乗務員にご提示ください。
           </p>
         </div>
 
+        <!-- 10/31 復路JR -->
         <div class="ticket-alert-box">
-          <div class="ticket-alert-title">⚠️ 【重要】10/31(土) 復路 JR特急しらさぎ・新幹線つるぎの受取方法</div>
+          <div class="ticket-alert-title">⚠️ 【最重要】10/31(土) 復路 JR特急しらさぎ・新幹線つるぎの受取について</div>
           <p style="color: #451a03; line-height: 1.6; margin-bottom: 8px;">
-            この区間（JR東海区間を含む予約）はチケットレス非対応のため、<strong>必ず乗車前に紙のきっぷを発券・受取</strong>する必要があります。
+            この区間（JR東海区間を含む予約）はチケットレス非対応のため、<strong>必ず乗車前に紙のきっぷを発券・受取</strong>する必要があります。<br>
+            <strong style="color:#b91c1c; font-size:1rem; text-decoration:underline;">名古屋駅での乗換時間（31分）は遅延や券売機の長蛇の列のリスクが極めて高いため、JR伊勢市駅での受取を強く推奨します！</strong>
           </p>
-          <div style="background: #fff; padding: 12px; border-radius: 6px; border: 1px solid #fcd34d; font-size: 0.9rem; color: #222;">
-            <strong>【受取場所】：</strong><br>
-            ・<strong>JR名古屋駅</strong>：JR東海の「指定席券売機」または「きっぷうりば」（乗換口付近に多数あり）<br>
-            ・または <strong>JR伊勢市駅</strong>：JR東海の指定席券売機（外宮側・JR改札口付近）でも受取可能<br><br>
-            <strong>【受取に必要なもの】：</strong><br>
-            ① 決済時に使用した<strong>クレジットカード</strong><br>
-            ② <strong>予約番号</strong>（e5489の予約詳細画面に記載の数字）<br>
-            ③ 登録した<strong>電話番号（下4桁）</strong><br><br>
-            <strong>【受取手順（券売機）】：</strong><br>
-            画面の「予約したきっぷのお受取り」➔「JR西日本 e5489の受取り」を選択 ➔ クレジットカードを挿入 ➔ 画面の案内に沿って発券。
+
+          <div class="step-box">
+            <h4 style="color:#92400e; font-size:1rem; margin-bottom:6px;">📍 受取推奨場所：【JR伊勢市駅】指定席券売機（外宮側・JR改札付近）</h4>
+            <p style="font-size:0.9rem; color:#444; margin-bottom:10px;">
+              受取タイミング：10/30(金) 伊勢市駅到着時、または 10/31(土) レンタカー返却後の出発前（17:10〜17:45）
+            </p>
+
+            <h4 style="color:#92400e; font-size:1rem; margin-bottom:6px;">💳 券売機で必要な情報（★超重要・太字）</h4>
+            <div style="background:#fef2f2; border:1px solid #f87171; padding:10px; border-radius:6px; margin-bottom:10px;">
+              <ul style="list-style:none; padding-left:0; font-size:0.95rem; line-height:1.8;">
+                <li>１．<strong>決済に使用したクレジットカード（VISA）</strong>（※暗証番号が必要です）</li>
+                <li>２．<strong>予約番号</strong>（※e5489予約完了メールまたは予約確認画面に記載の数字）</li>
+                <li>３．<strong>登録した電話番号の下4桁</strong></li>
+              </ul>
+            </div>
+
+            <h4 style="color:#92400e; font-size:1rem; margin-bottom:6px;">📱 券売機の操作手順（ステップ）</h4>
+            <ol style="padding-left:22px; font-size:0.92rem; line-height:1.7; color:#222;">
+              <li>券売機トップ画面の<strong>「予約したきっぷのお受取り」</strong>をタッチ</li>
+              <li><strong>「JR西日本 e5489の受取り」</strong>を選択</li>
+              <li><strong>決済で使用したVISAクレジットカード</strong>を挿入</li>
+              <li>画面の指示に従い、<strong>予約番号</strong>および<strong>電話番号下4桁</strong>を入力</li>
+              <li>発券内容（名古屋➔金沢）を確認し、<strong>紙のきっぷ（乗車券・特急指定席券）</strong>を受け取る</li>
+            </ol>
           </div>
         </div>
 
@@ -779,19 +827,19 @@
           <tr>
             <th>鉄道指定席<br>（全予約完了）</th>
             <td>
-              <strong>①【10/29(木) 往路 JR】チケットレス・Suica等</strong><br>
+              <strong>①【10/29(木) 往路 JR】Suicaチケットレス</strong><br>
               ・金沢 08:40発 ➔ 敦賀 09:25着：つるぎ11号（10号車 2番E席）<br>
               ・敦賀 09:39発 ➔ 大阪 11:02着：サンダーバード12号（8号車 2番D席）<br><br>
 
-              <strong>②【10/30(金) 近鉄特急】チケットレス</strong><br>
+              <strong>②【10/30(金) 近鉄特急】特急券チケットレス（乗車券はSuica別途）</strong><br>
               ・鶴橋 09:14発 ➔ 伊勢市 10:55着：伊勢志摩ライナー（3号車 1A番）<br>
               ・予約番号：<code>A64339</code>（認証コード: 07014）<br><br>
 
-              <strong>③【10/31(土) 近鉄特急】チケットレス</strong><br>
+              <strong>③【10/31(土) 近鉄特急】特急券チケットレス（乗車券はSuica別途）</strong><br>
               ・伊勢市 17:54発 ➔ 近鉄名古屋 19:17着：特急（7号車 1A番）<br>
               ・予約番号：<code>A45866</code>（認証コード: 51265）<br><br>
 
-              <strong>④【10/31(土) 復路 JR】★名古屋駅または伊勢市駅で紙のきっぷ受取必須</strong><br>
+              <strong>④【10/31(土) 復路 JR】★JR伊勢市駅での事前受取を強く推奨（VISAカード要）</strong><br>
               ・名古屋 19:48発 ➔ 敦賀 21:26着：特急しらさぎ15号（3号車 1番D席）<br>
               ・敦賀 21:42発 ➔ 金沢 22:39着：北陸新幹線つるぎ48号（6号車 18番E席）
             </td>
