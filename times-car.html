@@ -2,1740 +2,1359 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>タイムズカー情報漏えいとレンタカー利用・不審メールへの注意</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+               maximum-scale=1.0, user-scalable=no">
+
+<title>タイムズカー情報漏えいとレンタカー利用の関係・フィッシング対策</title>
 
 <style>
 /* =========================
    基本設定
 ========================= */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  font-size: 17px;
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    background: #f2f5f8;
-    color: #30343b;
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Hiragino Kaku Gothic ProN",
-        "Yu Gothic",
-        "Meiryo",
-        sans-serif;
-    font-size: 16px;
-    line-height: 1.85;
+  margin: 0;
+  padding: 0;
+  background: #f3f6f9;
+  color: #263238;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Noto Sans JP",
+    "Yu Gothic",
+    "Hiragino Kaku Gothic ProN",
+    Meiryo,
+    sans-serif;
+  line-height: 1.95;
+  -webkit-text-size-adjust: 100%;
 }
 
 .container {
-    width: 100%;
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 18px 14px 50px;
-}
-
-a {
-    color: #1769aa;
-    word-break: break-all;
+  width: min(100% - 32px, 900px);
+  margin: 0 auto;
 }
 
 /* =========================
    ヒーロー
 ========================= */
 .hero {
-    position: relative;
-    overflow: hidden;
-    color: #fff;
-    background:
-        linear-gradient(135deg, #173f68 0%, #236da6 55%, #3188bd 100%);
-    border-radius: 20px;
-    padding: 34px 25px 32px;
-    margin-bottom: 18px;
-    box-shadow: 0 10px 28px rgba(18, 57, 90, 0.18);
+  margin: 0 0 24px;
+  padding: 30px 20px 32px;
+  background: linear-gradient(145deg, #123b5d, #1d6585);
+  color: #fff;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 5px 18px rgba(0,0,0,.12);
 }
 
-.hero::after {
-    content: "!";
-    position: absolute;
-    right: 20px;
-    bottom: -30px;
-    font-size: 150px;
-    line-height: 1;
-    font-weight: 900;
-    color: rgba(255,255,255,0.06);
-}
-
-.hero-label {
-    display: inline-block;
-    padding: 5px 12px;
-    border: 1px solid rgba(255,255,255,0.35);
-    border-radius: 30px;
-    background: rgba(255,255,255,0.12);
-    font-size: 12px;
-    letter-spacing: .04em;
-    margin-bottom: 12px;
+.hero .label {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.16);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .04em;
 }
 
 .hero h1 {
-    position: relative;
-    z-index: 1;
-    margin: 0 0 12px;
-    font-size: 28px;
-    line-height: 1.45;
-    letter-spacing: .01em;
+  margin: 0 0 14px;
+  font-size: 27px;
+  line-height: 1.45;
+  letter-spacing: .01em;
 }
 
 .hero p {
-    position: relative;
-    z-index: 1;
-    margin: 0;
-    font-size: 14px;
-    opacity: .95;
-}
-
-/* =========================
-   最重要結論
-========================= */
-.main-conclusion {
-    background: #fff;
-    border-radius: 18px;
-    padding: 24px 21px;
-    margin-bottom: 18px;
-    border: 3px solid #2e75b6;
-    box-shadow: 0 6px 20px rgba(0,0,0,.07);
-}
-
-.conclusion-title {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    color: #174d7c;
-    font-size: 20px;
-    font-weight: 800;
-    margin-bottom: 13px;
-}
-
-.circle-check {
-    width: 31px;
-    height: 31px;
-    flex: 0 0 31px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #2e75b6;
-    color: #fff;
-    font-weight: bold;
-}
-
-.main-conclusion .lead {
-    margin: 0;
-    color: #174d7c;
-    font-size: 17px;
-    font-weight: 700;
-}
-
-.note-yellow {
-    margin-top: 17px;
-    padding: 15px 16px;
-    background: #fff8dc;
-    border-left: 5px solid #e1ae22;
-    border-radius: 7px;
-    font-size: 14px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255,255,255,.94);
 }
 
 /* =========================
    セクション
 ========================= */
-.section {
-    background: #fff;
-    border-radius: 17px;
-    padding: 25px 21px;
-    margin-bottom: 18px;
-    box-shadow: 0 4px 16px rgba(0,0,0,.055);
+section {
+  margin: 0 0 24px;
 }
 
-.section h2 {
-    margin: 0 0 20px;
-    padding: 0 0 11px;
-    border-bottom: 2px solid #e5edf4;
-    color: #174d7c;
-    font-size: 21px;
-    line-height: 1.5;
+.card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px 19px;
+  margin-bottom: 18px;
+  box-shadow: 0 3px 12px rgba(31,45,61,.07);
 }
 
-.section h3 {
-    margin: 22px 0 10px;
-    color: #236da6;
-    font-size: 18px;
+h2 {
+  margin: 0 0 17px;
+  padding-left: 13px;
+  border-left: 5px solid #1976a8;
+  font-size: 23px;
+  line-height: 1.45;
+  color: #153d56;
 }
 
-.section p {
-    margin: 0 0 14px;
+h3 {
+  margin: 20px 0 9px;
+  font-size: 19px;
+  line-height: 1.5;
+  color: #174f70;
+}
+
+p {
+  margin: 0 0 14px;
+}
+
+p:last-child {
+  margin-bottom: 0;
 }
 
 /* =========================
-   サービス比較
+   強調
 ========================= */
-.compare {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin: 18px 0;
+.lead {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.85;
 }
 
-.service {
-    border-radius: 14px;
-    padding: 20px 17px;
+strong {
+  color: #123f5a;
 }
 
-.service.carshare {
-    background: #edf6ff;
-    border: 2px solid #94c8ed;
+/* =========================
+   警告ボックス
+========================= */
+.warning {
+  background: #fff4f2;
+  border: 2px solid #e65c4a;
+  border-radius: 18px;
+  padding: 20px 18px;
 }
 
-.service.rental {
-    background: #f5f6f7;
-    border: 2px solid #d9dde1;
+.warning-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 10px;
+  color: #c53f30;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.5;
 }
 
-.service-tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: bold;
-    padding: 3px 8px;
-    border-radius: 15px;
-    margin-bottom: 6px;
+.warning-icon {
+  flex: 0 0 auto;
+  font-size: 25px;
 }
 
-.carshare .service-tag {
-    color: #1769aa;
-    background: #d8edff;
+/* =========================
+   情報ボックス
+========================= */
+.info {
+  background: #eef7fb;
+  border-left: 5px solid #2690b8;
+  border-radius: 12px;
+  padding: 17px 16px;
+  margin: 16px 0;
 }
 
-.rental .service-tag {
-    color: #555;
-    background: #e6e8ea;
-}
-
-.service h3 {
-    margin: 0 0 11px;
-    font-size: 20px;
-}
-
-.service ul {
-    margin: 0;
-    padding-left: 19px;
-    font-size: 14px;
-}
-
-.service li {
-    margin-bottom: 6px;
+.info-title {
+  margin-bottom: 6px;
+  font-weight: 800;
+  color: #145878;
 }
 
 /* =========================
    数字カード
 ========================= */
 .stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin: 18px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 18px 0;
 }
 
 .stat {
-    text-align: center;
-    background: #f5f9fc;
-    border-radius: 13px;
-    padding: 18px 10px;
-    border: 1px solid #dce8f1;
+  background: #f6f9fb;
+  border-radius: 15px;
+  padding: 17px;
+  text-align: center;
+  border: 1px solid #e0e8ed;
 }
 
 .stat-number {
-    display: block;
-    color: #1769aa;
-    font-size: 29px;
-    font-weight: 800;
-    line-height: 1.25;
+  display: block;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1.25;
+  color: #145f82;
 }
 
-.stat-text {
-    display: block;
-    margin-top: 5px;
-    font-size: 12px;
-    color: #5d6873;
-}
-
-/* =========================
-   ケース判定
-========================= */
-.case {
-    display: flex;
-    gap: 13px;
-    align-items: flex-start;
-    margin: 14px 0;
-    padding: 15px;
-    border-radius: 11px;
-    background: #f7f9fb;
-}
-
-.case-icon {
-    width: 31px;
-    height: 31px;
-    flex: 0 0 31px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #fff;
-}
-
-.case-icon.blue {
-    background: #2e75b6;
-}
-
-.case-icon.gray {
-    background: #6f7b86;
-}
-
-.case-content {
-    font-size: 14px;
-}
-
-.case-content strong {
-    color: #174d7c;
+.stat-label {
+  display: block;
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
 }
 
 /* =========================
-   あなたの場合
+   フロー
 ========================= */
-.your-case {
-    background: linear-gradient(135deg, #fffdf0, #fff7d5);
-    border: 2px solid #e4c34c;
-    border-radius: 15px;
-    padding: 21px 18px;
+.flow {
+  display: grid;
+  gap: 11px;
+  margin-top: 15px;
 }
 
-.your-case-title {
-    margin: 0 0 12px;
-    color: #805f00;
-    font-size: 19px;
-    font-weight: 800;
+.flow-item {
+  position: relative;
+  padding: 17px 17px 17px 57px;
+  background: #f7fafc;
+  border: 1px solid #dce7ed;
+  border-radius: 14px;
 }
 
-.route {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin: 15px 0;
+.flow-number {
+  position: absolute;
+  left: 15px;
+  top: 16px;
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #1976a8;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
 }
 
-.route-item {
-    flex: 1;
-    text-align: center;
-    background: #fff;
-    border: 1px solid #e3d49b;
-    border-radius: 9px;
-    padding: 10px 5px;
-    font-size: 12px;
-}
-
-.route-arrow {
-    color: #a58214;
-    font-weight: bold;
+.flow-item strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 17px;
 }
 
 /* =========================
-   メール注意喚起
+   5つの鉄則
 ========================= */
-.mail-alert {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #fff0ef, #fff8f7);
-    border: 3px solid #d9534f;
-    border-radius: 17px;
-    padding: 25px 20px;
-    margin: 18px 0;
+.rules {
+  display: grid;
+  gap: 12px;
 }
 
-.mail-alert::after {
-    content: "!";
-    position: absolute;
-    right: 13px;
-    top: -25px;
-    font-size: 120px;
-    color: rgba(217,83,79,.07);
-    font-weight: 900;
+.rule {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 17px 15px;
+  border-radius: 15px;
+  background: #f7fafc;
+  border: 1px solid #dce7ed;
 }
 
-.mail-alert h3 {
-    position: relative;
-    z-index: 1;
-    margin: 0 0 12px;
-    color: #b42d29;
-    font-size: 21px;
+.rule-number {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #145f82;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 900;
 }
 
-.mail-alert p {
-    position: relative;
-    z-index: 1;
+.rule-text {
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.rule-text strong {
+  display: block;
+  margin-bottom: 3px;
 }
 
 /* =========================
-   STOP / OK
+   メールチェック
 ========================= */
-.stop-box {
-    background: #fff;
-    border-radius: 13px;
-    overflow: hidden;
-    border: 1px solid #e1e5e9;
-    margin: 18px 0;
+.mail-example {
+  margin: 16px 0;
+  padding: 17px;
+  background: #f8f9fa;
+  border: 1px solid #d9e0e5;
+  border-radius: 14px;
 }
 
-.stop-head {
-    padding: 12px 16px;
-    background: #d9534f;
-    color: #fff;
-    font-weight: 800;
+.mail-line {
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e6e9;
 }
 
-.stop-list {
-    margin: 0;
-    padding: 8px 18px 12px 38px;
+.mail-line:last-child {
+  border-bottom: none;
 }
 
-.stop-list li {
-    padding: 9px 0;
-    border-bottom: 1px solid #eee;
+.mail-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  color: #68757d;
 }
 
-.stop-list li:last-child {
-    border-bottom: none;
-}
-
-.ok-box {
-    background: #f0f8f2;
-    border: 2px solid #8bc59a;
-    border-radius: 13px;
-    padding: 18px;
-    margin-top: 17px;
-}
-
-.ok-title {
-    color: #28753b;
-    font-weight: 800;
-    margin-bottom: 8px;
+.mail-value {
+  display: block;
+  margin-top: 2px;
+  font-size: 16px;
+  word-break: break-word;
 }
 
 /* =========================
-   3ステップ
+   OK / NG
 ========================= */
-.steps {
-    margin: 17px 0;
+.judgement {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 15px;
 }
 
-.step {
-    display: flex;
-    gap: 13px;
-    align-items: flex-start;
-    margin-bottom: 13px;
+.ok,
+.ng {
+  padding: 17px;
+  border-radius: 15px;
 }
 
-.step-number {
-    width: 35px;
-    height: 35px;
-    flex: 0 0 35px;
-    border-radius: 50%;
-    background: #2e75b6;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
+.ok {
+  background: #edf8f0;
+  border: 1px solid #b9dfc2;
 }
 
-.step-body {
-    padding: 1px 0;
-    font-size: 14px;
+.ng {
+  background: #fff1ef;
+  border: 1px solid #edbdb6;
 }
 
-.step-body strong {
-    color: #174d7c;
-    font-size: 15px;
+.judge-title {
+  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: 900;
 }
 
 /* =========================
-   メール見分け方
+   レンタカー比較
 ========================= */
-.email-check {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 13px;
+.compare-card {
+  padding: 18px;
+  border-radius: 15px;
+  background: #f7fafc;
+  border: 1px solid #dce7ed;
+  margin-bottom: 12px;
 }
 
-.email-card {
-    border-radius: 12px;
-    padding: 17px;
+.compare-card:last-child {
+  margin-bottom: 0;
 }
 
-.email-card.red {
-    background: #fff2f1;
-    border: 1px solid #efb0ad;
+.compare-title {
+  margin-bottom: 7px;
+  font-size: 18px;
+  font-weight: 900;
+  color: #174f70;
 }
 
-.email-card.green {
-    background: #f0f8f2;
-    border: 1px solid #b4d9bd;
-}
-
-.email-card h3 {
-    margin: 0 0 9px;
-    font-size: 17px;
-}
-
-.email-card.red h3 {
-    color: #b42d29;
-}
-
-.email-card.green h3 {
-    color: #28753b;
-}
-
-.email-card ul {
-    margin: 0;
-    padding-left: 19px;
-    font-size: 13px;
-}
-
-.email-card li {
-    margin-bottom: 6px;
-}
-
-/* =========================
-   URL確認
-========================= */
-.url-box {
-    background: #f5f8fb;
-    border-radius: 11px;
-    padding: 16px;
-    margin: 15px 0;
-    border-left: 4px solid #2e75b6;
-}
-
-.url-example {
-    display: block;
-    margin-top: 8px;
-    padding: 9px;
-    background: #fff;
-    border-radius: 6px;
-    font-family: monospace;
-    font-size: 12px;
-    color: #445;
-    word-break: break-all;
-}
-
-/* =========================
-   Q&A
-========================= */
-.qa {
-    padding: 16px 0;
-    border-bottom: 1px solid #e5e8eb;
-}
-
-.qa:last-child {
-    border-bottom: none;
-}
-
-.q {
-    font-weight: 800;
-    color: #174d7c;
-    margin-bottom: 8px;
-}
-
-.q::before {
-    content: "Q";
-    display: inline-flex;
-    width: 25px;
-    height: 25px;
-    margin-right: 7px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #174d7c;
-    color: #fff;
-    font-size: 12px;
-}
-
-.a {
-    font-size: 14px;
-}
-
-.a::before {
-    content: "A";
-    display: inline-flex;
-    width: 25px;
-    height: 25px;
-    margin-right: 7px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #7b8792;
-    color: #fff;
-    font-size: 12px;
+.compare-label {
+  display: inline-block;
+  margin-bottom: 7px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #e2f0f6;
+  color: #175878;
+  font-size: 13px;
+  font-weight: 800;
 }
 
 /* =========================
    チェックリスト
 ========================= */
 .checklist {
-    margin: 12px 0;
-    padding: 0;
-    list-style: none;
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
 }
 
-.checklist li {
-    position: relative;
-    padding: 10px 7px 10px 33px;
-    border-bottom: 1px solid #edf0f2;
-    font-size: 14px;
+.check {
+  position: relative;
+  padding: 15px 15px 15px 45px;
+  background: #f8fafb;
+  border-radius: 13px;
+  border: 1px solid #dde6eb;
 }
 
-.checklist li::before {
-    content: "✓";
-    position: absolute;
-    left: 3px;
-    top: 9px;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: #e3f1e7;
-    color: #28753b;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: bold;
+.check::before {
+  content: "✓";
+  position: absolute;
+  left: 15px;
+  top: 14px;
+  font-size: 19px;
+  font-weight: 900;
+  color: #198754;
 }
 
 /* =========================
-   情報源
+   まとめ
 ========================= */
-.sources {
-    background: #f7f8fa;
-    border-radius: 12px;
-    padding: 17px;
+.conclusion {
+  background: linear-gradient(145deg, #eaf5fa, #f7fbfd);
+  border: 2px solid #b8dce9;
 }
 
-.sources ul {
-    margin: 0;
-    padding-left: 19px;
+.conclusion-main {
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.8;
+  color: #164e69;
 }
 
-.sources li {
-    margin-bottom: 9px;
-    font-size: 13px;
+/* =========================
+   公式情報リンク
+========================= */
+.sources a {
+  display: block;
+  margin: 10px 0;
+  padding: 14px 15px;
+  background: #f5f8fa;
+  border: 1px solid #dbe5ea;
+  border-radius: 12px;
+  color: #145f82;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.sources a:active {
+  background: #e8f2f6;
+}
+
+/* =========================
+   小さな注記
+========================= */
+.note {
+  font-size: 15px;
+  color: #68757d;
+  line-height: 1.8;
+}
+
+.date {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #68757d;
 }
 
 /* =========================
    フッター
 ========================= */
 footer {
-    text-align: center;
-    color: #747c84;
-    font-size: 11px;
-    line-height: 1.7;
-    padding: 8px 12px 30px;
+  margin-top: 30px;
+  padding: 25px 18px 40px;
+  background: #20323d;
+  color: #dce5e9;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+footer p {
+  margin-bottom: 8px;
 }
 
 /* =========================
-   スマホ
+   タブレット以上
 ========================= */
-@media (max-width: 680px) {
+@media (min-width: 600px) {
 
-    body {
-        font-size: 15px;
-        line-height: 1.8;
-    }
+  html {
+    font-size: 18px;
+  }
 
-    .container {
-        padding: 8px 8px 35px;
-    }
+  .container {
+    width: min(100% - 48px, 900px);
+  }
 
-    .hero {
-        border-radius: 15px;
-        padding: 27px 18px 25px;
-        margin-bottom: 12px;
-    }
+  .hero {
+    margin: 18px auto 28px;
+    border-radius: 22px;
+    padding: 38px 35px;
+  }
 
-    .hero h1 {
-        font-size: 23px;
-    }
+  .hero h1 {
+    font-size: 31px;
+  }
 
-    .hero p {
-        font-size: 13px;
-    }
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .main-conclusion {
-        border-radius: 14px;
-        padding: 21px 17px;
-        border-width: 2px;
-    }
+  .judgement {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-    .main-conclusion .lead {
-        font-size: 16px;
-    }
+/* =========================
+   スマホ縦長画面
+========================= */
+@media (max-width: 380px) {
 
-    .section {
-        border-radius: 14px;
-        padding: 21px 16px;
-        margin-bottom: 13px;
-    }
+  html {
+    font-size: 16px;
+  }
 
-    .section h2 {
-        font-size: 19px;
-        margin-bottom: 17px;
-    }
+  .container {
+    width: min(100% - 24px, 900px);
+  }
 
-    .section h3 {
-        font-size: 17px;
-    }
+  .hero {
+    padding: 27px 16px 29px;
+  }
 
-    .compare,
-    .email-check {
-        grid-template-columns: 1fr;
-    }
+  .hero h1 {
+    font-size: 25px;
+  }
 
-    .stats {
-        grid-template-columns: 1fr 1fr;
-    }
+  h2 {
+    font-size: 21px;
+  }
 
-    .stat-number {
-        font-size: 25px;
-    }
+  h3 {
+    font-size: 18px;
+  }
 
-    .route {
-        gap: 4px;
-    }
+  .card {
+    padding: 19px 16px;
+  }
 
-    .route-item {
-        font-size: 11px;
-        padding: 9px 3px;
-    }
-
-    .route-arrow {
-        font-size: 12px;
-    }
-
-    .mail-alert {
-        padding: 21px 16px;
-        border-width: 2px;
-    }
-
-    .mail-alert h3 {
-        font-size: 19px;
-    }
-
-    .email-card {
-        padding: 15px;
-    }
-
-    .url-example {
-        font-size: 11px;
-    }
+  .lead {
+    font-size: 17px;
+  }
 }
 </style>
 </head>
 
-
 <body>
 
-<div class="container">
-
-
 <!-- =========================
-     ヘッダー
+     タイトル
 ========================= -->
-
 <header class="hero">
-
-    <div class="hero-label">
-        2026年10月時点・公式発表をもとに整理
-    </div>
+  <div class="container">
+    <span class="label">2026年9月発表</span>
 
     <h1>
-        タイムズカー情報漏えいと<br>
-        レンタカー利用・不審メールへの注意
+      タイムズカー情報漏えいと<br>
+      レンタカー利用の関係・フィッシング対策
     </h1>
 
     <p>
-        「タイムズカー」と「タイムズカーレンタル」を区別しながら、
-        万一メールやSMSが届いた場合の安全な対応方法まで整理します。
+      タイムズカーの不正アクセスについて、
+      「普段利用しているレンタカーにも関係するのか」
+      「今後どんなメールに注意すればよいのか」を整理します。
     </p>
-
+  </div>
 </header>
 
 
+<main class="container">
+
 <!-- =========================
-     結論
+     1. まず結論
 ========================= -->
+<section>
+  <div class="card conclusion">
 
-<section class="main-conclusion">
+    <h2>まず押さえておきたいこと</h2>
 
-    <div class="conclusion-title">
-        <span class="circle-check">✓</span>
-        まず結論
-    </div>
-
-    <p class="lead">
-        楽天トラベル経由で「タイムズカーレンタル」を利用し、
-        店舗で運転免許証を提示・提出したことだけでは、
-        今回の「タイムズカーWebシステム」への不正アクセスの
-        対象になったとは判断できません。
+    <p class="conclusion-main">
+      今回公表された情報漏えいは、
+      「タイムズカー」のWebシステムへの不正アクセスに関するものです。
     </p>
 
-    <div class="note-yellow">
-        ただし「絶対に対象外」「安全」と断定するのではなく、
-        <strong>現時点の公式発表では、タイムズカーレンタル店舗で
-        取得された免許証の写しが今回の漏えい対象になったとは
-        公表されていない</strong>、と理解するのが正確です。
+    <p>
+      一方、タイムズカーのカーシェアリングと、
+      「タイムズカー レンタル」で店舗から車を借りるレンタカーサービスは、
+      利用の仕組みが異なります。
+    </p>
+
+    <p>
+      そのため、レンタカーを
+      <strong>楽天トラベル経由で予約して利用したことだけを理由に、
+      今回の情報漏えいの対象になったと判断することはできません。</strong>
+    </p>
+
+    <div class="info">
+      <div class="info-title">重要</div>
+      <p>
+        ただし、公式発表では「タイムズカー」の会員情報について
+        大規模な漏えいが確認されています。
+        タイムズカーの会員だった場合は、
+        個別の案内メールなどを確認する必要があります。
+      </p>
     </div>
 
+  </div>
 </section>
 
 
 <!-- =========================
-     今回の事件
+     2. フィッシング対策
 ========================= -->
+<section>
+  <div class="card">
 
-<section class="section">
+    <h2>⚠️ これから特に注意したいフィッシングメール</h2>
 
-    <h2>1．今回、何が起きたのか</h2>
+    <div class="warning">
+
+      <div class="warning-title">
+        <span class="warning-icon">⚠</span>
+        「タイムズ」を名乗るメールに注意
+      </div>
+
+      <p>
+        漏えいした情報が悪用され、
+        本物のサービスを装ったメールやSMSなどに
+        利用される可能性があります。
+      </p>
+
+      <p>
+        特に、氏名やメールアドレスなどを知ったうえで
+        送られてくるメールは、一見すると本物らしく見える可能性があります。
+      </p>
+
+      <p>
+        <strong>
+          「自分の名前が書いてあるから本物」とは判断しないことが重要です。
+        </strong>
+      </p>
+
+    </div>
+
+    <h3>メールが来たときの5つの鉄則</h3>
+
+    <div class="rules">
+
+      <div class="rule">
+        <div class="rule-number">1</div>
+        <div class="rule-text">
+          <strong>メール内のリンクを急いで押さない</strong>
+          メールに記載されたURLからログインしない。
+        </div>
+      </div>
+
+      <div class="rule">
+        <div class="rule-number">2</div>
+        <div class="rule-text">
+          <strong>パスワードを入力しない</strong>
+          「確認してください」「再設定してください」などと要求されても、
+          メールから入力画面へ進まない。
+        </div>
+      </div>
+
+      <div class="rule">
+        <div class="rule-number">3</div>
+        <div class="rule-text">
+          <strong>クレジットカード情報を入力しない</strong>
+          カード番号、有効期限、セキュリティコードなどを
+          メールのリンク先で入力しない。
+        </div>
+      </div>
+
+      <div class="rule">
+        <div class="rule-number">4</div>
+        <div class="rule-text">
+          <strong>メールではなく公式サイトから確認する</strong>
+          ブックマークや公式アプリなど、
+          自分で確認できる正規の入口からアクセスする。
+        </div>
+      </div>
+
+      <div class="rule">
+        <div class="rule-number">5</div>
+        <div class="rule-text">
+          <strong>少しでも怪しければ操作を止める</strong>
+          「今すぐ」「至急」「利用停止」など、
+          不安をあおって操作を急がせる場合は特に注意する。
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     3. 今回の情報漏えい
+========================= -->
+<section>
+  <div class="card">
+
+    <h2>今回の情報漏えいで何が起きたのか</h2>
 
     <p>
-        2026年9月25日、タイムズカーWebシステムへの
-        外部からの不正アクセスが検知され、その後の調査で
-        第三者による不正アクセスが確認されました。
+      タイムズは2026年9月25日、
+      「タイムズカー」のWebシステムに対する
+      不正アクセスを確認したと発表しました。
     </p>
 
     <div class="stats">
 
-        <div class="stat">
-            <span class="stat-number">約660万件</span>
-            <span class="stat-text">情報が取得されたアカウント</span>
-        </div>
+      <div class="stat">
+        <span class="stat-number">約660万</span>
+        <span class="stat-label">影響が確認されたアカウント</span>
+      </div>
 
-        <div class="stat">
-            <span class="stat-number">約160万件</span>
-            <span class="stat-text">本人確認書類が漏えいしたアカウント</span>
-        </div>
+      <div class="stat">
+        <span class="stat-number">約160万</span>
+        <span class="stat-label">免許証画像などの漏えいが確認されたアカウント</span>
+      </div>
 
     </div>
 
     <p>
-        漏えいした情報は対象者によって異なりますが、
-        氏名、住所、生年月日、電話番号、メールアドレス、
-        免許情報、本人確認書類情報などが含まれています。
+      対象には、タイムズカーの現会員だけでなく、
+      退会会員や入会手続き途中の人なども含まれています。
     </p>
 
-    <p>
-        対象には、現在のタイムズカー会員だけでなく、
-        <strong>退会済みのタイムズカー会員</strong>も含まれます。
-    </p>
+    <h3>漏えいした可能性がある情報</h3>
 
-    <div class="note-yellow">
-        なお、現時点では、本件に起因する個人情報の不正利用や、
-        情報が不特定多数に公開された事実は確認されていないと
-        タイムズ側が公表しています。
+    <div class="checklist">
+
+      <div class="check">氏名</div>
+      <div class="check">住所</div>
+      <div class="check">生年月日</div>
+      <div class="check">電話番号</div>
+      <div class="check">メールアドレス</div>
+      <div class="check">会員番号</div>
+      <div class="check">運転免許証に関する情報</div>
+      <div class="check">本人確認書類の画像など</div>
+      <div class="check">パスワード</div>
+      <div class="check">連携サービスのIDなど</div>
+
     </div>
 
+    <div class="info">
+
+      <div class="info-title">
+        クレジットカード情報について
+      </div>
+
+      <p>
+        タイムズの発表では、
+        <strong>クレジットカード情報は漏えいしていない</strong>
+        とされています。
+      </p>
+
+      <p class="note">
+        また、パスワードについては不可逆形式で保存されており、
+        パスワードそのものが認識可能な形で漏えいしたことは確認されていないとされています。
+      </p>
+
+    </div>
+
+  </div>
 </section>
 
 
 <!-- =========================
-     サービスの違い
+     4. タイムズカーとレンタカー
 ========================= -->
+<section>
+  <div class="card">
 
-<section class="section">
+    <h2>タイムズカーとレンタカーは同じなのか</h2>
 
-    <h2>2．「タイムズカー」と「タイムズカーレンタル」は別に考える</h2>
+    <div class="compare-card">
 
-    <div class="compare">
+      <span class="compare-label">今回の発表</span>
 
-        <div class="service carshare">
+      <div class="compare-title">
+        タイムズカー
+      </div>
 
-            <span class="service-tag">カーシェア</span>
+      <p>
+        カーシェアリングサービス。
+        Web上の会員情報を利用して、
+        車両を予約・利用する仕組みです。
+      </p>
 
-            <h3>タイムズカー</h3>
-
-            <ul>
-                <li>会員制のカーシェアリング</li>
-                <li>Webサイト・アプリなどから予約</li>
-                <li>今回、不正アクセスが公表されたWebシステム</li>
-                <li>退会済み会員も対象に含まれる</li>
-            </ul>
-
-        </div>
-
-
-        <div class="service rental">
-
-            <span class="service-tag">レンタカー</span>
-
-            <h3>タイムズカーレンタル</h3>
-
-            <ul>
-                <li>店舗で車を借りるレンタカー</li>
-                <li>楽天トラベルなどから予約可能</li>
-                <li>利用時に運転免許証を提示</li>
-                <li>約款では免許証の写しの提出を規定</li>
-            </ul>
-
-        </div>
+      <p>
+        今回の不正アクセスについて、
+        約660万アカウントに関する情報漏えいが公表されています。
+      </p>
 
     </div>
 
-    <p>
-        したがって、
-        <strong>「タイムズカーレンタルで免許証をコピーされた」
-        ことと、「今回のタイムズカーWebシステムの不正アクセス」
-        は、同じものとして扱わないことが重要です。</strong>
-    </p>
+    <div class="compare-card">
 
+      <span class="compare-label">レンタカーサービス</span>
+
+      <div class="compare-title">
+        タイムズカー レンタル
+      </div>
+
+      <p>
+        店舗で手続きをして車両を借りる一般的なレンタカーサービスです。
+      </p>
+
+      <p>
+        レンタカー利用時には運転免許証の提示・提出などが必要になります。
+      </p>
+
+    </div>
+
+    <div class="info">
+
+      <div class="info-title">
+        ここが重要
+      </div>
+
+      <p>
+        今回公表された資料だけから、
+        「レンタカー店舗で保管されている免許証コピーも
+        今回の不正アクセスで漏えいした」と判断することはできません。
+      </p>
+
+      <p>
+        逆に、「絶対に関係ない」と断定することもできません。
+        公表されている対象範囲に基づいて判断する必要があります。
+      </p>
+
+    </div>
+
+  </div>
 </section>
 
 
 <!-- =========================
-     あなたの場合
+     5. 楽天トラベル経由
 ========================= -->
+<section>
+  <div class="card">
 
-<section class="section">
+    <h2>楽天トラベル経由でレンタカーを予約した場合</h2>
 
-    <h2>3．今回の利用歴を当てはめると</h2>
+    <p class="lead">
+      「楽天トラベルで予約したから今回の漏えい対象なのか？」
+      という点は、分けて考える必要があります。
+    </p>
 
-    <div class="your-case">
+    <div class="flow">
 
-        <div class="your-case-title">
-            今回のケース
-        </div>
+      <div class="flow-item">
+        <span class="flow-number">1</span>
+        <strong>楽天トラベルで予約</strong>
+        レンタカー予約サイトとして利用。
+      </div>
 
-        <p>
-            旅行先まで公共交通機関で移動し、
-            現地でレンタカーを利用することがあり、
-            楽天トラベルからタイムズカーレンタルを
-            予約したことがあります。
-        </p>
+      <div class="flow-item">
+        <span class="flow-number">2</span>
+        <strong>レンタカー会社で受付</strong>
+        店舗で本人確認や貸渡手続きを行う。
+      </div>
 
-        <div class="route">
-
-            <div class="route-item">
-                楽天トラベル<br>
-                予約
-            </div>
-
-            <div class="route-arrow">→</div>
-
-            <div class="route-item">
-                タイムズ<br>
-                カーレンタル
-            </div>
-
-            <div class="route-arrow">→</div>
-
-            <div class="route-item">
-                店舗で<br>
-                免許証提示
-            </div>
-
-        </div>
-
-        <p>
-            この利用歴だけでは、今回のタイムズカーWebシステムの
-            情報漏えいの対象になったとは判断できません。
-        </p>
+      <div class="flow-item">
+        <span class="flow-number">3</span>
+        <strong>運転免許証を提示</strong>
+        レンタカーの利用手続きとして、
+        免許証の提示・提出が必要になります。
+      </div>
 
     </div>
 
-    <h3>約7年前の直接予約について</h3>
-
     <p>
-        約7年前、急きょレンタカーが必要になり、
-        楽天トラベルではなくレンタカー会社へ直接連絡して
-        借りた可能性があるケースについても、
-        それが通常のレンタカー利用だったのであれば、
-        現時点の公表情報から今回の漏えい対象と判断する根拠はありません。
+      したがって、
+      <strong>
+        「楽天トラベルでタイムズカー レンタルを予約した」
+        という事実だけでは、
+        今回のタイムズカーWebシステムの情報漏えい対象だったとは判断できません。
+      </strong>
     </p>
 
-    <p>
-        ただし、当時どの会社・サービスを利用したのか分からないため、
-        「絶対に対象外」とまでは言えません。
-    </p>
+    <div class="warning">
 
+      <div class="warning-title">
+        <span class="warning-icon">⚠</span>
+        ただし、メールには注意
+      </div>
+
+      <p>
+        過去にタイムズ関連サービスを利用している場合、
+        「予約確認」「アカウント確認」「本人確認」などを装った
+        メールが届いても、
+        メール内リンクからログインしないことが安全です。
+      </p>
+
+    </div>
+
+  </div>
 </section>
 
 
 <!-- =========================
-     メール注意
+     6. 免許証コピー
 ========================= -->
+<section>
+  <div class="card">
 
-<section class="section">
-
-    <h2>4．もし「タイムズカー」からメールが届いたら？</h2>
-
-    <div class="mail-alert">
-
-        <h3>
-            ⚠ 本物のメールとは限りません
-        </h3>
-
-        <p>
-            今回の漏えいではメールアドレスも漏えいした可能性があり、
-            タイムズ側も、
-            <strong>漏えい情報がなりすましメールや
-            フィッシングメール等に悪用される可能性</strong>
-            を案内しています。
-        </p>
-
-        <p>
-            そのため、今後「タイムズカー」を名乗るメール、
-            SMS、電話が来た場合は、
-            <strong>「タイムズから来たから本物」と考えず、
-            一度立ち止まる</strong>ことが大切です。
-        </p>
-
-    </div>
-
-
-    <h3>一番安全な対応</h3>
-
-    <div class="steps">
-
-        <div class="step">
-
-            <div class="step-number">1</div>
-
-            <div class="step-body">
-                <strong>メールのリンクをすぐ押さない</strong><br>
-                「情報漏えいのお知らせ」
-                「本人確認が必要」
-                「アカウントを確認してください」
-                などと書かれていても、まず操作を止めます。
-            </div>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="step-number">2</div>
-
-            <div class="step-body">
-                <strong>メールとは別に公式サイトを開く</strong><br>
-                ブラウザのお気に入りや自分で検索した
-                公式サイトから確認します。
-                メール本文のリンクから確認しないことが重要です。
-            </div>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="step-number">3</div>
-
-            <div class="step-body">
-                <strong>必要なら公式窓口へ直接問い合わせる</strong><br>
-                メールに書かれている電話番号ではなく、
-                公式サイトに掲載されている問い合わせ先を利用します。
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     絶対にしない
-========================= -->
-
-<section class="section">
-
-    <h2>5．メール・SMSで「絶対に急いで操作しない」こと</h2>
-
-    <div class="stop-box">
-
-        <div class="stop-head">
-            ✕ こんな要求が来ても、その場で操作しない
-        </div>
-
-        <ul class="stop-list">
-
-            <li>
-                「本人確認のため、リンクをクリックしてください」
-            </li>
-
-            <li>
-                「アカウントを復旧するため、ログインしてください」
-            </li>
-
-            <li>
-                「パスワードを確認・更新してください」
-            </li>
-
-            <li>
-                「認証コードを入力してください」
-            </li>
-
-            <li>
-                「クレジットカード情報を再登録してください」
-            </li>
-
-            <li>
-                「本人確認書類をもう一度アップロードしてください」
-            </li>
-
-            <li>
-                「本日中に対応しないとアカウントを停止します」
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <div class="ok-box">
-
-        <div class="ok-title">
-            ✓ タイムズ公式発表で明記されている重要事項
-        </div>
-
-        <p>
-            タイムズ側は、
-            <strong>
-                メール、SMS、電話等でパスワードや
-                クレジットカード情報を尋ねることはない
-            </strong>
-            と案内しています。
-        </p>
-
-        <p style="margin-bottom:0;">
-            したがって、そのような情報を要求された場合は、
-            <strong>入力せず、いったん中止する</strong>のが安全です。
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     見分け方
-========================= -->
-
-<section class="section">
-
-    <h2>6．メールが本物かどうか、どう判断する？</h2>
+    <h2>レンタカー店で免許証をコピーされた場合</h2>
 
     <p>
-        メールアドレスやロゴだけを見て、
-        本物か偽物かを判断するのは危険です。
-        本物らしく見せたフィッシングメールもあります。
+      レンタカーを借りる際、
+      運転免許証を提示したうえで、
+      店舗側がそのコピーを取るケースがあります。
     </p>
-
-    <div class="email-check">
-
-        <div class="email-card red">
-
-            <h3>⚠ 怪しいサイン</h3>
-
-            <ul>
-                <li>突然パスワード入力を要求する</li>
-                <li>認証コードを入力させる</li>
-                <li>カード情報を要求する</li>
-                <li>本人確認書類を急いで送らせる</li>
-                <li>「本日中」「至急」など焦らせる</li>
-                <li>添付ファイルを開くよう要求する</li>
-                <li>メール内リンクからログインを要求する</li>
-            </ul>
-
-        </div>
-
-
-        <div class="email-card green">
-
-            <h3>✓ 安全側の行動</h3>
-
-            <ul>
-                <li>メールをすぐ操作しない</li>
-                <li>公式サイトを自分で開く</li>
-                <li>公式サイトのお知らせを確認する</li>
-                <li>公式窓口へ直接問い合わせる</li>
-                <li>メール内の電話番号を使わない</li>
-                <li>パスワード等を入力しない</li>
-                <li>不審な添付ファイルを開かない</li>
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     URL
-========================= -->
-
-<section class="section">
-
-    <h2>7．リンク先のURLだけで判断しない</h2>
 
     <p>
-        「タイムズらしいURLだから大丈夫」と決めつけるのも避けたほうが
-        安全です。メールに表示されている文字と、
-        実際のリンク先が異なることがあります。
+      タイムズカー レンタルの現行約款でも、
+      レンタカー利用者について
+      運転免許証の提示・提出や、
+      その写しを提出することが定められています。
     </p>
 
-    <div class="url-box">
+    <div class="info">
 
+      <div class="info-title">
+        今回の情報漏えいとの関係
+      </div>
+
+      <p>
+        ただし、
         <strong>
-            一番安全なのは「メールのリンクを使わない」方法
+          店舗で保管されている免許証コピーが
+          今回のWebシステムへの不正アクセスで漏えいした
+          という発表は確認されていません。
         </strong>
+      </p>
 
-        <p>
-            公式サイトをブラウザから直接開き、
-            そこに掲載されているお知らせを確認します。
-        </p>
-
-        <span class="url-example">
-            https://share.timescar.jp/
-        </span>
-
-    </div>
-
-    <p>
-        今回の不正アクセスについては、
-        タイムズカー公式サイトの「新着情報」に
-        第1報、第2報、第3報が掲載されています。
-    </p>
-
-</section>
-
-
-<!-- =========================
-     本物の個別連絡
-========================= -->
-
-<section class="section">
-
-    <h2>8．では、本当にタイムズから個別メールが来ることはある？</h2>
-
-    <p>
-        <strong>あります。</strong>
-    </p>
-
-    <p>
-        実際にタイムズ側は、本人確認書類情報の漏えいが確認された
-        会員に対して、2026年9月29日からメールによる個別案内を
-        開始したと公表しています。
-    </p>
-
-    <p>
-        したがって、
-        <strong>
-            「タイムズからメールが来た＝必ず偽物」
-        </strong>
-        でもありません。
-    </p>
-
-    <div class="note-yellow">
-
-        <strong>重要なのはここです。</strong><br>
-
-        本物か偽物かをメールだけで判断しようとせず、
-        <strong>
-            メールを入口にしない
-        </strong>
-        ことです。
-
-        <br><br>
-
-        メールを受け取ったら、
-        いったんメールを閉じ、
-        自分でタイムズカー公式サイトを開いて確認する、
-        という手順にすると安全性を高められます。
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     個人情報入力
-========================= -->
-
-<section class="section">
-
-    <h2>9．特に入力してはいけない情報</h2>
-
-    <p>
-        今回のようにメールアドレスなどが漏えいした可能性がある場合、
-        攻撃者が「知っている情報」を使って、
-        もっともらしいメールを作る可能性があります。
-    </p>
-
-    <ul class="checklist">
-
-        <li>
-            タイムズカーのパスワード
-        </li>
-
-        <li>
-            SMSなどで届いた認証コード
-        </li>
-
-        <li>
-            クレジットカード番号
-        </li>
-
-        <li>
-            セキュリティコード
-        </li>
-
-        <li>
-            生年月日などの個人情報
-        </li>
-
-        <li>
-            運転免許証画像などの本人確認書類
-        </li>
-
-    </ul>
-
-    <div class="mail-alert">
-
-        <h3>⚠ 「漏えい確認のため」と言われても注意</h3>
-
-        <p style="margin-bottom:0;">
-            「あなたの情報が漏えいしたか確認するため」
-            「本人確認のため」など、もっともらしい理由で
-            個人情報を入力させようとする可能性もあります。
-            <strong>理由が納得できる内容でも、メールから直接入力しない</strong>
-            ことが重要です。
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     パスワード
-========================= -->
-
-<section class="section">
-
-    <h2>10．パスワードについて</h2>
-
-    <p>
-        タイムズカーの第2報では、パスワードは復元できない形式で
-        保管されており、現時点でパスワードそのものが第三者に
-        認識可能な状態で漏えいした事実は確認されていないとされています。
-    </p>
-
-    <p>
-        ただし、タイムズカーと他のサービスで
-        <strong>同じパスワードを使い回している場合</strong>は、
-        セキュリティ上、サービスごとに異なるパスワードにすることが
-        望ましいです。
-    </p>
-
-    <div class="note-yellow">
-        パスワード変更をする場合も、
-        <strong>届いたメールのリンクから変更するのではなく、
-        公式サイトを自分で開いて変更する</strong>
-        という手順をおすすめします。
-    </div>
-
-</section>
-
-
-<!-- =========================
-     もしクリックしてしまったら
-========================= -->
-
-<section class="section">
-
-    <h2>11．もし間違ってリンクをクリックしてしまったら</h2>
-
-    <p>
-        「リンクをクリックしただけ」と、
-        「個人情報を入力した」では対応が異なります。
-    </p>
-
-    <div class="case">
-
-        <div class="case-icon blue">1</div>
-
-        <div class="case-content">
-            <strong>クリックしただけ</strong><br>
-            ページを閉じ、何も入力・ダウンロードしていないか確認します。
-        </div>
-
-    </div>
-
-
-    <div class="case">
-
-        <div class="case-icon blue">2</div>
-
-        <div class="case-content">
-            <strong>パスワードを入力した</strong><br>
-            公式サイトを自分で開き、該当サービスのパスワードを変更します。
-            同じパスワードを他サービスでも使っている場合は、
-            そちらも変更を検討します。
-        </div>
-
-    </div>
-
-
-    <div class="case">
-
-        <div class="case-icon blue">3</div>
-
-        <div class="case-content">
-            <strong>カード情報・認証コード等を入力した</strong><br>
-            速やかにカード会社や該当サービスの公式窓口へ連絡し、
-            状況を伝えてください。
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     公式確認ルート
-========================= -->
-
-<section class="section">
-
-    <h2>12．今回の件を確認するなら、このルートが安全</h2>
-
-    <div class="steps">
-
-        <div class="step">
-
-            <div class="step-number">1</div>
-
-            <div class="step-body">
-                <strong>届いたメールは、まず読むだけ</strong><br>
-                リンク・添付ファイルは開かず、
-                パスワードなども入力しません。
-            </div>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="step-number">2</div>
-
-            <div class="step-body">
-                <strong>公式サイトを自分で開く</strong><br>
-                「タイムズカー」の公式サイトから
-                最新のお知らせを確認します。
-            </div>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="step-number">3</div>
-
-            <div class="step-body">
-                <strong>自分が対象か確認したい場合</strong><br>
-                公式サイトに掲載された問い合わせ窓口から
-                直接確認します。
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="ok-box">
-
-        <div class="ok-title">
-            ✓ タイムズカーの公式問い合わせ窓口
-        </div>
-
-        <p>
-            今回の情報漏えいに関する問い合わせ窓口として、
-            タイムズカーは
-            <strong>0120-25-8924（24時間）</strong>
-            を案内しています。
-        </p>
-
-        <p style="margin-bottom:0;">
-            問い合わせフォームも公式サイトに掲載されています。
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     Q&A
-========================= -->
-
-<section class="section">
-
-    <h2>13．今回のケースで気になること</h2>
-
-
-    <div class="qa">
-
-        <div class="q">
-            タイムズカーからメールが来たら、偽物？
-        </div>
-
-        <div class="a">
-            そうとは限りません。実際に対象者への個別案内メールが
-            開始されています。ただし、今回の漏えい情報が
-            なりすましメール等に悪用される可能性も公式に案内されています。
-            メール内のリンクから操作せず、公式サイトから確認するのが安全です。
-        </div>
-
-    </div>
-
-
-    <div class="qa">
-
-        <div class="q">
-            「本人確認してください」というメールが来たら？
-        </div>
-
-        <div class="a">
-            まず操作を止めます。メールのリンクを使わず、
-            公式サイトを自分で開いて確認してください。
-        </div>
-
-    </div>
-
-
-    <div class="qa">
-
-        <div class="q">
-            パスワードを入力してほしいと言われたら？
-        </div>
-
-        <div class="a">
-            入力しないでください。タイムズ側は、
-            メール・SMS・電話等でパスワードを尋ねることはないと
-            明記しています。
-        </div>
-
-    </div>
-
-
-    <div class="qa">
-
-        <div class="q">
-            クレジットカード情報を求められたら？
-        </div>
-
-        <div class="a">
-            入力しないでください。タイムズ側は、
-            メール・SMS・電話等でクレジットカード情報を
-            尋ねることはないと案内しています。
-        </div>
-
-    </div>
-
-
-    <div class="qa">
-
-        <div class="q">
-            楽天トラベル経由でタイムズカーレンタルを利用しただけなら？
-        </div>
-
-        <div class="a">
-            現時点の公式発表からは、
-            その利用歴だけをもって今回のタイムズカーWebシステムの
-            漏えい対象と判断することはできません。
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     最終チェック
-========================= -->
-
-<section class="section">
-
-    <h2>14．覚えておきたい「5つの鉄則」</h2>
-
-    <div class="case">
-        <div class="case-icon blue">1</div>
-        <div class="case-content">
-            <strong>メールが来ても、すぐリンクを押さない。</strong>
-        </div>
-    </div>
-
-    <div class="case">
-        <div class="case-icon blue">2</div>
-        <div class="case-content">
-            <strong>公式サイトは自分で開く。</strong>
-        </div>
-    </div>
-
-    <div class="case">
-        <div class="case-icon blue">3</div>
-        <div class="case-content">
-            <strong>パスワード・認証コード・カード情報をメール経由で入力しない。</strong>
-        </div>
-    </div>
-
-    <div class="case">
-        <div class="case-icon blue">4</div>
-        <div class="case-content">
-            <strong>添付ファイルを安易に開かない。</strong>
-        </div>
-    </div>
-
-    <div class="case">
-        <div class="case-icon blue">5</div>
-        <div class="case-content">
-            <strong>迷ったら、メールに書かれた連絡先ではなく公式窓口へ。</strong>
-        </div>
-    </div>
-
-</section>
-
-
-<!-- =========================
-     最終結論
-========================= -->
-
-<section class="main-conclusion">
-
-    <div class="conclusion-title">
-        <span class="circle-check">✓</span>
-        最終整理
-    </div>
-
-    <p>
-        今回の情報漏えいについて、
-        <strong>
-            「楽天トラベル経由でタイムズカーレンタルを利用し、
-            店舗で免許証をコピーされた」
-        </strong>
-        ことだけから、今回の漏えい対象だと判断することはできません。
-    </p>
-
-    <p>
-        一方、過去に<strong>タイムズカー（カーシェア）</strong>の
-        会員登録をしていた場合は、退会済み会員も対象に含まれるため、
-        公式発表を確認する意味があります。
-    </p>
-
-    <div class="note-yellow">
-
-        <strong>そして、これから特に大切なのがメールへの対応です。</strong><br><br>
-
-        タイムズから本物の個別案内が届く可能性はあります。
-        同時に、漏えいした可能性のあるメールアドレス等を利用して、
-        タイムズを装ったフィッシングメール等が送られてくる可能性も
-        公式に指摘されています。<br><br>
-
+      <p>
         そのため、
-        <strong>
-            「タイムズからメールが来たかどうか」ではなく、
-            「メールを入口にして個人情報を入力しない」
-        </strong>
-        ことを基本にしておくと安心です。
+        「レンタカー店で免許証をコピーされた」
+        という事実だけから、
+        今回の情報漏えいと結びつけることはできません。
+      </p>
 
     </div>
 
+  </div>
 </section>
 
 
 <!-- =========================
-     公式情報
+     7. 約7年前の直接予約
 ========================= -->
+<section>
+  <div class="card">
 
-<section class="section">
+    <h2>約7年前に直接レンタカーを借りた場合</h2>
 
-    <h2>15．公式情報</h2>
+    <p>
+      以前、急にレンタカーが必要になり、
+      楽天トラベルではなくレンタカー会社へ直接申し込んで
+      車を借りたケースについても、
+      今回の情報漏えいとの関係を考える必要があります。
+    </p>
 
-    <div class="sources">
+    <div class="judgement">
 
-        <ul>
+      <div class="ok">
 
-            <li>
-                <a href="https://share.timescar.jp/news/2026/0929/1816.html"
-                   target="_blank" rel="noopener noreferrer">
-                    タイムズカー 第3報
-                </a><br>
-                本人確認書類約160万件、個別案内、なりすましメール等への注意
-            </li>
+        <div class="judge-title">
+          現時点で分かること
+        </div>
 
-            <li>
-                <a href="https://share.timescar.jp/news/2026/0928/1815.html"
-                   target="_blank" rel="noopener noreferrer">
-                    タイムズカー 第2報
-                </a><br>
-                約660万件、対象者、漏えい情報、問い合わせ窓口など
-            </li>
+        <p>
+          そのレンタカー会社が
+          今回発表された「タイムズカー」のWebシステムを
+          利用していたという情報がなければ、
+          その利用歴だけから今回の漏えい対象と判断することはできません。
+        </p>
 
-            <li>
-                <a href="https://share.timescar.jp/news/2026/0925/1814.html"
-                   target="_blank" rel="noopener noreferrer">
-                    タイムズカー 第1報
-                </a><br>
-                不正アクセスの概要、なりすまし・フィッシングへの注意
-            </li>
+      </div>
 
-            <li>
-                <a href="https://share.timescar.jp/"
-                   target="_blank" rel="noopener noreferrer">
-                    タイムズカー公式サイト
-                </a><br>
-                最新のお知らせを確認する入口
-            </li>
+      <div class="ng">
 
-        </ul>
+        <div class="judge-title">
+          分からないこと
+        </div>
+
+        <p>
+          約7年前の利用先や手続き方法が確認できない場合、
+          どの会社のどのシステムに情報が保存されていたかまでは
+          判断できません。
+        </p>
+
+      </div>
 
     </div>
 
+    <p class="note">
+      したがって、古いレンタカー利用歴については、
+      現在分かっている公式発表だけから
+      「今回の対象だった」「対象ではなかった」と断定することはできません。
+    </p>
+
+  </div>
 </section>
+
+
+<!-- =========================
+     8. 今後のメール対応
+========================= -->
+<section>
+  <div class="card">
+
+    <h2>実際にメールが届いたらどうするか</h2>
+
+    <p>
+      今回のような情報漏えいでは、
+      漏えいした情報そのものだけでなく、
+      その情報を利用した「なりすまし」に注意することが重要です。
+    </p>
+
+    <div class="mail-example">
+
+      <div class="mail-line">
+        <span class="mail-label">件名</span>
+        <span class="mail-value">
+          「重要」「本人確認」「利用停止」などの言葉が入っている
+        </span>
+      </div>
+
+      <div class="mail-line">
+        <span class="mail-label">本文</span>
+        <span class="mail-value">
+          「至急確認してください」など、操作を急がせる
+        </span>
+      </div>
+
+      <div class="mail-line">
+        <span class="mail-label">リンク</span>
+        <span class="mail-value">
+          ログインや本人確認を要求する
+        </span>
+      </div>
+
+      <div class="mail-line">
+        <span class="mail-label">入力要求</span>
+        <span class="mail-value">
+          パスワード、カード情報などを入力させる
+        </span>
+      </div>
+
+    </div>
+
+    <div class="warning">
+
+      <div class="warning-title">
+        <span class="warning-icon">STOP</span>
+        怪しいと思ったらリンクを押さない
+      </div>
+
+      <p>
+        メールの真偽を確認するために、
+        メールに記載されたリンクを開く必要はありません。
+      </p>
+
+      <p>
+        <strong>
+          公式サイトを自分で検索する、
+          公式アプリを開く、
+          すでに登録してあるブックマークからアクセスする
+        </strong>
+        などの方法で確認してください。
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     9. タイムズからのメール
+========================= -->
+<section>
+  <div class="card">
+
+    <h2>タイムズからの連絡で特に覚えておきたいこと</h2>
+
+    <p>
+      タイムズは今回の情報漏えいに関する案内の中で、
+      <strong>
+        パスワードやクレジットカード情報を
+        メール・SMS・電話で尋ねることはない
+      </strong>
+      と案内しています。
+    </p>
+
+    <div class="info">
+
+      <div class="info-title">
+        つまり
+      </div>
+
+      <p>
+        「タイムズです。本人確認のためパスワードを入力してください」
+      </p>
+
+      <p>
+        「カード情報を確認するため、こちらから登録してください」
+      </p>
+
+      <p>
+        といった要求が来た場合は、
+        特に慎重に扱う必要があります。
+      </p>
+
+    </div>
+
+    <p class="lead">
+      「メールのリンクを押して確認」ではなく、
+      「自分で公式サイトを開いて確認」
+      と覚えておくと分かりやすいです。
+    </p>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     10. 自分で確認する項目
+========================= -->
+<section>
+  <div class="card">
+
+    <h2>今、自分で確認しておきたいこと</h2>
+
+    <div class="checklist">
+
+      <div class="check">
+        タイムズカーの会員だったか確認する
+      </div>
+
+      <div class="check">
+        タイムズから届いた案内メールを確認する
+      </div>
+
+      <div class="check">
+        不審なメールやSMSのリンクを開かない
+      </div>
+
+      <div class="check">
+        同じパスワードを他のサービスでも使っている場合は、
+        使い回しを避ける
+      </div>
+
+      <div class="check">
+        クレジットカード情報をメール経由で入力しない
+      </div>
+
+      <div class="check">
+        不安な場合は公式サイトに掲載された問い合わせ先から確認する
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     11. 今回のケースを整理
+========================= -->
+<section>
+  <div class="card">
+
+    <h2>今回のケースを整理すると</h2>
+
+    <div class="compare-card">
+
+      <div class="compare-title">
+        タイムズカーの会員だった
+      </div>
+
+      <p>
+        今回公表された情報漏えいの対象に含まれています。
+        個別の案内が届いているか確認することが重要です。
+      </p>
+
+    </div>
+
+    <div class="compare-card">
+
+      <div class="compare-title">
+        楽天トラベル経由でタイムズカー レンタルを利用した
+      </div>
+
+      <p>
+        その事実だけで、
+        今回のタイムズカーWebシステムの情報漏えい対象だったとは判断できません。
+      </p>
+
+    </div>
+
+    <div class="compare-card">
+
+      <div class="compare-title">
+        レンタカー店で免許証をコピーされた
+      </div>
+
+      <p>
+        レンタカー利用に伴う手続きとして免許証の提示・提出が必要になる場合があります。
+        ただし、そのコピーが今回の不正アクセスで漏えいしたという発表は確認されていません。
+      </p>
+
+    </div>
+
+    <div class="compare-card">
+
+      <div class="compare-title">
+        約7年前に直接レンタカーを借りた
+      </div>
+
+      <p>
+        利用先や当時のシステムが分からないため、
+        今回の情報漏えいとの関係を現在の公表情報だけから断定することはできません。
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     12. 最終まとめ
+========================= -->
+<section>
+  <div class="card conclusion">
+
+    <h2>まとめ</h2>
+
+    <p class="conclusion-main">
+      今回もっとも注意したいのは、
+      「漏えい情報を利用したフィッシング」です。
+    </p>
+
+    <p>
+      タイムズカーの会員情報については、
+      大規模な情報漏えいが公表されています。
+    </p>
+
+    <p>
+      一方、楽天トラベルなどを通じて利用した
+      タイムズカー レンタルのレンタカー利用歴や、
+      店舗で提示・コピーされた免許証については、
+      公表資料だけから今回のWebシステムの漏えい対象と
+      判断することはできません。
+    </p>
+
+    <div class="warning">
+
+      <div class="warning-title">
+        <span class="warning-icon">✓</span>
+        覚えておくのはこの3つ
+      </div>
+
+      <p><strong>① メールのリンクからログインしない</strong></p>
+      <p><strong>② パスワード・カード情報をメール経由で入力しない</strong></p>
+      <p><strong>③ 確認するときは自分で公式サイトを開く</strong></p>
+
+    </div>
+
+    <p class="date">
+      ※情報は2026年10月時点で公表されている内容をもとに整理。
+      今後、調査結果により内容が更新される可能性があります。
+    </p>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     13. 公式情報
+========================= -->
+<section>
+  <div class="card sources">
+
+    <h2>公式発表・関連情報</h2>
+
+    <a href="https://share.timescar.jp/news/2026/0925/1814.html"
+       target="_blank" rel="noopener">
+      タイムズカー：不正アクセスに関するお知らせ
+      （2026年9月25日）
+    </a>
+
+    <a href="https://share.timescar.jp/news/2026/0928/1815.html"
+       target="_blank" rel="noopener">
+      タイムズカー：不正アクセスに関するお知らせ（第2報）
+      （2026年9月28日）
+    </a>
+
+    <a href="https://share.timescar.jp/news/2026/0929/1816.html"
+       target="_blank" rel="noopener">
+      タイムズカー：不正アクセスに関するお知らせ（第3報）
+      （2026年9月29日）
+    </a>
+
+    <a href="https://rental.timescar.jp/agreement/provisions.html"
+       target="_blank" rel="noopener">
+      タイムズカー レンタル：貸渡約款
+    </a>
+
+    <p class="note">
+      公式発表の更新により、漏えい対象や対応方法が変更される場合があります。
+      実際に不審なメールなどを受け取った場合は、
+      最新の公式案内を確認してください。
+    </p>
+
+  </div>
+</section>
+
+</main>
 
 
 <footer>
+  <div class="container">
+    <p>
+      本ページは、タイムズカーが公表した情報をもとに、
+      情報漏えいとレンタカー利用の関係、
+      およびフィッシング対策を分かりやすく整理したものです。
+    </p>
 
-    本ページは、2026年10月時点で公表されている
-    タイムズカーおよびタイムズカーレンタルの情報をもとに、
-    情報漏えいとレンタカー利用の関係、
-    ならびに不審なメール等への注意点を整理したものです。<br>
-    今後の調査・発表によって内容が更新される可能性があります。
-
+    <p>
+      情報漏えいの対象について、
+      公表されていない事項を推測して断定するものではありません。
+    </p>
+  </div>
 </footer>
-
-
-</div>
 
 </body>
 </html>
